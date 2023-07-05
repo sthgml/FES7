@@ -1,0 +1,11 @@
+p {
+    color :red;
+}
+
+section p {
+    color: royalblue;
+}
+
+[type="button"] {
+    background-color: crimson;
+}
