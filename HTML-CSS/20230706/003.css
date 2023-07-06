@@ -1,0 +1,31 @@
+.fes7 {
+    text-transform: capitalize;
+    text-decoration: underline overline line-through wavy;
+    text-decoration-thickness: 4px;
+}
+
+.txt-shadow {
+    text-shadow: 2px 2px 2px rgb(222,222,222);
+    box-shadow: 2px 2px 4px rgb(222,222,222);
+    border-radius: 0.25rem;
+    text-align: center;
+}
+
+.p-word-break {
+    word-break: keep-all;
+}
+
+/* 한 줄 말줄임 표시 */
+.filtering { 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 여러 줄 말줄임 표시 */
+.filtering2{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
