@@ -5,8 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>구조적 가상 선택자</title>
-
     <style>
+        :root {
+            --main-color: royalblue;
+        }
+        
         /* 짝수번째 항목에 다 적용 */
         li:nth-child(2n){
             color:yellowgreen
@@ -48,7 +51,16 @@
         p:not(.t2) {
             background-color: red;
         }
+
+        button {
+            color: var(--main-color);
+            border: 1px solid var(--main-color);
+            border-radius: 4px;
+            padding: 10px 80px 10px 80px;
+        }
     </style>
+
+        
 </head>
 <body>
     아까 배웠던 ul 태그를 써보겠습니다
@@ -97,6 +109,9 @@
     <hr>
     <ol class="ol-style">
 
+        <button>
+            버튼
+        </button>
     </ol>
 </body>
 </html>
