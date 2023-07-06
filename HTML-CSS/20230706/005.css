@@ -1,0 +1,35 @@
+ul {
+    list-style: none outsdie url('/non-existent.svg');
+    padding:0;
+    position: outside;
+}
+
+ol {
+    list-style: none;
+    padding:0;
+}
+
+/* 가상요소를 만들어서 스타일을 처리할 수 있습니다 강사님이 선호하는 방식 */
+ul>li::before {
+    content : "😀"
+}
+
+a {
+    transition: all 0.3s;
+}
+
+a:visited  {
+    color: aqua
+}
+
+a:active {
+    color:yellowgreen
+}
+
+a:focus {
+    background-color: red;
+}
+
+a:hover{
+    font-size: 200%;
+}
