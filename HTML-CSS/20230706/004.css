@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'KIMM_Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/KIMM_Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+.box {
+    padding: 1rem;
+    margin-top: 4rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80vw;
+    border-radius: 2rem;
+    box-shadow: 16px 16px 50px #ececec;
+}
+
+.header {
+    text-align: center;
+    font-family: 'KIMM_Bold';
+    font-weight: bolder;
+    text-decoration: underline overline dotted;
+}
+
+.slogan-box {
+    text-align: center;
+    margin-left: 2rem;
+    font-family: 'KIMM_Bold';
+}
+
+.slogan-en {
+    font-size: 3rem;
+    color:rgb(15, 15, 15);
+    text-shadow: 6px 0px 0px rgb(255, 0, 0, 0.5),
+    -6px 0px 0px rgb(0, 0, 255, 0.5);
+    margin-bottom: 0px;
+}
+
+.desc {
+    
+}
