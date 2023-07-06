@@ -5,6 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>구조적 가상 선택자</title>
+
+    <style>
+        /* 짝수번째 항목에 다 적용 */
+        li:nth-child(2n){
+            color:yellowgreen
+        }
+        
+        li:nth-child(2n+1) {
+            color: violet;
+        }
+
+        li {
+            transition: all 0.1s;
+            padding-top: 16px;
+            padding-bottom: 16px;
+        }
+
+        li:hover {
+            font-size: 40px;
+        }
+
+        li:first-child {
+            color: aliceblue;
+            border: 4px solid royalblue;
+            padding: 10px;
+        }
+
+        li:last-child {
+            color:cadetblue
+        }
+
+        div :nth-of-type(1) {
+            color:red
+        }
+
+        .only-of-type :only-of-type {
+            color: cadetblue
+        }
+
+        /* 부정선택자 */
+        p:not(.t2) {
+            background-color: red;
+        }
+    </style>
 </head>
 <body>
     아까 배웠던 ul 태그를 써보겠습니다
@@ -21,5 +65,38 @@
         <li>리스트</li>
     </ol>
     
+    3번째마다 이벤트가 발생한다든가 이러 서비스가 만들어질 수 있겠죠. 첫번째꺼는 강조를 한다거나 그런 클래스들을 강조를 할 수 있습니다. 
+    
+    오브 타입을 한 번 만들어볼게요.
+    <div class="of-type">
+        <p class="t2">안녕하세요</p>
+        <p class="t1">안녕하세요</p>
+        <p class="t2">안녕하세요</p>
+        <strong>안녕하세요</strong>
+        <strong>안녕하세요</strong>
+        <strong>안녕하세요</strong>
+        <a href="#">a</a>
+        <a href="#">a</a>
+        <a href="#">a</a>
+        <em>멍청이</em>
+    </div>
+
+    <div class="only-of-type">
+        <p class="t2">안녕하세요</p>
+        <p class="t1">안녕하세요</p>
+        <p class="t1">안녕하세요</p>
+        <strong>안녕하세요</strong>
+        <strong>안녕하세요</strong>
+        <strong>안녕하세요</strong>
+        <a href="#">a</a>
+        <a href="#">a</a>
+        <a href="#">a</a>
+        <em>멍청이</em>
+    </div>
+
+    <hr>
+    <ol class="ol-style">
+
+    </ol>
 </body>
 </html>
