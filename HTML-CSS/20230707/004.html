@@ -6,14 +6,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>박스모델</title>
     <style>
-        div {
-            background-color: skyblue;
-            width: 100px;
-            border: 10px solid royalblue;
+        p{
+        padding: 10px; /* top, right, bottom, left 모두 10px */
+        padding: 10px 20px; /* top, bottom :10px,  left, right:20px */
+        padding: 10px 20px 30px; /* top:10px, left,right:20px, bottom:30px */
+        padding: 10px 20px 30px 40px; /* 탑부터 시계방향 */
+
+        background-color: salmon;
+        }
+
+        .max-content{
+            width:max-content;
+        }
+
+        .min-content{
+            width:min-content;
+        }
+
+        .fit-content{
+        width:fit-content;
+        }
+
+
+        .parent{
+        width:500px;
+        background:gray;
+        }
+
+        .parent p{
+        width: 200px;
+        margin: auto;
+        }
+
+        .parent p{
+        width: 200px;
+        margin: auto 0 auto auto;
         }
     </style>
 </head>
 <body>
-    <div>box</div>
+    HTML CSSResult Skip Results Iframe
+EDIT ON
+<p>
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo molestias animi error nobis ut sapiente magni ipsa eaque eveniet voluptatibus illo alias ex, at aut enim pariatur, tenetur harum obcaecati?
+
+</p>
+<p class="max-content">
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo molestias animi error nobis ut sapiente magni ipsa eaque eveniet voluptatibus illo alias ex, at aut enim pariatur, tenetur harum obcaecati?
+
+</p>
+<p class="min-content">
+  Lorem ipsum dolor sit
+
+</p>
+<p class="fit-content">
+  Lorem ipsum dolor sit
+</p>
+
+<p class="fit-content">
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo molestias animi error nobis ut sapiente magni ipsa eaque eveniet voluptatibus illo alias ex, at aut enim pariatur, tenetur harum obcaecati?
+</p>
+
+<div class="parent">
+  <p>Lorem ipsum dolor sit</p>
+</div>
+
+Resources1× 0.5× 0.25×Rerun
+
+body, html 부모에게 받을 높이값이 없기 때문에 height는 %단위를 쓸 때 주의하기~!
+
 </body>
 </html>

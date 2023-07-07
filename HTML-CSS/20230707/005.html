@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>margin incorporation effect</title>
+    <style>
+        .box1,
+        .box2,
+        .box3 {
+            width: 100px;
+            height: 100px;
+
+        }
+
+        .box1{
+            background-color: royalblue;
+            margin-bottom: 100px;
+        }
+        /* margin 병합현상 겹치면 더 큰 값의 마진만 적용됨 */
+        .box2{
+            background-color: salmon;
+            margin-top: 20px;
+        }
+        /* 마진병합현상 해결방법
+        부모요소에 
+        overflow 속성 값, 
+        display:inline-block, 
+        border 값 적용,
+        display:flow-root을 사용합니다.
+        >> 굳이 마진 병합현상을 해결할 필요 없이, 마진 병합현상을 알고 작업을 진행하시면 됩니다*/
+        .box3{
+            background-color: gold;
+        }
+
+        .parent {
+            overflow-x: scroll;
+            overflow-y: hidden;
+        }
+
+        .child {
+            width: 1000px;
+            /* height: 100px; */
+            background-color: slateblue;
+            margin: 20px;
+        }
+        
+        .tooltip {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            top: 70px;
+            left: 70px;
+            background-color: #eee;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        안뇽
+    </div>
+    <div class="box2">
+        안뇽
+    </div>
+    <div class="box3">
+        안뇽
+    </div>
+
+    <div class="parent">
+        <div class="child">
+            child
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi repellat, iste beatae voluptatibus vitae obcaecati aut non ipsa nesciunt ratione facilis cumque, sit eligendi sed rerum commodi eius tenetur nostrum.
+            <div class="tooltip">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae possimus omnis ad consequatur! Laudantium ipsam officiis ea, earum molestias pariatur sed eveniet illo quae dolorum cum eius excepturi asperiores recusandae!Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae possimus omnis ad consequatur! Laudantium ipsam officiis ea, earum molestias pariatur sed eveniet illo quae dolorum cum eius excepturi asperiores recusandae!
+              </div>
+        </div>
+    </div>
+</body>
+</html>
