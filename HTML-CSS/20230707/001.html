@@ -1,0 +1,51 @@
+CSS 언어에는 충돌 시 어떤 규칙이 우선하는지 규칙이 있습니다<div class="이를 계단식, 우선순위 라고 합니다."></div>
+<ol>
+    <li>
+        후자 우선의 원칙
+        <ol type="i" start="1">
+            <li>
+                CSS 상 더 밑에 선언된 것이 적용됩니다.
+            </li>
+        </ol>
+    </li>
+    
+    <li>
+        구체성(명시도)의 원칙
+        <ol type="i" start="1">
+            <li>
+                가중치 : 개발자 도구의 '계산됨' 탭에서 확인해보기
+                <ol type="a" start="1">
+                    <li>
+                        <strong>1000점</strong> inline style property 
+                    </li>
+                    <li>
+                        <strong>100점</strong>id <code>#</code>
+                    </li>
+                    <li>
+                        <strong>10점</strong> class <code>.</code>, 가상클래스 속성선택자
+                    </li>
+                    <li>
+                        <strong>1점</strong>type(tag), 가상요소 선택자
+                    </li>
+                    <a href="https://specificity.keegan.st/">명시도 계산기 사이트</a>
+                </ol>
+            </li>
+        </ol>
+    </li>
+    <li>
+        중요성의 원칙 
+        <ol type="i" start="1">
+            <li>
+                <strong>!important</strong>
+            </li>
+            <ol type="a" start="1">
+                <li>!important 선언 위치 : 선택자 { 속성 : 속성값 (여기) ;} </li>
+                <li>이 선언은 다른 CSS의 어떤 선언 보다도 우선합니다. </li>
+                <li>!important 는 선택자 우선순위에 직접적인 영향을 미칩니다. </li>
+                <li>important 사용은 좋지 못한 습관입니다. 
+                    CSS의 자연스러운 상속을 깨트리기 때문에 오류/버그 발생 시 수정을 어렵게 만듭니다.</li>
+                <li>!important 도 여러개 사용하면 후자가 우선순위로 적용</li>
+            </ol>
+        </ol>
+    </li>
+</ol>
