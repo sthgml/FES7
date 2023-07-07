@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>블록레벨 요소 vs 인라인 레벨 요소</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        div, span {
+            background-color: salmon;
+            border: 2px solid saddlebrown;
+            width: 200px;
+            height: 200px;
+            margin: 30px;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div>안녕하세요</div>
+    <div>안녕하세요</div>
+    <div>안녕하세요</div>
+    <span>안녕하세요</span><span>안녕하세요</span><span>안녕하세요</span>
+    width height를 적용할 수 없고, padding, margin, border할 수 있지만 상하로는 margin이 생기지 않습니다~
+
+    button은 인라인 블록
+    <button>
+        버튼입니다~!
+    </button>
+    <button>
+        버튼입니다~!
+    </button>
+    <button>
+        버튼입니다~!
+    </button>
+    block / inline / inline-block
+    인라인요소 포함 가능 / 블록요소 포함 불가 (a태그 제외) / 
+    줄바꿈 O / X / X
+    가로세로 O / X / O
+    패딩 O / X / O
+    마진 O / X / O
+    보더 O / X / O
+</body>
+</html>
