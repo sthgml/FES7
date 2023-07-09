@@ -1,18 +1,22 @@
+* {
+    font-family: 'AppleSDGothicNeo', 'Noto Sans KR', sans-serif; 
+    font-size: 36px; 
+    font-weight: bold;  
+}
+
 body {
     height: 1024px;
 }
-div {
+
+div, header {
     padding: 32px 64px;
 
     color: #fff;
 
     text-align: center;
-
-    font-size: 36px;
-    font-weight: bold;
-    font-family: 'AppleSDGothicNeo', 'Noto Sans KR', sans-serif;
     
     text-transform: capitalize;
+    transition: all 0.3s;
 }
 
 .grey-box {
@@ -56,16 +60,29 @@ div {
     margin-right:24px;
 }
 
-.msg-bbl-box-right:hover {
-    background-color: #4d4d4d;
-    width: 400px;
-    height: 200px;
+div:hover {
+    background-color: #f1f1f1;
+    width: fit-content;
+    height: fit-content;
+    font-size: 48px;
+    color: #ffffff;
 }
 
 .input-text {
-    width: 100%;
-    padding: 24px;
-    margin-top: 300px;
-    margin-bottom: 0px;
-    position: absolute;
+    width: 95%;
+    padding: 36px 64px;
+    box-sizing: border-box;
+
+    border: 4px solid #f0d0ff;
+    border-radius: 100px;
+
+    margin: 240px 24px;
+
+    font-size: 36px;
+    color:rgb(216, 149, 255);
+}
+
+.input-text:focus {
+    background: linear-gradient(90deg, rgb(216, 149, 255), rgb(107, 130, 255));
+    color:#ffffff;
 }
