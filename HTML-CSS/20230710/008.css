@@ -1,0 +1,57 @@
+@import url('https://webfontworld.github.io/pretendard/Pretendard.css');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.card-bg {
+    width: 18rem;
+    height: 21.75rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    font-family: 'Pretendard';
+    box-shadow: 0.125rem 0.125rem 0.5rem 0 rgba(0,0,0,0.1);
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.img-wrap {
+    width: 100%;
+    height: 12.25rem;
+}
+
+.card-text-head {
+    font-weight: 700; 
+    font-size: 1rem;
+    color : #29363D;
+    margin: 1.5rem 4.5rem 0.75rem 1rem;
+}
+
+.card-text-content {
+    font-size: 0.75rem;
+    color: #5A6A72;
+    line-height: 1.25rem;
+    /* text-overflow: ellipsis; */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    margin: 0.75rem 1rem 1rem 1rem;
+}
+
+.card-text-button {
+    color: #29363D;
+    font-size: 0.875rem;
+    font-weight: bold;
+    text-decoration: underline;
+    -webkit-text-underline-position: under;
+    text-underline-position: under;
+    margin: 1rem;
+}

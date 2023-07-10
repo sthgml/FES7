@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>img-resizing</title>
+    <style>
+        div {
+            width: 100%;
+            
+        }
+        .method1>img {
+            width: 30%;
+            aspect-ratio: 1/1;
+            /* img 비율설정 */
+            object-fit: cover;
+            /* cover = 크롭, contain = 각 이미지의 비율 유지 */
+        }
+        .method2 div {
+            height: 0;
+            background-color: skyblue;
+            position: relative;
+            height: 0;
+            width: 300px;
+            padding-top: 10%;
+            /* 이미지의 세로길이를 주는 대신에 padding-top을 통해서 이미지의 세로길이를 주는 것과 같은 효과를,,내는 것입니다.. 아니 어째서 이렇게 개가튼 */
+            overflow: hidden;
+            /* 습관적으로 레이아웃이 깨질까봐 넣는 코드 */
+        }
+
+        .method2 div img {
+            position: absolute;
+            top:0;
+            left:0;
+            width: 100%;
+            height: 100%;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="method1">
+        <p>방법1 | width, aspect-ratio, object-fit 사용하기</p>
+        <img src="./imgaes/weniv-binky.png" alt="위니브 토끼 캐릭터 빙키">
+        <img src="./imgaes/weniv-chilli.png" alt="위니브 다람쥐 캐릭터 칠리">
+        <img src="./imgaes/weniv-garry.png" alt="위니브 개구리 캐릭터 개리">
+        <img src="./imgaes/weniv-licat.png" alt="위니브 사자 갈퀴를 쓴 고양이 캐릭터 라이캣">
+        <img src="./imgaes/weniv-suri.png" alt="위니브 물개 캐릭터 수리">
+        <img src="./imgaes/weniv-wade.png" alt="위니브 나무늘보 캐릭터 웨이드">
+    </div>
+    <div class="method2">
+        <p>방법2 | padding, % 값 사용하기</p>
+        <div><img src="./imgaes/weniv-binky.png" alt="위니브 토끼 캐릭터 빙키"></div>
+        <div><img src="./imgaes/weniv-chilli.png" alt="위니브 다람쥐 캐릭터 칠리"></div>
+        <div><img src="./imgaes/weniv-garry.png" alt="위니브 개구리 캐릭터 개리"></div>
+        <div><img src="./imgaes/weniv-licat.png" alt="위니브 사자 갈퀴를 쓴 고양이 캐릭터 라이캣"></div>
+        <div><img src="./imgaes/weniv-suri.png" alt="위니브 물개 캐릭터 수리"></div>
+        <div><img src="./imgaes/weniv-wade.png" alt="위니브 나무늘보 캐릭터 웨이드"></div>
+    </div>
+</body>
+</html>
