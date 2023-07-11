@@ -10,8 +10,6 @@
         background:#ddd;
         width:350px;
         height:300px;
-        display: flex;
-        justify-content: space-between;
         }
 
         .box{
@@ -27,13 +25,17 @@
         .pink{background:salmon;}
         .yellow{background:gold;}
 
+        .wrap,
         .wrap>div {
             height:300px;
             display: flex;
-            flex-direction: column;
             justify-content: space-between;
         }
         
+        .left-side, .center {
+            flex-direction: column;
+        }
+
         .wrap>div.right-side {
             flex-direction: column-reverse;
         }

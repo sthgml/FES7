@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 만들기 실습과제</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .a1>*{
+            height: 100px;
+            border: 4px solid rgb(110, 145, 103);
+            box-sizing: border-box;    
+        }
+
+        .a1 .flex-layout {
+            height: 400px;
+
+            display: flex;
+            justify-content: space-between;
+            
+            flex-wrap: wrap;
+        }
+        
+        .a1 .flex-layout section {
+            background-color: salmon;
+            border: 4;
+            /* width: 80%; */
+            flex-basis: 300px;
+            flex-grow: 1;
+        }
+
+        .a1 .flex-layout aside {
+            background-color: royalblue;
+            /* width: 20%; */
+            flex-basis: 200px;
+            flex-grow: 0;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="a1">
+        <header>header</header>
+        <div class="flex-layout">
+            <section><h2>section</h2><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum corrupti, suscipit vel quia eum alias sint iste rerum placeat, molestiae corporis error quod sequi, nihil labore maiores aperiam. Deserunt, porro.</p></section>
+            <aside>aside</aside>
+        </div>
+        <footer>footer</footer>
+    </div>
+</body>
+</html>

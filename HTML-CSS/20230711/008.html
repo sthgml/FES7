@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+    <style>
+        .wrap {
+            background: #ddd;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .box {
+        width: 50px;
+        height: 50px;
+        color: #fff;
+        text-align: center;
+        line-height: 50px;
+        font-weight: bold;
+        background: royalblue;
+        }
+
+        .wrap2 {
+            background: #ddd;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+        }
+
+        .wrap3 {
+            background: #ddd;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: end;
+        }
+
+        .wrap4 {
+            background: #ddd;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+        }
+
+        .wrap4 > .box {
+            /* text-align: right; */
+            margin-left: auto;
+        }
+
+
+    </style>
+    </head>
+
+    <body>
+        컨테이너 속성 값
+        flex-wrap : wrap/nowrap 감쌀꺼냐 안 감쌀거냐 = 줄바꿈 허용 여부
+        gap: 탑바탐 좌우;
+        언어를 변경하면, 레이아웃은 그대로 있고, 안에 있는 컨텐츠가 번역되게끔 함 이 때 언어를 변경하면 텍스트 양이 달라질 수 있는데 그럴 때 사용하면 유용한 것이 바로!@~! flex 속성이다!
+
+        flex-basis : 200px
+        아까가지는 컨테이너에 사용하는 속성갑, 이거는 아이템에 사용하는 속성, 값
+        축에 따라 방향이 달라진다는 것과 내부 컨텐ㅡㅊ에 따라 유연한 크기를 가진다는 것
+        
+        아무리 높이값을 줘도 flex-basis가 우선임
+
+        1차원 적으로 한 줄에 배치되게끔 최대한 노력을 하게 만드는 태그속성
+
+        
+    <div class="wrap">
+        <div class="box">1</div>
+    </>
+
+    <div class="wrap2">
+        <div class="box">2</div>
+    </div>
+
+    <div class="wrap3">
+        <div class="box">3</div>
+    </div>
+
+    <div class="wrap4">
+        <div class="box">4</div>
+    </div>
+
+    </body>
+    </html>
