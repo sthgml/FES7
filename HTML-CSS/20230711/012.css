@@ -7,7 +7,7 @@
     } 
 
 body {
-    background-color: #ebebeb;
+    /* background-color: #ebebeb; */
 }
 
 *{
@@ -35,24 +35,25 @@ a.login-button,
 }
 
 .login-ui {
+    float: center;
     width: 350px;
     height: 140px;
     margin: auto;
-    margin-top: 35vh;
 
     background-color: #fff;
-    border: 2px solid rgb(238, 238, 238);
+    border: 1px solid rgb(238, 238, 238);
     border-radius: 8px;
     box-sizing: border-box;
     
     flex-direction: column;
-    gap: 16px;
+    gap: 15px;
 
-    padding: 20px 16px;
+    padding: 20px 16px 20px 16px;
 }
 
 a.login-button {
     justify-content: center;
+    align-items: center;
     gap: 4px;
 
     width: 100%;
@@ -60,9 +61,8 @@ a.login-button {
     background-color: #711bff;
     border-radius: 4px;
     color: white;
-    line-height: 40px;
-
-    /* padding: 12px; */
+    
+    padding: 11px;
     box-sizing: border-box;
 }
 
@@ -78,6 +78,7 @@ a.login-button>img {
 .lower-part>.container-left, 
 .lower-part>.container-right {
     gap: 4px;
+    align-items: center;
 }
 
 .lower-part img {
