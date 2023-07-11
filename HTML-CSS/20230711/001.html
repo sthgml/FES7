@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout 예제</title>
+    <style>
+        *{
+            height: 100px;
+            margin : 0;
+        }
+
+        header {
+            background-color: saddlebrown;
+            clear: both;
+        }
+
+        section {
+            background-color: skyblue;
+            width: 80%;
+            float: left;
+            text-align: center;
+
+        }
+
+        aside {
+            width: 20%;
+            background-color: seagreen;
+            float: right;
+
+        }
+
+        footer {
+            background-color: salmon;
+            clear: both;
+        }
+
+        .clear-fix::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .m2 {
+            width: 80%;
+        }
+
+        .m2 section {
+            width: 20%;
+            float: left;
+        }
+
+        .m2 footer {
+            clear: both;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="m1">
+        <header>header</header>
+        <section>section</section>
+        <aside>광고</aside>
+        <footer>footer</footer>
+    </div>
+    
+    <div class="m2">
+        <header>header</header>
+        <section>section</section>
+        <aside>광고</aside>
+        <footer>footer</footer>
+    </div>
+
+    <div class="m3">
+        <header>header</header>
+        <section>section</section>
+        <aside>광고</aside>
+        <footer>footer</footer>
+    </div>
+</body>
+</html>

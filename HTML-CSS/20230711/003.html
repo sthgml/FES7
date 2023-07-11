@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex 예제</title>
+    <style>
+        .container {
+            height: 100px;
+            /* container의 높이값을 줬는데 item이 따라옴 */
+            background-color: royalblue;
+            gap:20px;
+            display: flex;
+            
+            /* default값 */
+            flex-direction: row; 
+            /* flex-direction: column; */
+            /* flex-direction: row-reverse; */
+            /* flex-direction: column-reverse; */
+            
+            /* default값 */
+            justify-content: flex-start; 
+            justify-content: flex-end; 
+            /* flex-direction: row-reverse랑 다름, 아이템의 순서는 바뀌지 않음 */
+            justify-content: space-between;
+            /* 아이템을 등간격으로 조정해줌 */
+            justify-content: space-around;
+            /* 요소 양 옆의 여백을 같이 가져감 */
+            justify-content: space-evenly;
+            /* 브라우저 끝이랑 사이의 여백도 똑같이 */
+        }
+
+        .item {
+            
+            background-color: pink;
+        }
+
+    </style>
+</head>
+<body>
+    flex는 기본적으로 컨테이너와 아이템으로 구성되어있습니다.
+    감싸는 요소가 있어야 합니다. 각 구성에 적용할 수 있는 속성이 다릅니다
+    일단 flex는 디스플레이 속성을 바꾸는 것
+    자식요소들이 컨테이너 안 공간을 맞추기 위해서 크기를 키우거나 줄이는 방법을 설정하는 속성입니다. 1차원적 레이아웃 가로혹은세로를 만들기 위해 주로 사용합니다
+
+    <div class="container">
+        
+        <div class="item">item A</div>
+        <div class="item">item B</div>
+        <div class="item">item C</div>
+        <div class="item">item D</div>
+    </div>
+</body>
+</html>
