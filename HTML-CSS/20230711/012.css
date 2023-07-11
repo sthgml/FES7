@@ -6,6 +6,10 @@
     font-style: normal;
     } 
 
+body {
+    background-color: #ebebeb;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -32,6 +36,8 @@ a.login-button,
 .login-ui {
     width: 350px;
     height: 140px;
+    margin: auto;
+    margin-top: 35vh;
 
     background-color: #fff;
     border: 2px solid rgb(238, 238, 238);
