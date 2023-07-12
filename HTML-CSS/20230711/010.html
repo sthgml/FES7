@@ -8,8 +8,6 @@
     <title>flex-shrink 예제 및 실습</title>
     <style>
         .container {
-        width: 500px;
-        height: 200px;
         display: flex;
         background-color: #ddd;
         }
@@ -17,17 +15,19 @@
         .item {
         background-color: skyblue;
         border: 2px solid royalblue;
+        flex-basis: 0;
+        /* flex-shrink: 0; */
         
         }
 
         .item1 {
-            flex-basis: 200px;
+            
             /* 개별적으로 지정해주는 고정값 */
-            flex-shrink: 0;
+            
             /* (공간이 없어도) 쪼그라트리지마! */
-            flex-grow: 0;
+            /* flex-grow: 0; */
             flex-grow: 1;
-            flex-grow: 2;
+            
             /* (여백이 남으면) 얘는 특별히 크게 만들어 줘! */
         }
 
@@ -43,22 +43,7 @@
         <div class="item item2">item B dddd</div>
         <div class="item item3">item C ddd</div>
         <div class="item item4">item D dd</div>
-        <div class="item">item A dd</div>
-        <div class="item">item B dd</div>
-        <div class="item">item C dd</div>
-        <div class="item">item D dd</div>
-        <div class="item">item A dd</div>
-        <div class="item">item B dd</div>
-        <div class="item">item C dd</div>
-        <div class="item">item D dd</div>
-        <div class="item">item A dd</div>
-        <div class="item">item B dd</div>
-        <div class="item">item C dd</div>
-        <div class="item">item D dd</div>
-        <div class="item">item A dd</div>
-        <div class="item">item B dd</div>
-        <div class="item">item C dd</div>
-        <div class="item">item D dd</div>
+
     </div>
 
 

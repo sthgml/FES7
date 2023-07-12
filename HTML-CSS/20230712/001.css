@@ -1,0 +1,112 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+        format('woff');
+    font-weight: 400;
+    font-style: normal;
+} 
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Pretendard";
+}
+.card-bg * {
+    /*  */
+}
+
+.card-bg {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1vh;
+    width: 18rem;
+    height: 23.375rem;
+
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+
+    gap: 0.75rem;
+
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0.125rem 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.upper-part {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap:1rem;
+}
+
+.upper-part img {
+    width: 2.5rem;
+    height: 2.5rem;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.upper-part .user-info-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-info-head {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #29363D;
+}
+
+.user-info-secondary,
+.content-text {
+    color: #5A6A72;
+    font-size: 0.75rem;
+}
+
+p.content-text {
+    line-height: 1.25rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    margin: 0.625rem 1rem;
+    margin-bottom: 0;
+}
+
+.lower-part {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-container {
+    margin-left: 1rem;
+    padding: 3px 6px;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.left-container p{
+    font-weight: bold;
+    color: #29363D;
+    text-decoration: underline;
+    -webkit-text-underline-postion: under;
+    text-underline-position: under;
+}
+
+.right-container {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    margin-right: 1rem;
+}
+
+.icon {
+    width: 2rem;
+}
