@@ -1,0 +1,81 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+        format('woff');
+    font-weight: 400;
+    font-style: normal;
+    } 
+
+    /* 변수 설정 */
+:root {
+    --bg-color : #343f50;
+    --shadow-color: #4a5568;
+    --border-color:#1a202c;
+    --main-color : #CBD5DF;
+}
+
+.yes {
+    --main-color : #439AFF;
+}
+
+.del {
+    --main-color : #EB5757;
+}
+
+.yes:hover {
+    --bg-color : #439AFF;
+    --shadow-color: #73B4FF;
+    --border-color:#439AFF;
+}
+
+.del:hover {
+    --bg-color : #EB5757;
+    --shadow-color: #FD6F6F;
+    --border-color:#EB5757;
+}
+
+button:enabled:active{
+    --shadow-color: #262F3E;
+}
+
+.yes:enabled:active {
+    --shadow-color: #3B77BE;
+}
+
+.del:enabled:active {
+    --shadow-color: #D94242;
+}
+
+button:disabled {
+    --bg-color : #343f50;
+    --shadow-color: #343f50;
+    --border-color:#343E4E;
+    --main-color : #4A5568;
+}
+
+/* 기본 세팅 */
+button {
+    width: 88px;
+    height: 32px;
+
+    font-family: Pretendard;
+    font-size: 12px;
+    font-weight: bold;
+    
+    border: 1px solid ;
+    border-radius: 4px;
+}
+
+/* 변수 사용해보기 */
+button{
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    box-shadow: inset 1px 1px var(--shadow-color);
+    color: var(--main-color);
+}
+
+button:enabled:hover {
+    color: white;
+    text-decoration: underline;
+    text-underline-position: under;
+}
