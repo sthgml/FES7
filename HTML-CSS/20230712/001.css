@@ -11,8 +11,27 @@
     padding: 0;
     font-family: "Pretendard";
 }
-.card-bg * {
-    /*  */
+
+ul>li {
+    list-style: none;
+}
+
+button {
+    background: transparent;
+    border: 0;
+}
+
+ul.card-list {
+    width: 1224px;
+    margin: 0 auto;
+    max-width: calc(100% - 60px);
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.news {
+    margin: auto auto;
+    width: fit-content;
 }
 
 .card-bg {
@@ -34,31 +53,32 @@
 }
 
 .upper-part {
-    margin-top: 1rem;
-    margin-left: 1rem;
+    margin: 1rem 1rem 0;
     display: flex;
-    flex-direction: row;
     gap:1rem;
 }
 
 .upper-part img {
     width: 2.5rem;
     height: 2.5rem;
-    aspect-ratio: 1/1;
     object-fit: cover;
     border-radius: 50%;
-    overflow: hidden;
+    flex-shrink: 0;
 }
 
 .upper-part .user-info-container {
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .user-info-head {
     font-size: 1rem;
     font-weight: bold;
     color: #29363D;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .user-info-secondary,
@@ -68,11 +88,13 @@
 }
 
 p.content-text {
-    line-height: 1.25rem;
+    line-height: 1.6em;
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
+    height: calc(1em * 1.6 *2);
+
     margin: 0.625rem 1rem;
     margin-bottom: 0;
 }
@@ -80,12 +102,13 @@ p.content-text {
 .lower-part {
     display: flex;
     justify-content: space-between;
+
 }
 
 .left-container {
     margin-left: 1rem;
     padding: 3px 6px;
-    
+
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -93,11 +116,42 @@ p.content-text {
 }
 
 .left-container p{
+    width: 3.5em;
+
     font-weight: bold;
     color: #29363D;
+
     text-decoration: underline;
     -webkit-text-underline-postion: under;
     text-underline-position: under;
+    position: relative;
+}
+
+p.read::after {
+    content: '';
+    display: block;
+
+    width: 4px;
+    height: 4px;
+
+    /* background-color: skyblue; */
+
+    position: absolute;
+    right: 0;
+    top: 50%;
+
+    border: 2px solid #29363D;
+    border-bottom: 0;
+    border-left:0;
+
+    transform: translateY(-50%) rotate(45deg);
+    transition: all 0.3s;
+}
+
+p.read:hover::after{
+    position: absolute;
+    right :-25px;
+    transform: translate(0, -50%) rotate(225deg);
 }
 
 .right-container {
@@ -109,4 +163,19 @@ p.content-text {
 
 .icon {
     width: 2rem;
+    vertical-align: top;
+}
+
+button {
+}
+
+button:enabled {
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: transparent;
+    position: relative;
+    top: -5px;
+    left: -5px;
 }
