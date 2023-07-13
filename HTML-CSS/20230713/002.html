@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상선택자</title>
+    <style>
+        button {
+            border: 1px solid slategray;
+            border-radius: 2px;
+        }
+        button:active {
+            background-color: salmon;
+            /* click 하면 바뀜 */
+        }
+
+        button:hover {
+            /* hover 때매 active가 안보임 active 보고싶으면.. .. */
+            background-color: slateblue;
+        } 
+
+        button:focus {
+            /* tab + click해놓은 상태 */
+            background-color: red;
+        }
+        
+        button:focus-visible {
+            /* click시에는 안보이고, tab에서만 보임 */
+            background-color: sandybrown;
+        }
+
+        div:focus-within {
+            /* 자식요소 중에 포커스를 받은 요소가 있다면 다음의 속성들이 적용됩니다.*/
+            background-color: skyblue;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>가상선택자</h1>
+    <h2>종류</h2>
+    <ul>
+        <li>active</li>
+        <li>hover</li>
+        <li>focus</li>
+        <li>focus-visible</li>
+        <li>focus-within</li>
+    </ul>
+    <div>
+        <button type="button">
+            버튼이지롱
+        </button>
+        <input type="text">
+    </div>
+
+</body>
+</html>

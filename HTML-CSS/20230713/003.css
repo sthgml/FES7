@@ -1,0 +1,76 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+        format('woff');
+    font-weight: 400;
+    font-style: normal;
+    } 
+
+
+button {
+    width: 88px;
+    height: 32px;
+
+    color: #CBD5DF;
+
+    font-family: Pretendard;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold;
+    
+    border-radius: 4px;
+}
+button:enabled {
+    background-color: #2D3848;
+    border: 1px solid #1A202C;
+    box-shadow: inset 1px 1px #4A5568;
+
+}
+button:hover,
+button:active {
+    color: #FFFFFF;
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
+button:active {
+    background-color: #252e3b;
+    box-shadow: inset 2px 2px #11151b;
+}
+
+button:disabled {
+    background-color: #3A4556;
+    
+    color:#4A5568;
+    text-decoration: none;
+    box-shadow: none;
+    border: 1px solid #3A3e4e;
+}
+
+button.yes {
+    color: #439AFF;
+}
+
+button.yes:hover {
+    box-shadow: inset 1px 1px #73B4FF;
+    border:1px solid transparent;
+    background-color: #439AFF;
+    color: #FFFFFF
+}
+button.yes:active {
+    box-shadow: inset 1px 1px #3B78BE;
+}
+
+button.del {
+    color: #EB5757;
+}
+
+button.del:hover {
+    box-shadow: inset 1px 1px #FD6F6F;
+    border:1px solid transparent;
+    background-color: #EB5757;
+    color: #FFFFFF
+}
+button.del:active {
+    box-shadow: inset 1px 1px #D94242;
+}
