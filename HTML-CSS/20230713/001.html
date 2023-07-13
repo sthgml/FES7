@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS에도 변수가 있다!</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        :root { /*광역 변수 만들기 하이픈 두개는 넣어주어야 변수로 만들수 있어요*/
+            --main-color : royalblue; 
+            --pane-padding : 0.5rem 0.2em;
+            --margin : 20px
+        }
+
+        .dark {
+            /* 이 안에서 선언하면 지역변수가 됩니다 */
+            --local-color : salmon;
+            color: var(--local-color);
+            background-color: var(--local-color);
+        }
+
+        p { 
+            color :var(--main-color, blue); /*2번째 인수는 대체재*/
+            padding: var(--pane-padding);
+        }
+        ul>li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        li { 
+            /* 리스트 좌우로 정렬할 때 float left를 썼다.. 메모.. */
+            float: left;
+            background-color: gold;
+            width: calc((100% - (20px * 3))/4);
+        }
+        li:not(:first-child) {
+            margin-left: 20px;
+        }
+
+        li:nth-child(even) {
+            background-color: seagreen;
+        }            
+
+        .calc-practice {
+            width: calc((100% - var(--margin)* 3)/4);
+        }
+
+        p {
+            background-color: salmon;
+            margin: auto;
+
+            /* width: min(1000px, calc(100% -80px)); + -  쓸 때 공백 필요하다고 해찌!!~!~~!~ 쌔꺄~!*/ 
+            width: min(1000px, calc(100% - 80px));
+        }
+
+        div {
+            font-size: 20px;
+        }
+
+        button {
+            background: linear-gradient(90deg, salmon, slateblue);
+            font-size: clamp(20px, 2.5vw, 60px);
+        }
+
+    </style>
+</head>
+<body>
+    <p>안녕
+        자두야
+    </p>
+    <ul>
+        <li class="calc-practice">안뇽</li>
+        <li class="calc-practice">안뇽</li>
+        <li class="calc-practice">안뇽</li>
+        <li class="calc-practice">안뇽</li>
+    </ul>
+    <div>
+        안뇽안뇽
+    </div>
+    <button>
+        버튼이지롱
+    </button>
+</body>
+</html>
