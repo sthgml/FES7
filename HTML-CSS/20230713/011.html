@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수능성적표 만들기</title>
+    <style>
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+                format('woff');
+            font-weight: 400;
+            font-style: normal;
+            } 
+
+        body {
+            font-family: 'Pretendard';
+        }
+
+        table {
+            width: 100%;
+            border: 4px solid black;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        table * {
+            border: 2px solid #4e4e4e;
+            text-align: center;
+        }
+
+        thead {
+            height: auto;
+        }
+
+        th {
+            background-color: #eee;
+        }
+
+        tfoot {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <colgroup>
+            <col class="구분">
+            <col class="한국사 영역">
+            <col class="국어 영역">
+            <col class="영어 영역">
+            <col class="수학 영역">
+            <col span="2" class="탐구영역">
+            <col class="제 2 외국어 / 한문 영역">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>
+                    구분
+                </th>
+                <th scope="col" rowspan="2">
+                    한국사 영역
+                </th>
+                <th scope="col">
+                    국어 영역
+                </th>
+                <th scope="col">
+                    수학 영역
+                </th>
+                <th scope="col" rowspan="2">
+                    영어 영역
+                </th>
+                <th scope="col" colspan="2">
+                    탐구 영역
+                </th>
+                <!-- col sapn(탐구영역) -->
+                <th scope="col">
+                    제 2 외국어 
+                    <br>
+                    / 한문 영역
+                </th>
+            </tr>
+            <tr>
+                <th scope="col">
+                    선택과목
+                </th>
+                <!-- span -->
+                <th scope="col">
+                    화법과 작문
+                </th>
+                <th scope="col">
+                    확률과 통계
+                </th>
+                <!-- span 영어영역 -->
+                <th scope="col">
+                    생활과 윤리
+                </th>
+                <th scope="col">
+                    지구과학 1
+                </th>
+                <th scope="col">
+                    독일어
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>표준점수</th> <td rowspan="2">&nbsp;</td> <td> 131</td> <td> 131</td> <td rowspan="2">&nbsp;</td> <td> 131</td> <td> 131</td> <td rowspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+                <th>백분위</th> <!-- rowspan 한국사영역 밑 공백 --> <td> 131</td> <td> 131</td> <!-- rowspan 한국사영역 밑 공백 --><td> 131</td> <td> 131</td> <!-- rowspan 한국사영역 밑 공백 -->
+            </tr>
+        </tbody>
+        <tfoot>
+            <th>등급</th> <td>2</td> <td>2</td> <td>2</td> <td>1</td> <td>1</td> <td>2</td> <td>2</td>
+        </tfoot>
+    </table>
+</body>
+</html>
