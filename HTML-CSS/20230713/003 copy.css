@@ -64,12 +64,11 @@ button {
     
     border: 1px solid ;
     border-radius: 4px;
-    transition: color 0.4s;
+    transition: all 0.4s 0.15s;
 }
 
 /* 변수 사용해보기 */
 button{
-
     background-color: var(--bg-color);
     border: 1px solid var(--border-color);
     box-shadow: inset 1px 1px var(--shadow-color);
