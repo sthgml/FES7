@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position</title>
+    <style>
+        .modal {
+      width: 200px;
+      height: 100px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+
+      text-align: center;
+
+      position: fixed;
+      /* 부모요소 크기의 50% -> 가운데 점 찾기*/
+      top: 50%;
+      left: 50%;
+      /* 가운데 점이 왼쪽 위로 오게 내 요소가 렌더링 되기 때문에, 내 크기의 50% 만큼을 또 - 해줘서 가운데에 위치하게 만들기*/
+      transform: translate(-50%, -50%)
+    }
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit labore velit maiores laudantium ea saepe nulla sint tempore, molestias, assumenda reprehenderit quo ipsa esse totam doloribus omnis doloremque. Autem, maiores!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit labore velit maiores laudantium ea saepe nulla sint tempore, molestias, assumenda reprehenderit quo ipsa esse totam doloribus omnis doloremque. Autem, maiores!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit labore velit maiores laudantium ea saepe nulla sint tempore, molestias, assumenda reprehenderit quo ipsa esse totam doloribus omnis doloremque. Autem, maiores!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit labore velit maiores laudantium ea saepe nulla sint tempore, molestias, assumenda reprehenderit quo ipsa esse totam doloribus omnis doloremque. Autem, maiores!</p>
+
+    <div class="modal">
+        <p>삭제하시겠습니까?</p>
+        <button type="button">취소</button>
+        <button type="button">삭제</button>
+    </div>
+</body>
+</html>
