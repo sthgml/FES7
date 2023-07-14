@@ -1,4 +1,47 @@
-div {
+* {
+    padding : initial;
+    margin: initial;
+}
+div.wrapper {
     background-color: orange;
-    /* 사용자에이전트 = 브라우저, div 에 대해ㅓㅅ 작성하지 않앗는데 브라우저가 display: bock으로 설정을 해놨습니다. 이 너비가 으띃게 결정이 되었냐 이걸 볼게요. 직계 부모! element 에 설정된 이 너비가 어떻게 나온거냐면~ 직계뿌모가 제공해주는 컨텐츠 영역의 크기입니다. body에 margin 8px 빼고 이 안이 content 영역이에요 이 나머지 영역을 컨탠츠영역으로 제공해준다. 이걸 자식인 div에게 제공을 해준다 이런 이야기예요.  */
+    
+    width: 800px;
+    height: auto;
+    margin: 100px auto;
+}
+
+.header {
+    background-color: #f4f4f4;
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+}
+
+.footer {
+    background-color: rosybrown;
+}
+
+body {
+    background-image: url(./images/background.gif);}
+
+h1 {
+    background-color: orange;
+    text-align:center;
+}
+
+header.header>img {
+    margin:0 auto;
+    display: block;
+}
+
+p {
+    border-top: 3px solid white;
+    color: white;
+    width: fit-content;
+    padding: 20px 20px;
+
+}
+
+.contents {
+    background-color: salmon;
 }
