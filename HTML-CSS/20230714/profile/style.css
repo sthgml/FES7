@@ -1,20 +1,32 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+        format('woff');
+    font-weight: 400;
+    font-style: normal;
+    } fsdf
+
 * {
+    font-family: "Pretendard";
     padding : initial;
     margin: initial;
 }
+
 div.wrapper {
     background-color: orange;
     
     width: 800px;
-    height: auto;
+    /* height: auto; */
     margin: 100px auto;
 }
 
 .header {
-    background-color: #f4f4f4;
+    background-image: url(./images/background4.png);
     background-size: cover;
     background-position: center;
     padding: 100px 0;
+
+    color: white
 }
 
 .footer {
@@ -24,9 +36,12 @@ div.wrapper {
 body {
     background-image: url(./images/background.gif);}
 
-h1 {
-    background-color: orange;
+header h1,
+header p {
+    /* background-color: orange; */
     text-align:center;
+    margin:0 auto;
+    display: block;
 }
 
 header.header>img {
@@ -34,14 +49,31 @@ header.header>img {
     display: block;
 }
 
-p {
+.header>p {
     border-top: 3px solid white;
-    color: white;
     width: fit-content;
-    padding: 20px 20px;
-
+    padding: 3px 20px;
+    margin-top: 20px;
 }
 
 .contents {
-    background-color: salmon;
+    background-color: #ddd;
+    padding: 16px;
+    
 }
+
+.contents-list {
+    padding: 16px;
+    background-color: #fff;
+    margin: 16px auto;
+}
+
+ul {
+    list-style-type: none;
+    list-style-position: inside;
+}
+.section li{
+    border-left: 10px solid #ddd;
+    padding-left: 5px;
+}
+
