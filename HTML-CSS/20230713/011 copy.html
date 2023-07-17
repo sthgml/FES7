@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수능성적표 만들기 id/header 사용해보기</title>
+    <style>
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+                format('woff');
+            font-weight: 400;
+            font-style: normal;
+            } 
+
+        
+        body {
+            font-family: 'Pretendard';
+        }
+
+        table {
+            width: 100%;
+            border: 4px solid black;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+        
+        table * {
+            border: 2px solid #4e4e4e;
+            text-align: center;
+        }
+
+        caption {
+            caption-side: bottom;
+            margin-top: 20px;
+            border: 0;
+        }
+
+        /* thead {
+            height: auto;
+        } */
+
+        th {
+            background-color: #eee;
+        }
+
+        tfoot {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <!-- caption은 table의 첫 번째 자식 요소로 와야합니다. -->
+        <caption>2023 학년도 대학수학능력평가 성적통지표</caption>
+        
+        <colgroup> <!-- style 속성을 따로 주고자 할 때~!~! but 적용할 수 있는 style의 한계가 있어서 보통 너비값을 주고자 할때 사용합니다~! -->
+            <col>
+            <col>
+            <col>            
+            <col>
+            <col>
+            <col span="2" class="explosion">
+            <col>
+        </colgroup> 
+        
+        <thead><!--굳이 작성하지 않아도 되지만 가독성을 위해 작성 하는게 좋다-->
+            <tr><!--행을 만들어 주려면-->
+                <th><!--일단 1열의 요소들을 모두 적어주고,-->
+                    구분
+                </th>
+                <th id="col1" rowspan="2">
+                    한국사 영역
+                </th>
+                <th id="col2">
+                    국어 영역
+                </th>
+                <th id="col3">
+                    수학 영역
+                </th>
+                <th id="col4" rowspan="2">
+                    영어 영역
+                </th>
+                <th id="col5" scope="colgroup" colspan="2">
+                    탐구 영역
+                </th>
+                <!-- col sapn(탐구영역) -->
+                <th id="col6">
+                    제 2 외국어 
+                    <br>
+                    / 한문 영역
+                </th>
+            </tr>
+            <tr><!--또다시 행을 만들어 주고-->
+                <th id="row1">
+                    선택과목
+                </th>
+                <!-- span -->
+                <th id="col2-1">
+                    화법과 작문
+                </th>
+                <th id="col=3-1">
+                    확률과 통계
+                </th>
+                <!-- span 영어영역 -->
+                <th id="col5-1">
+                    생활과 윤리
+                </th>
+                <th id="col5-2">
+                    지구과학 1
+                </th>
+                <th id="col6-1">
+                    독일어
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th id="row2">표준점수</th> <td rowspan="2">&nbsp;</td> <td> 131</td> <td> 137</td> <td rowspan="2">&nbsp;</td> <td> 53</td> <td> 64</td> <td rowspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+                <th id="row3">백분위</th> 
+                <!-- rowspan 한국사영역 밑 공백 --> 
+                <td headers="col2 col2-1 row3"> 93</td> 
+                <td headers="col3 col3-1 row3"> 95</td> 
+                <!-- rowspan 한국사영역 밑 공백 -->
+                <td headers="col5-1 col5-1 row3"> 75</td> 
+                <td headers="col5 col5-2 row3"> 93</td> 
+                <!-- rowspan 한국사영역 밑 공백 -->
+            </tr>
+        </tbody>
+        <tfoot>
+            <th id="row4">등급</th> 
+            <td headers="col1 row4">2</td> 
+            <td headers="col2 col2-1 row4">2</td> 
+            <td headers="col3 col3-1 row4">2</td> 
+            <td headers="col4 row4">1</td> 
+            <td headers="col5-1 col5-1 row4">1</td> 
+            <td headers="col5 col5-2 row4">2</td> 
+            <td>2</td>
+        </tfoot>
+    </table>
+</body>
+</html>

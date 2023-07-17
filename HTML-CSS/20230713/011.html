@@ -14,6 +14,7 @@
             font-style: normal;
             } 
 
+        
         body {
             font-family: 'Pretendard';
         }
@@ -24,15 +25,21 @@
             border-collapse: collapse;
             table-layout: fixed;
         }
-
+        
         table * {
             border: 2px solid #4e4e4e;
             text-align: center;
         }
 
-        thead {
-            height: auto;
+        caption {
+            caption-side: bottom;
+            margin-top: 20px;
+            border: 0;
         }
+
+        /* thead {
+            height: auto;
+        } */
 
         th {
             background-color: #eee;
@@ -45,7 +52,9 @@
 </head>
 <body>
     <table>
-        <colgroup>
+        <!-- caption은 table의 첫 번째 자식 요소로 와야합니다. -->
+        <caption>2023 학년도 대학수학능력평가 성적통지표</caption>
+        <!-- <colgroup>
             <col class="구분">
             <col class="한국사 영역">
             <col class="국어 영역">
@@ -53,10 +62,10 @@
             <col class="수학 영역">
             <col span="2" class="탐구영역">
             <col class="제 2 외국어 / 한문 영역">
-        </colgroup>
-        <thead>
-            <tr>
-                <th>
+        </colgroup> scope랑 colgroup중에 둘 중 하나만!--> 
+        <thead><!--굳이 작성하지 않아도 되지만 가독성을 위해 작성 하는게 좋다-->
+            <tr><!--행을 만들어 주려면-->
+                <th><!--일단 1열의 요소들을 모두 적어주고,-->
                     구분
                 </th>
                 <th scope="col" rowspan="2">
@@ -71,7 +80,7 @@
                 <th scope="col" rowspan="2">
                     영어 영역
                 </th>
-                <th scope="col" colspan="2">
+                <th scope="colgroup" colspan="2">
                     탐구 영역
                 </th>
                 <!-- col sapn(탐구영역) -->
@@ -81,7 +90,7 @@
                     / 한문 영역
                 </th>
             </tr>
-            <tr>
+            <tr><!--또다시 행을 만들어 주고-->
                 <th scope="col">
                     선택과목
                 </th>
@@ -106,14 +115,14 @@
         </thead>
         <tbody>
             <tr>
-                <th>표준점수</th> <td rowspan="2">&nbsp;</td> <td> 131</td> <td> 137</td> <td rowspan="2">&nbsp;</td> <td> 53</td> <td> 64</td> <td rowspan="2">&nbsp;</td>
+                <th scope="row">표준점수</th> <td rowspan="2">&nbsp;</td> <td> 131</td> <td> 137</td> <td rowspan="2">&nbsp;</td> <td> 53</td> <td> 64</td> <td rowspan="2">&nbsp;</td>
             </tr>
             <tr>
-                <th>백분위</th> <!-- rowspan 한국사영역 밑 공백 --> <td> 93</td> <td> 95</td> <!-- rowspan 한국사영역 밑 공백 --><td> 75</td> <td> 93</td> <!-- rowspan 한국사영역 밑 공백 -->
+                <th scope="row">백분위</th> <!-- rowspan 한국사영역 밑 공백 --> <td> 93</td> <td> 95</td> <!-- rowspan 한국사영역 밑 공백 --><td> 75</td> <td> 93</td> <!-- rowspan 한국사영역 밑 공백 -->
             </tr>
         </tbody>
         <tfoot>
-            <th>등급</th> <td>2</td> <td>2</td> <td>2</td> <td>1</td> <td>1</td> <td>2</td> <td>2</td>
+            <th scope="row">등급</th> <td>2</td> <td>2</td> <td>2</td> <td>1</td> <td>1</td> <td>2</td> <td>2</td>
         </tfoot>
     </table>
 </body>
