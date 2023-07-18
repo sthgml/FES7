@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>animation-reverse practice</title>
+<style>
+    .wrap {
+        width: 500px;
+        background-color: #eee;
+    }
+
+    .wrap div {
+        /* styling - 박스모양 디자인 */
+        width: 100px;
+        height: 100px;
+        background-color: skyblue;
+        border-radius: 50%;
+        
+        /* styling - 중앙정렬 */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .wrap div~div {
+        margin-top: 20px;
+    }
+
+    /* 실습 */
+    @keyframes slide {
+    from {
+        margin-left: 0
+    }
+
+    to {
+        margin-left: 80% 
+        /* 100을 하면 div의 0,0이 부모의 right 에 닿게 되기 때문 */
+    }
+    }
+
+    .animation {
+        animation-name: slide;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+    }
+
+    div.alternate {
+        background-color: royalblue;
+    }
+
+    .alternate {
+        animation-direction: alternate;
+        /* 정방향 역방향을 계속 반복함 */
+    }
+
+    .reverse {
+        animation-direction: reverse;
+        /* 역방향으로 1회 일방향으로 진행 */
+    }
+
+    .alternate-reverse {
+        animation-direction: alternate-reverse;
+        /* 역방향 정방향으로 계속 반복함 */
+    }
+</style>
+</head>
+
+<body>
+<div class="wrap"> 
+    <div class="animation">normal</div>
+    <div class="animation alternate">alternate</div>
+    <div class="animation reverse">reverse</div>
+    <div class="animation alternate-reverse">alternate-reverse</div>
+</div>
+
+</body>
+
+</html>
