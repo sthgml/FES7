@@ -1,0 +1,219 @@
+    <!DOCTYPE html>
+    <html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>form practice</title>   
+    </head>
+    <body>
+        <form action="" >
+            <!-- method 양식을 제출할 때 사용할 http 메소드
+            post:            양식데이터를 요청 본문으로 전송        캐시되지 않고 히스토리 x    post방식의 http요청에 의한 데이터는 쿼리 문자열 과는 별도로 전송데이터의 길이제한이 없고, get방식보다 보안성이 높음.enctype 속성- method 특성이 post인 경우 enctype은 양식 제출시 데이터의 MIME (엠아이엠이) 유형을 나타냅니다.  -->
+            <label for="">이름
+                <input type="text" name="user-id" autocomplete="on" 
+                placeholder="웃기지마" readonly>
+                readonly : 데이터가 있으면 전송
+                disabled : 데이터가 있어도 전송되지 않음
+            </label>
+            <label for="">password
+                <input type="text" name="user-pw">
+            </label>
+            <input type="file">
+            <button type="submit">send</button>
+        </form>
+        <!-- 문자열을 무제한으로 다 전송할 수는 없습니다. 브라우저마다 설정해놓은 글자수제한이 있기는 합니다. -->
+
+        action 데이터를 처리할 프로그램의 uri (네이버는 같은 url.login)
+        autocomplete : 입력했던 기록이 있다면 자동완성 하겠냐고 물어보는 속성~
+
+        <section>
+            <h2>키보드 입력</h2>
+            <div>
+            <label for=" input-text">text</label><br>
+            <input type="text" id="input-text" value="text">
+            </div>
+            <div>
+            <label for="input-email">email</label><br>
+            <input type="email" id="input-email" value="email@gmail.com">
+            </div>
+            <div>
+            <label for="input-pw">password</label><br>
+            <input type="password" id="input-pw" value="1234">
+            </div>
+            <div>
+            <label for="input-url">url</label><br>
+            <input type="url" id="input-url">
+            </div>
+            <div>
+            <label for="input-num">number</label><br>
+            <input type="number" id="input-num">
+            </div>
+            <div>
+            <label for="input-search">search</label><br>
+            <input type="search" id="input-search">
+            </div>
+            <div>
+            <label for="input-tel">tel</label><br>
+            <input type="tel" id="input-tel">
+            </div>
+            <div>
+                textarea<br>
+                <textarea></textarea>
+            </div>
+        </section>
+        
+        
+        <section>
+            <h2>checkbox vs radio</h2>
+            <fieldset>
+            <legend>사용 기술</legend>
+            <input type="checkbox" id="tech1"><label for="tech1">HTML</label>
+            <input type="checkbox" id="tech2"><label for="tech2">CSS</label>
+            <input type="checkbox" id="tech3"><label for="tech3">Sass</label>
+            <input type="checkbox" id="tech4"><label for="tech4">JavaScript</label>
+            <input type="checkbox" id="tech5"><label for="tech5">React</label>
+            <input type="checkbox" id="tech6"><label for="tech6">Vue</label>
+            <input type="checkbox" id="tech7"><label for="tech7">Svelte</label>
+            <input type="checkbox" id="tech8"><label for="tech8">TypeScript</label>
+            </fieldset>
+        
+        
+            <fieldset>
+            <legend>연령</legend> <!--name 값이 달라지면 전송ㅇ되는 데이터의 종류가 다른 것이라는 의미이므로 단일선택이 아닌 것처럼 보이지만 그 네임 벨류를 가진 태그는 다른 태그들과는 별도의 선택이 됨-->
+            <input type="radio" name="age" id="age1"><label for="age1">10대</label>
+            <input type="radio" name="age" id="age2"><label for="age2">20대</label>
+            <input type="radio" name="age" id="age3"><label for="age3">30대</label>
+            <input type="radio" name="age" id="age4"><label for="age4">40대 이상</label>
+            </fieldset>
+        </section>
+        
+        보이진 않지만 서버로 전송하는 컨트롤 : hidden 다양한 정보를 전달하고 있는 것 같습니다. 보이지는 앟지만 해당 값은 전송하는 히듵값도잇따
+        이렇게 다양한 인풋 타입이 있습니다.
+
+        선생님 보여주신거 보니까 다 똑같이 생겼던데 다 같은거 쓰면 안되나요?
+
+        당연히 안됩니다. 코드만 보고도 이메일을 받는 인풋 태그구나 아 패스워드 받는 구나 아 url 받는구나 어떤 데이터를 받는지 미리 앎으로써 코드의 가독성을 높일 수 있으며
+
+        모바일의 경우 키패드의 형태가 조금 달라집니다. 
+        어떤 경우에는 @가 없는 키패드가 뜨고, 어떤 경우에는 @가 바로 뜨는 키패드가 뜨기도 하죠. 
+
+        텍스트랑 서치는 기본적으로 텍스트만 알파벳만 (특수기호 x) 
+        
+        email은 골뱅이랑 닷 바로 패스워드는 이모지 못넣으니까 없어짐
+
+        넘버의 경우 숫자가 나타나ㅡㄴ 
+        텔 의 경우 전화번호 키 패드
+
+        url의 경우 닷 슬래시 닷컴이 바로 뜸
+
+        사용자의 경험을 좋게 만들 수 있습니다.
+
+        데이터를 입력할 때 편리하게 만들 수 있음
+        오ㅔ 타입을 다 다르게 설정해야 하나요?? 에 대한 답이었습니다.
+        
+        
+        <section>
+            <h2>선택하기</h2>
+        
+            <input type="color"><br>
+            <input type="datetime-local"><br>
+                <input type="date"><br>
+            <input type="month"><br>
+            <input type="week"><br>  
+        
+            <input type="time"><br>
+            <input type="file"><br>
+            <input type="range">
+        
+            <div>
+            <label for="dino-select">Choose a dinosaur:</label><br>
+            <select id="dino-select">
+                <optgroup label="Theropods">
+                <option>Tyrannosaurus</option>
+                <option>Velociraptor</option>
+                <option>Deinonychus</option>
+                </optgroup>
+                <optgroup label="Sauropods">
+                <option>Diplodocus</option>
+                <option>Saltasaurus</option>
+                <option>Apatosaurus</option>
+                </optgroup>
+            </select>
+        </div>
+        </section>
+        
+        
+        
+        <section>
+            <h2>버튼</h2>
+            <input type="button" value="버튼">
+            <input type="reset" value="초기화">
+            <input type="submit" value="전송">
+        </section>
+        
+        인풋 버튼과 버튼 타입 버튼의 차이점은 인풋은 빈태그이고 버튼은 닫힌 태그라는 것인데 빈태그의 경우 갓ㅇ요소를 사용할 수 없다는 특징이 있다. 어차피 자스로 연결시킬 것이기 때문에 그냥 편한대ㅗㄹ 써도 된다.
+
+        <button type="submit"></button>
+        
+        min-length / max-length 브라우저가 알림을 줌 더 쓰세요~ 그만 쓰세요~
+
+        file 파일을 지정할 수 있습니다
+        accept 허용하는 파일 유형을 지정할 수 있습니다.
+        멀티플 : 지정할 경우 사용자가 여러개의 파일을 선택할 수 있도록 
+        
+        <input type="fiel"  accept="image/png" multiple>
+
+        number 숫자 입력 화살표 컨트롤 제공
+        step - 화살 표 누를 때마다 올라가는 단위값~
+        <input type="number" step="10">
+        label 사용자 인터페이스 항목 어떤 데이터를 입력해야하는지 사용자에게 알려주기 위해서 사용하는 그야말로 이름표(태그) 라고 할 수 있습니다
+
+        라벨을 이용해서 인풋에 포커스를 이동시키거나 입력할 수 있도록 활성화 시킬 수도 있스니다. 
+
+        for-id 를 이용해 연결하기
+        <label for="user-id">id</label>
+        <input type="text" id="user-id">
+        이렇게 별도로 넣어줘도 되고
+        <label for="user-id2">
+            id
+            <input type="text" id="user-id2">
+        </label>
+        이렇게 안에 포함시켜도 됨
+
+        label 안에 h2라든지 제목요소를 포함하지 마세요
+
+        fieldset legend 등을 통해서 분류를 하고 묶어주세요
+        단, 옛날 태그라서 flex 와 같은 최신기술이 잘 안먹을 수 있음. 제목 태그를 h2를 달아서 관계성을 알려주도록 대체해도 됨
+
+        버튼선언과 유효한 밸류 속성을 가진 인풋 요소에는 레이블이 필요하지 않습니다
+        <select name="user-sth" id="user-sth">
+            <option value="lunch">햄버거</option>
+            <option value="lunch2" selected>김밥</option>
+            <option value="lunch3">피자</option>
+        </select>
+
+        <select name="user-tech" id="user-tech" multiple size="5">
+            <optgroup label="front-end">
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="javascript">JavaSccript</option>
+                <option value="react">React</option>
+                <option value="typescript">TypeScript</option>
+            </optgroup>
+        </select>
+
+        <label for="ice-cream-choice">좋아하는 아이스크림을 적어주세요</label>
+<input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice">
+
+<datalist id="ice-cream-flavors">
+  <option value="스크류바">
+  <option value="빵또아">
+  <option value="빙빙바">
+  <option value="월드콘">
+  <option value="바밤바">
+    <!-- 옵션은 빈태그로도 닫힌태그로도 사용가능 -->
+</datalist>
+
+    </body>
+    </html>
