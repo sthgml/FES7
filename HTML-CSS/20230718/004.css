@@ -1,0 +1,116 @@
+/* 버튼 초기화 */
+button {
+    border: 0;
+    padding: 0;
+    background: none;
+}
+
+button:enabled {
+    cursor: pointer;
+}
+
+.a11y-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
+.btn {
+    background-color: #eee;
+    width: 48px;
+    height: 48px;
+    padding: 4px;
+
+}
+
+.line-wrap {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: salmon;
+
+    position: relative;
+    transition: all 0.3s 0.1s;
+}
+
+.line-wrap span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+
+    position: absolute;
+    /* postion 속성이 static이 아닌 가장 가까운 부모요소의 position을 기준으로 */
+    transition: all 0.3s 0.1s;
+
+}
+
+.line-wrap span:nth-child(1) {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: red;
+    top: 15%;
+}
+
+.line-wrap span:nth-child(2) {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: gold;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.line-wrap span:nth-child(3){
+    background-color: seagreen;
+    bottom: 15%;
+}
+
+/* 호버됐을 때 */
+.line-wrap:hover {
+    animation: plus 0.3s 0.1s both;
+}
+
+.line-wrap:hover span:nth-child(1){
+    transform: translateY(1em)  rotate(45deg);
+}
+
+.line-wrap:hover span:nth-child(2){
+    transform: translate(-100%, -50%);
+    opacity: 0;
+}
+
+.line-wrap:hover span:nth-child(3){
+    transform: translateY(-1em) rotate(-45deg);
+}
+
+/* 클릭됐을 때 */
+.line-wrap:active {
+    /* transform: rotate(180deg); */
+    animation: x 0.3s 0.1s both;
+}
+
+@keyframes plus {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(45deg);
+
+    }
+}
+
+@keyframes x {
+    0%{
+        transform: rotate(45deg);
+    }100%{
+        transform: rotate(180deg);
+    }
+    
+}
