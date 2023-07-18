@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid-areas</title>
+    <style>
+        .container {
+            display: grid;
+            gap: 10px;
+            height: 100vh;
+            background-color: #eee;
+            grid-template-areas:
+            "header header header"
+		    "section section aside"     
+		    "footer footer footer";
+        }
+       
+        .item {
+            background-color: #bbb;
+        }
+        .header {
+            grid-area: header;
+        }
+
+        .section {
+            grid-area: section;
+        }
+        
+        .aside {
+            grid-area: aside;
+        }
+
+        .footer {
+            grid-area: footer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item header">
+            header
+        </div>
+        <div class="item section">
+            section
+        </div>
+        <div class="item aside">aside</div>
+        <div class="item footer">
+            footer
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>licat animation practice</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: gold;
+            animation: change 1s infinite;
+        }
+
+        @keyframes change {
+            0%{
+                scale: 0;
+                background-color: royalblue;
+            }50%{
+                scale: 1.4;
+                background-color: blue;
+            }100%{
+                scale: 1.2;
+                background-color: seagreen;
+            }
+        }
+
+        .licat {
+            width: 168px;
+            height: 200px;
+            background-origin: 4px solid #000;
+            background: url(./images/keyframes-licat.png) no-repeat 0 0 / auto 100%;
+            /* background-image
+            background-repeat: no-repeat (반복금지!)
+            background-position : 0 0 (0,0 부터 오른쪽 아래로 그려라)
+            background-size: auto 아니고 100%를 줘버리면 전체 사이즈에 맞춰줘버리려고 해요.
+            따라서 이 값은 auto 100%로 줍니다.
+            bg */
+
+            animation: move-licat 1s infinite steps(6);
+            animation-name: move-licat;
+            animation-duration: 0.8s;
+            animation-iteration-count: infinite;
+            animation-timing-function: steps(6);
+            /* animation-timing-function: ease 해주면 곡선모양 중 천천히가다가 급히 가다가 다시 천천히.. 가 기본값으로 들어감 */
+        }
+        /* 라이캣 애니메이션 */
+@keyframes move-licat {
+    0%{background-position: 0 0;}
+    30%{background-position: 0 0;}
+    100%{
+        background-position: right 0; 
+        /* 오른쪽 끝으로 보낼거야
+        긴 이미지를 옆으로 계속 옮기면서 움직이느 ㄴ것ㅊ처럼 보이게 하는거쥬? 그 구멍뚫어놓고 보는 애니메이션 그것처럼? */
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="licat">
+    </div> 
+</body>
+</html>
+

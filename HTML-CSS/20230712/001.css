@@ -25,9 +25,11 @@ ul.card-list {
     width: 1224px;
     margin: 0 auto;
     max-width: calc(100% - 60px);
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+    /* display: flex; */
+    display: grid;
+    gap: 32px 24px;
+    grid-template-columns: repeat(auto-fill, minmax(288px, auto));
+    /* flex-wrap: wrap; */
 }
 .news {
     margin: auto auto;
@@ -38,8 +40,6 @@ ul.card-list {
     margin-left: auto;
     margin-right: auto;
     margin-top: 1vh;
-    width: 18rem;
-    height: 23.375rem;
 
     display: flex;
     flex-direction: column;
@@ -81,6 +81,12 @@ ul.card-list {
     overflow: hidden;
 }
 
+.content-img img {
+    width: 100%;
+    aspect-ratio: 288/196;
+    object-fit: cover;
+}
+
 .user-info-secondary,
 .content-text {
     color: #5A6A72;
@@ -102,7 +108,7 @@ p.content-text {
 .lower-part {
     display: flex;
     justify-content: space-between;
-
+    margin-bottom: 016px;
 }
 
 .left-container {

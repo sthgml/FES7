@@ -1,0 +1,52 @@
+.container {
+    
+    display: grid;
+
+    gap: 10px;
+
+    /* 단위
+     fr : fraction : 분수
+    컨테이너를 분할해줍니다
+    grid 컨테이너 안에서 비율을 지정해주는..유연한 길이 단위 입니다.
+    1fr 1fr 1fr은 1:1:1 비율을 의미합니다. */
+    grid-template-columns: 100px 100px;
+    /* 프로퍼티
+     열방향 그리드 트랙의 사이즈를 설정합니다 
+     크기를 지정해줄거야 200px 
+     두개 쓰면 열이 두개구나
+     세 개쓰면 열이 세개구나
+     자동으로 2단이었다가 3단이었다가*/
+    grid-template-rows: 200px 200px 200px;
+    /* 행방향 그리드 트랙의 사이즈를 정해줍니다.
+     */
+
+    /* 밸류 :
+     repeat(반복할횟수, 반복할값); */
+    grid-template-columns: repeat(3, 1fr);
+    /* 반복할값을 여러개 넣으면 단이 배가 됨(여러개를 반복할 횟수만큼 반복해서 열을 생성하니까) */
+    grid-template-columns: repeat(3, 1fr 2fr);
+    /* fr과 절대크기 함께 쓰면 */
+    grid-template-columns: 1fr 2fr 300px;
+    /* 컨테이닝블럭에서 절대 크기를 제외한 나머지 크기를 갖다가 나누어서 비율대로 차지합니다. */
+    grid-template-columns: minmax(100px, 150px) 1fr 1fr;
+    grid-template-rows: minmax(100px, 150px) minmax(50px, 100px);
+
+    grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+    /* grid-template-rows: repeat(auto-fit,  minmax(200px, auto)); */
+    
+    background-color: rgb(207, 235, 188);
+    height: 1000px;
+    /* 컨테이너에 비해서 아이템이 차지하는 공간의 크기가 작아짐 > 정렬 고고 */
+    align-content: center;
+    justify-content: center;
+
+     /* 이렇게 정렬된 아이템의 셀 안에서 아이템의 위치를 또 정렬하고 싶으면 */
+    align-items: center;
+    justify-items: center;
+}
+
+.item {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(255, 215, 186);
+}

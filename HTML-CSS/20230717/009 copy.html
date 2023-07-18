@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid 실습 +@ flex</title>
+    <style>
+        .container {
+            width:calc(100vh - 80px);
+            height: calc(100vh - 80px);
+            background-color: #eee;
+            gap: 10px;
+            display: flex;
+            flex-direction: column;
+            flex-basis: 0;
+        }
+
+        .cd-con,
+        .a-cd-con,
+        .a-cd-b-con,
+        .ef-con {
+            display: flex;
+            justify-content: space-between;
+            flex-shrink: 0;
+            gap: 10px;
+        }
+
+        .a-cd-b-con {
+            flex-grow:3;
+        }
+
+            .a-cd-con{
+                flex-direction: column;
+                flex-grow:3;
+            }
+
+                .a {
+                    background-color: royalblue;
+                    flex-grow: 2;
+                }
+
+                .cd-con{
+                    flex-grow: 1;
+                }
+
+                    .c {
+                        background-color: slateblue;
+                        flex-grow: 2
+                    }
+
+                    .d{
+                        background-color: sandybrown;
+                        flex-grow: 1
+                    }    
+
+            .b {
+                background-color: gold;
+                flex-grow: 2;
+            }
+
+        
+
+        .ef-con {
+            flex-grow: 2;
+        }
+        
+        .e{
+            background-color: salmon;
+            flex-grow: 2
+        }
+
+        .f {
+            background-color: seagreen;
+            flex-grow: 3
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="a-cd-b-con">
+            <div class="a-cd-con">
+                    <div class="item1 a">a</div>
+                    <div class="cd-con">
+                            <div class="item1 c">c</div>
+                            <div class="item1 d">d</div>
+                    </div>
+            </div>
+            <div class="item1 b">b</div>
+        </div>
+        <div class="ef-con">
+            <div class="item1 e">e</div>
+            <div class="item1 f">f</div>
+        </div>
+    </div>
+</body>
+</html>
