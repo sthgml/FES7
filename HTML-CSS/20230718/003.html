@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>animation-fill mode practice</title>
+<style>
+    
+
+    .wrap {
+        width: 500px;
+        background-color: #eee;
+    }
+
+    .wrap div {
+        /* styling - 박스모양 디자인 */
+        width: 100px;
+        height: 100px;
+        background-color: skyblue;
+        border-radius: 50%;
+        
+        /* styling - 중앙정렬 */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    div:nth-child(even) {
+        background-color: slateblue;
+    }
+    .wrap div~div {
+        margin-top: 20px;
+    }
+
+    /* 실습 */
+    .animation {
+        animation-name: slide;
+        animation-duration: 3s;
+        animation-delay: 2s;
+        /* animation-iteration-count: infinite; */
+        /* 이 속성을 하면 계속 돌기 때문에 fill-mode가 먹지 않음! */
+        /* 시작 : 기존값으로 시작 
+        애니메이션이 끝나고 난후 
+        끝: 기존값 */
+
+    }
+
+    .forwards {
+        animation-fill-mode: forwards;
+        /* 시작 : 기존값 
+        애니메이션이 끝나고 난후 
+        끝 : 끝 값을 유지 */
+    }
+
+    .backwards {
+        animation-fill-mode: backwards;
+        /* 시작: 첫 값 
+        끝 : 컴백 */
+    }
+
+    .both {
+        animation-fill-mode: both;
+        /* 애니메이션이 끝나고 난후 첫 값을 유지 
+        시작: 첫 값 
+        끝: 끝값*/
+    }
+
+    @keyframes slide {
+    0% {
+        margin-left: 40%;
+    }
+
+    50% {
+        margin-left: 0%;
+        /* 100을 하면 div의 0,0이 부모의 right 에 닿게 되기 때문 */
+    }
+
+    100%{
+        margin-left: 80% ;
+    }
+    }
+
+    /* 응용 - animation-state : paused */
+    div:hover {
+        animation-play-state: paused;
+    }
+</style>
+</head>
+
+<body>
+<div class="wrap"> 
+    <div class="animation">normal</div>
+    <div class="animation forwards">forwards</div>
+    <div class="animation backwards">backwards</div>
+    <div class="animation both">both</div>
+</div>
+
+</body>
+
+</html>
