@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>media query practice</title>
+    <style>
+        section.container {
+            background-color: skyblue;
+            display: grid;
+            grid-template-areas: 
+                "a b"
+                "a c";
+        }
+
+        .left-text {
+            grid-area: a;
+            background-color: royalblue;
+        }
+
+        li {
+            display: inline-block;
+        }
+        .link.edu-video {
+            grid-area: b;
+            background-color: gold;
+        }
+
+        .link.books {
+            background-color: salmon;
+            grid-area: c;
+        }
+
+        @media (min-width: 501px) and (max-width:768px) {
+            section.container {
+                grid-template-areas: 
+                    "a a"
+                    "b c";
+            }
+        }
+
+        @media (max-width:500px) {
+            section.container {
+                grid-template-areas: 
+                    "a"
+                    "b"
+                    "c";
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="left-text">
+            <h1>
+                위니브에서 함께 콘텐츠 제작하실 분을 모십니다.
+            </h1>
+            <p>
+                위니브는 ICT 연구 및 (코딩) 교육기관이며 다양한 사회 공헌 활동을 하고 있습니다.
+            </p>
+        </div>
+        <div class="link-list">
+            <ul>
+                <li class="link edu-video">
+                    <a href="#">
+                        <h2>IT 교육영상콘텐츠</h2>
+                        <p>바로가기</p>
+                    </a>
+                </li>
+                <li class="link books">
+                    <a href="#">
+                        <h2>IT 서적</h2>
+                        <p>바로가기</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </section>
+
+</body>
+</html>
