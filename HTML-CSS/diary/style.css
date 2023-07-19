@@ -1,0 +1,131 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+        format('woff');
+    font-weight: 400;
+    font-style: normal;
+} 
+    
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit
+}
+
+body {
+    font-family: "Pretendard";
+    background-color: #fffaf0;
+}
+
+/* 헤더 */
+
+header {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 32px 6px 32px;
+}
+
+header>h1>a>img {
+    height: 48px;
+}
+
+header>a {
+    display: flex;
+    align-items: center;
+}
+
+header>a>img {
+    vertical-align: center;
+    width: 32px;
+    height: 32px;
+}
+
+header>a>p {
+    vertical-align: top;
+    line-height: 32px;
+}
+
+/* 메인 */
+
+main {
+    margin: 32px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 32px;
+}
+
+main>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+main>div>img {
+    width: 240px;
+}
+
+main>div>h2 {
+    text-decoration: underline;
+    text-underline-position: under;
+    text-decoration-color: #ff4f6e;
+    background: linear-gradient(to top, rgba(255, 79, 110, 20%) 50%, transparent 50%) 
+}
+
+main>form {
+    width: 400px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+main>form>label {
+    margin: 16px 0 4px 0;
+}
+
+main>form>input {
+    border: 0;
+    background-color: #fff;
+    border-bottom: 1px solid #999;
+    height: 40px;
+}
+
+main>form>button {
+    margin-top: 20px;
+    
+    background-color: #29363d;
+    border: 0;
+    border-radius: 4px;
+    padding: 8px;
+    
+    color: white;
+    line-height: 24px;
+    font-size: 16px;
+}
+
+main>form>button:hover {
+    box-shadow: inset -2px -2px #1a262c ;
+    background: linear-gradient(to top, #202a30, #29363d, #475c66);
+    cursor: pointer;
+}
+
+main>form>button:active {
+    box-shadow: inset 2px 2px #192125;
+    background: linear-gradient(to top, #1f272c, #273136, #35444b);
+    color: #999;
+}
+
+/* footer */
+
+footer>p {
+    font-size: 12px;
+    color: #aaa;
+    text-align: center;
+}
