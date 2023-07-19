@@ -1,10 +1,66 @@
 @font-face {
+	font-family: 'Pretendard Variable';
+	font-weight: 45 920;
+	font-style: normal;
+	font-display: swap;
+	src: local('Pretendard Variable'), url('./images/PretendardVariable.woff2') format('woff2-variations');
+}
+
+@font-face {
     font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
-        format('woff');
+    src: url('./images/Pretendard-Thin.woff') format('woff');
+    font-weight: 100;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('./images/Pretendard-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('./images/Pretendard-Light.woff') format('woff');
+    font-weight: 300;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('./images/Pretendard-Regular.woff') format('woff');
     font-weight: 400;
-    font-style: normal;
-} 
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('./images/Pretendard-Medium.woff') format('woff');
+    font-weight: 500;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('./images/Pretendard-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('./images/Pretendard-Bold.woff') format('woff');
+    font-weight: 700;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('./images/Pretendard-ExtraBold.woff') format('woff');
+    font-weight: 800;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('./images/Pretendard-Black.woff') format('woff');
+    font-weight: 900;
+    font-display: swap;
+}
+
     
 * {
     margin: 0;
@@ -21,38 +77,53 @@ body {
     background-color: #fffaf0;
 }
 
-/* 헤더 */
-
-header {
-    background-color: #fff;
-    display: flex;
-    justify-content: space-between;
-    padding: 12px 32px 6px 32px;
+img {
+    vertical-align: top;
 }
 
-header>h1>a>img {
+/* ----------- 헤더 -----------  */
+.header {
+    background-color: #fff;
+}
+
+.header>div.max-width {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 32px;
+    margin: 0 auto;
+}
+
+.max-width { /* 재사용을 위한 max-width의 클라스 화!*/
+    width: 1224px;
+    max-width: calc(100% - 60px);
+    margin: auto;
+}
+
+.header>div>h1>a>img {
     height: 48px;
 }
 
-header>a {
+.btn-join {
     display: flex;
     align-items: center;
+    gap: 4px;
 }
 
-header>a>img {
+.btn-join>img {
     vertical-align: center;
     width: 32px;
     height: 32px;
 }
 
-header>a>p {
+.btn-join>p {
     vertical-align: top;
     line-height: 32px;
+    padding: 8px;
 }
 
-/* 메인 */
+/* ----------- 메인 ----------- */
 
-main {
+main.login {
     margin: 32px auto 0 auto;
     display: flex;
     flex-direction: column;
@@ -61,25 +132,45 @@ main {
     padding: 32px;
 }
 
-main>div {
+main>h2.main-title {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 24px;
 }
 
-main>div>img {
+main>h2>a>svg {
     width: 240px;
+    position: relative;
 }
 
-main>div>h2 {
+main>h2>a>svg .heart{
+    stroke: white;
+    stroke-width: 0;
+    scale: 0.8;
+    transform-origin: 50% 20px;
+    animation: heart-pumping 0.4s infinite alternate;
+    animation-timing-function: cubic-bezier(0.9, -0.4, 0, 1.51);
+    z-index: 10;
+}
+
+@keyframes heart-pumping {
+    to {
+        stroke: #ffc7d1;
+        stroke-width: 2px;
+        scale: 2.5;
+    }
+}
+
+main>h2>strong {
     text-decoration: underline;
     text-underline-position: under;
     text-decoration-color: #ff4f6e;
-    background: linear-gradient(to top, rgba(255, 79, 110, 20%) 50%, transparent 50%) 
+    /* background: linear-gradient(to top, rgba(255, 79, 110, 20%) 50%, transparent 50%)  */
+    box-shadow: inset 0 -0.5em 0 rgba(255, 79, 110, 0.2);
 }
 
-main>form {
+main>.form {
     width: 400px;
     text-align: left;
     display: flex;
@@ -94,7 +185,12 @@ main>form>input {
     border: 0;
     background-color: #fff;
     border-bottom: 1px solid #999;
-    height: 40px;
+    height: 32px;
+    padding: 12px
+}
+
+main>form>input[type='password'] {
+    
 }
 
 main>form>button {
@@ -108,6 +204,7 @@ main>form>button {
     color: white;
     line-height: 24px;
     font-size: 16px;
+    font-weight: 600;
 }
 
 main>form>button:hover {
