@@ -7,6 +7,35 @@
     <title>반응형 이미지</title>
 </head>
 <body>
-    
+    <!-- picture -->
+    <picture>
+        <source media="(min-width: 1024px)" src="img/lication-chilli.png" srcset="./img/lication-chilli.png">
+        <source media="(max-width: 1023px)" src="img/lication-chilli2.png" srcset="./img/lication-chilli2.png ">
+        <img src="./img/lication-chilli.png" alt="위니브 리케이션 속 칠리">
+    </picture>
+
+    <img
+        srcset="./img/chilli_360px.jpg 360w, 
+        ./img/chilli_720px.jpg 720w,
+        ./img/chilli_1440px.jpg 1440w," 
+        src="img/chilli_360px.jpg" 
+        alt="다람쥐 캐릭터 칠리">
+    이미지 선택권을 부라우저에 넘김
+    s, w 등의 속성으로 변경할 수 있습니다.
+
+    <img
+        srcset="./img/chilli_360px.jpg 360w, 
+        ./img/chilli_720px.jpg 720w,
+        ./img/chilli_1440px.jpg 1440w," 
+        sizes="(max-width: 360px) 200px,
+        (max-width: 720px) 400px,
+        600px"
+        src="img/chilli_360px.jpg" 
+        alt="다람쥐 캐릭터 칠리">
+
+    하지~만?
+    css에서 이미지 크기를 지정해버리면 css스타일이 우선적용 됨;
+
+    .o. o0o - O0O;; -
 </body>
 </html>

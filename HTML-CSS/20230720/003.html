@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3d</title>
+    <style>
+        body{
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 400px;
+            height: 100px;
+            border: 3px dashed rosybrown;
+            display: flex;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: rgba(255, 192, 203, 0.5);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            box-shadow: inset 2px 2px 0 rgba(250, 128, 114, 0.4);
+        }
+
+        .box:nth-child(even) {
+            background-color: rgba(0, 250, 154,0.5)
+        }
+
+        /* 3d 효과주기~ */
+        .box{
+            transform: rotateY(90deg) rotateX(45deg);
+            
+        }
+        /* 지금은 원근감이 없어서 돌아가는게 아니라 꾸겨지는것처럼 보이지만?! */
+
+        .container {
+            perspective: 100px;
+            perspective-origin: 50% 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+            <div class="box">4</div>
+            <div class="box">5</div>
+        </div>
+    </div>
+</body>
+</html>
