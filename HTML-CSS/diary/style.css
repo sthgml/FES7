@@ -81,6 +81,35 @@ img {
     vertical-align: top;
 }
 
+h1,
+h2,
+h3 {
+    font: inherit;
+}
+
+.a11y-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
+ul, ol, li{
+    list-style: none;
+}
+
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+}
+
 /* ----------- 헤더 -----------  */
 .header {
     background-color: #fff;
@@ -96,7 +125,7 @@ img {
 .max-width { /* 재사용을 위한 max-width의 클라스 화!*/
     width: 1224px;
     max-width: calc(100% - 60px);
-    margin: auto;
+    margin: 0 auto;
 }
 
 .header>div>h1>a>img {
@@ -119,6 +148,18 @@ img {
     vertical-align: top;
     line-height: 32px;
     padding: 8px;
+}
+
+.login-text-container{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.login-text::after {
+    content: '|';
+    color: #aaa;
+    margin-left: 16px;
 }
 
 /* ----------- 메인 ----------- */
@@ -162,7 +203,7 @@ main>h2>a>svg .heart{
     }
 }
 
-main>h2>strong {
+strong {
     text-decoration: underline;
     text-underline-position: under;
     text-decoration-color: #ff4f6e;
@@ -170,30 +211,29 @@ main>h2>strong {
     box-shadow: inset 0 -0.5em 0 rgba(255, 79, 110, 0.2);
 }
 
-main>.form {
+.login .form {
     width: 400px;
     text-align: left;
     display: flex;
     flex-direction: column;
 }
 
-main>form>label {
+.form>label {
     margin: 16px 0 4px 0;
 }
 
-main>form>input {
+.form input {
     border: 0;
+    width: 100%;
+    box-sizing: border-box;
     background-color: #fff;
     border-bottom: 1px solid #999;
-    height: 32px;
+    height: 48px;
     padding: 12px
 }
 
-main>form>input[type='password'] {
-    
-}
-
-main>form>button {
+.form button {
+    width: 100%;
     margin-top: 20px;
     
     background-color: #29363d;
@@ -207,16 +247,26 @@ main>form>button {
     font-weight: 600;
 }
 
-main>form>button:hover {
+.form button:hover {
     box-shadow: inset -2px -2px #1a262c ;
     background: linear-gradient(to top, #202a30, #29363d, #475c66);
     cursor: pointer;
 }
 
-main>form>button:active {
+.form button:active {
     box-shadow: inset 2px 2px #192125;
     background: linear-gradient(to top, #1f272c, #273136, #35444b);
     color: #999;
+}
+
+.form textarea {
+    display: block;
+    width: 100%;
+    height: 360px;
+    resize: none;
+    padding: 16px;
+    font: inherit;
+    box-sizing: border-box;
 }
 
 /* footer */

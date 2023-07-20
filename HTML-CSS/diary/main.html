@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일기쓰기 | 두근두근 비밀일기</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- header -->
+        <header class="header">
+            <div class="max-width">
+                <h1>
+                    <a href="./" class="logo"> 
+                        <!-- 이렇게 해놓으면 이 폴더의 가장 상위의 폴더 안에 있는 index.html로 이동하기 때문에 메인페이지로 가는것임 -->
+                        <img src="images/logo.svg" alt="logo-header">
+                    </a>
+                </h1>
+                <div class="login-text-container">
+                    <p class="login-text"> 환영합니다! <strong>홍길동님</strong></p>
+                    <a class="btn-join" href="./">
+                        <img src="images/icon-logout.svg" alt="icon-logout">
+                        <p>로그아웃</p>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <!-- header -->
+    
+        <!-- main -->
+        <main class="main max-width">
+            <section class="today">
+                <h2 class="heart-title">2023.02.27의 비밀일기</h2>
+                <form class="form">
+                    <div class="diary-title">
+                        <label for="diary-title" class="a11y-hidden">제목</label>
+                        <input type="text" id="diary-title" placeholder="제목">
+                    </div>
+    
+                    <div class="diary-content">
+                        <label for="diary-content" class="a11y-hidden">내용</label>
+                        <textarea name="diary-content" id="diary-content" cols="30" rows="10" placeholder="오늘의 비밀은 무엇인가요?">감사한 일 적어바</textarea>
+                    </div>
+    
+                    <button type="submit">저장하기</button>
+                </form>
+            </section>
+            <section class="diary-list">
+                <h2 class="a11y-hidden">일기목록</h2>
+                <ol>
+                    <li>
+                        <article class="diary-article">
+                            <div class="article-header">
+                                <h3 class="article-title">오늘은 아점이 아니라 브런치를 먹기루다가 했다.오늘은 아점이 아니라 브런치를 먹기루다가 했다.오늘은 아점이 아니라 브런치를 먹기루다가 했다.</h3>
+                                <time datetime="2023-02-25" class="article-time">2023. 02. 25. THU</time>
+                            </div>
+                            <p class="article-content">아점은 영어로 브런취 이는 청춘의 것은 그들의 운다. 동산에는 수 것이 있는 뼈 이상의 쓸쓸하랴? 없으면, 날카로우나 뛰노는 풀이 아니다. 황금시대를 무한한 따뜻한 청춘이 같으며, 속잎나고, 운다. 위하여서
+                            커다란 영락과 따뜻한 피고 안고, 뼈 봄바람이다. 가는 곧 아니한 눈에 얼마나 있음으로써 지혜는 대한 얼마나 봄바람이다. 때까지 위하여 가지에 열락의 것이다. 그림자는 꽃이 천하를 우리
+                            찬미를 원대하고, 인생을 때에, 황금시대다. 목숨을 할지니, 청춘은 용기가 말이다.</p>
+                            <div class="button-container">
+                                <button type="button">
+                                    <img src="images/icon-edit.svg" alt="button-edit">
+                                </button>
+                                <span></span>
+                                <button type="button">
+                                    <img src="images/icon-delete.svg" alt="button-delete">
+                                </button>
+                            </div>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="diary-article">
+                            <div class="article-header">
+                                <h3 class="article-title">오늘은 아점이 아니라 브런치를 먹기루다가 했다.오늘은 아점이 아니라 브런치를 먹기루다가 했다.오늘은 아점이 아니라 브런치를 먹기루다가 했다.</h3>
+                                <time datetime="2023-02-25" class="article-time">2023. 02. 25. THU</time>
+                            </div>
+                            <p class="article-content">아점은 영어로 브런취 이는 청춘의 것은 그들의 운다. 동산에는 수 것이 있는 뼈 이상의 쓸쓸하랴? 없으면, 날카로우나 뛰노는 풀이 아니다. 황금시대를 무한한 따뜻한 청춘이 같으며, 속잎나고, 운다. 위하여서
+                            커다란 영락과 따뜻한 피고 안고, 뼈 봄바람이다. 가는 곧 아니한 눈에 얼마나 있음으로써 지혜는 대한 얼마나 봄바람이다. 때까지 위하여 가지에 열락의 것이다. 그림자는 꽃이 천하를 우리
+                            찬미를 원대하고, 인생을 때에, 황금시대다. 목숨을 할지니, 청춘은 용기가 말이다.</p>
+                            <div class="button-container">
+                                <button type="button">
+                                    <img src="images/icon-edit.svg" alt="button-edit">
+                                </button>
+                                <span></span>
+                                <button type="button">
+                                    <img src="images/icon-delete.svg" alt="button-delete">
+                                </button>
+                            </div>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="diary-article">
+                            <div class="article-header">
+                                <h3 class="article-title">오늘은 아점이 아니라 브런치를 먹기루다가 했다.오늘은 아점이 아니라 브런치를 먹기루다가 했다.오늘은 아점이 아니라 브런치를 먹기루다가 했다.</h3>
+                                <time datetime="2023-02-25" class="article-time">2023. 02. 25. THU</time>
+                            </div>
+                            <p class="article-content">아점은 영어로 브런취 이는 청춘의 것은 그들의 운다. 동산에는 수 것이 있는 뼈 이상의 쓸쓸하랴? 없으면, 날카로우나 뛰노는 풀이 아니다. 황금시대를 무한한 따뜻한 청춘이 같으며, 속잎나고, 운다. 위하여서
+                            커다란 영락과 따뜻한 피고 안고, 뼈 봄바람이다. 가는 곧 아니한 눈에 얼마나 있음으로써 지혜는 대한 얼마나 봄바람이다. 때까지 위하여 가지에 열락의 것이다. 그림자는 꽃이 천하를 우리
+                            찬미를 원대하고, 인생을 때에, 황금시대다. 목숨을 할지니, 청춘은 용기가 말이다.</p>
+                            <div class="button-container">
+                                <button type="button">
+                                    <img src="images/icon-edit.svg" alt="button-edit">
+                                </button>
+                                <span></span>
+                                <button type="button">
+                                    <img src="images/icon-delete.svg" alt="button-delete">
+                                </button>
+                            </div>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="diary-article">
+                            <div class="article-header">
+                                <h3 class="article-title">오늘은 아점이 아니라 브런치를 먹기루다가 했다.오늘은 아점이 아니라 브런치를 먹기루다가 했다.오늘은 아점이 아니라 브런치를 먹기루다가 했다.</h3>
+                                <time datetime="2023-02-25" class="article-time">2023. 02. 25. THU</time>
+                            </div>
+                            <p class="article-content">아점은 영어로 브런취 이는 청춘의 것은 그들의 운다. 동산에는 수 것이 있는 뼈 이상의 쓸쓸하랴? 없으면, 날카로우나 뛰노는 풀이 아니다. 황금시대를 무한한 따뜻한 청춘이 같으며, 속잎나고, 운다. 위하여서
+                            커다란 영락과 따뜻한 피고 안고, 뼈 봄바람이다. 가는 곧 아니한 눈에 얼마나 있음으로써 지혜는 대한 얼마나 봄바람이다. 때까지 위하여 가지에 열락의 것이다. 그림자는 꽃이 천하를 우리
+                            찬미를 원대하고, 인생을 때에, 황금시대다. 목숨을 할지니, 청춘은 용기가 말이다.</p>
+                            <div class="button-container">
+                                <button type="button">
+                                    <img src="images/icon-edit.svg" alt="button-edit">
+                                </button>
+                                <span></span>
+                                <button type="button">
+                                    <img src="images/icon-delete.svg" alt="button-delete">
+                                </button>
+                            </div>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="diary-article">
+                            <div class="article-header">
+                                <h3 class="article-title">오늘은 아점이 아니라 브런치를 먹기루다가 했다.오늘은 아점이 아니라 브런치를 먹기루다가 했다.오늘은 아점이 아니라 브런치를 먹기루다가 했다.</h3>
+                                <time datetime="2023-02-25" class="article-time">2023. 02. 25. THU</time>
+                            </div>
+                            <p class="article-content">아점은 영어로 브런취 이는 청춘의 것은 그들의 운다. 동산에는 수 것이 있는 뼈 이상의 쓸쓸하랴? 없으면, 날카로우나 뛰노는 풀이 아니다. 황금시대를 무한한 따뜻한 청춘이 같으며, 속잎나고, 운다. 위하여서
+                            커다란 영락과 따뜻한 피고 안고, 뼈 봄바람이다. 가는 곧 아니한 눈에 얼마나 있음으로써 지혜는 대한 얼마나 봄바람이다. 때까지 위하여 가지에 열락의 것이다. 그림자는 꽃이 천하를 우리
+                            찬미를 원대하고, 인생을 때에, 황금시대다. 목숨을 할지니, 청춘은 용기가 말이다.</p>
+                            <div class="button-container">
+                                <button type="button">
+                                    <img src="images/icon-edit.svg" alt="button-edit">
+                                </button>
+                                <span></span>
+                                <button type="button">
+                                    <img src="images/icon-delete.svg" alt="button-delete">
+                                </button>
+                            </div>
+                        </article>
+                    </li>
+                </ol>
+            </section>
+        </main>
+        <!-- main -->
+    
+        <!-- footer -->
+        <footer>
+            <p>Copyright 2023. WENIV All rights reserved</p>
+        </footer>
+        <!-- footer -->
+    </div>
+</body>
+</html>

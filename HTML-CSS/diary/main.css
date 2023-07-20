@@ -1,0 +1,195 @@
+html,
+body,
+.wrapper {
+    margin: 0;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.heart-title {
+    font-weight: bold;
+    padding-left: 2em; 
+    /* 폰트사이즈의 두배 
+    폰트사이즈는 style.css에서 body전체에 16px로 지정했음*/
+    line-height: 2;
+
+    background-image: url(./images/heart.svg);
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    background-size: 2em;
+
+    margin-bottom: 16px;
+}
+
+.main {
+    flex-grow: 1;
+
+    display: flex;
+    gap: 40px;
+}
+
+.main .today {
+    width: 416px;
+    flex-shrink: 0;
+    padding-right: 40px;
+    border-right: 1px solid #ff4f6e;
+}
+
+.main .today .diary-title {
+    width: 100%;
+}
+
+.main .today .diary-content {
+    margin-top: 30px;
+}
+
+@media (max-width:836px) {
+    .wrapper {
+        gap: 32px;
+    }
+
+    .main {
+        flex-direction: column;
+        gap: 64px;
+    }
+
+    .main .today{
+        width: calc(100% - 80px);
+        margin: 0 auto;
+        border: 0;
+        padding: 0;
+    }
+
+    .diary-list {
+        width: calc(100% - 80px);
+        margin: 0 auto;
+    }
+
+    .article-header {
+        flex-direction: column;
+    }
+}
+
+/* article */
+
+.main .diary-list {
+    flex-grow: 1;
+    /* margin: 40px 40px 0 0; */
+}
+
+.diary-article {
+    border: 1px solid #677880;
+    border-width: 4px 1px 1px;
+    padding: 60px 48px;
+    position: relative;
+    margin: 0 0 60px;
+}
+
+.article-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 64px;
+}
+
+.article-header::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #677880;
+    position: absolute;
+    top: 4px;
+    left: 0;
+}
+
+.diary-article h3 {
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: #29363d;
+}
+
+.article-time{
+    font-size: 12px;
+    color: #677880;
+    flex-shrink: 0;
+}
+
+@media  (max-width:1228px) {
+    .article-header {
+        flex-direction: column;
+        gap: 0px;
+        margin-bottom: 24px;
+    }
+}
+
+.article-content {
+    color:#677880;
+    font-size: 14px;
+    line-height: 160%;
+}
+
+.diary-article::before,
+.diary-article::after{
+    content: '';
+    display: block;
+    background-color: #fffaf0;
+    width: 80px;
+    height: 40px;
+    position: absolute;
+    
+    background-size: contain;
+}
+
+.diary-article::before{
+    top: -20px;
+    left: 30px;
+    background-image: url(./images/quote-start.svg);
+    z-index: 10;
+}
+
+.diary-article::after{
+    bottom: -20px;
+    right: 30px;
+    margin-right: 40px;
+    background-image: url(./images/quote-end.svg);
+    
+}
+
+.button-container {
+    border: 1px solid #677880;
+    border-radius: 2em;
+    background-color: #fff;
+
+    display: flex;
+    width: fit-content;
+    padding: 10px;
+    gap: 8px;
+
+    position: absolute;
+    bottom: -1.5em;
+    left: calc(50% - 2.5em);
+    z-index: 20;
+}
+
+.button-container span {
+    width: 1px;
+    background-color: #677880;
+}
+
+@media (max-width:600px) {
+    .header .login-text {
+        position: absolute;
+        top: 100px;
+        right: 30px;
+    }
+
+    .header .login-text::after{
+        content: none;
+    }
+}
