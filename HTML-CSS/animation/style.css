@@ -5,12 +5,17 @@
 
 body {
     background-color: #EAA0A0;
+    position: relative;
 }
 
 .wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: absolute;
+    top: -50vh;
+    left: 50vw;
+    transform: translate(-50%, 20%);
 }
 
 .ears {
@@ -143,7 +148,6 @@ body {
 
 /* ---- nose part ---- */
 
-
 .nose-part .left, 
 .nose-part .right {
     width: 136px;
@@ -227,4 +231,69 @@ background: #846464;
 position: absolute;
     top: 160px;
     left: 15%;
+}
+
+div.hairs-left, 
+div.hairs-right {
+    position: relative;
+}
+
+
+div.hairs-left *,
+div.hairs-right * {
+    width: 137.79px;
+    height: 142.8px;
+    border-radius: 0px 171px 0px 0px;
+    border-top: 1px solid #FFF;
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    left: 0;
+}
+
+.hair:first-child {
+    top: -330px;
+    left: 120px;
+    transform: rotateZ(-90deg);
+    transform-origin: 0 0;
+}
+
+.hair:nth-child(2){
+    top: -320px;
+    left: 150px;
+    transform: rotateZ(-50deg);
+    transform-origin: 0 0;
+}
+
+.hair:nth-child(3){
+    top: -180px;
+    left: 90px;
+    transform: rotateZ(-55deg);
+    transform-origin: 0 0;
+}
+
+.hair:nth-child(4){
+    top: -150px;
+    left: 110px;
+    transform: rotateZ(-35deg);
+    transform-origin: 0 0;
+}
+
+.hair:nth-child(5){
+    top: -120px;
+    left: 130px;
+    transform: rotateZ(-10deg);
+    transform-origin: 0 0;
+}
+
+.hair:nth-child(6){
+    top: -120px;
+    left: 80px;
+    transform: rotateZ(-5deg);
+    transform-origin: 0 0;
+}
+
+div.hairs-left {
+    transform: rotateY(180deg);
+    z-index: 30;
 }
