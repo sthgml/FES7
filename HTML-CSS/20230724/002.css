@@ -20,6 +20,9 @@ ol li {
 body {
     font-family: Noto Sans KR;
     font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    gap: 135px;
 }
 
 button {
@@ -33,6 +36,7 @@ button {
 main.main {
     width: 1060px;
     height: 1170px;
+    box-sizing: border-box;
 
     background-color: #F2F2F2;
     border-radius: 15px;
@@ -40,7 +44,8 @@ main.main {
 
     text-align: center;
     padding: 30px;
-    margin: calc(50vh - 222px - 585px) auto;
+    margin: 0 auto;
+    margin-top: 86px;
 }
 
 header.header h1 {
@@ -79,13 +84,15 @@ hr {
     border: 2px solid #bdbdbd;
     border-radius:  15px;
     padding: 26px;
+
+    box-sizing: border-box;
 }
 
 .movie-list ol {
     display: flex;
     flex-wrap: wrap;
-    gap: 23px;
     justify-content: center;
+    gap: 20px;
 }
 
 .movie-list article {
@@ -94,6 +101,7 @@ hr {
     border-radius:  10px;
     padding: 20px;
     box-sizing: border-box;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.30);
 
     width: 220px;
     height: 441px;
@@ -111,22 +119,30 @@ hr {
 }
 
 .movie-list article h3 {
-    font-family: Noto Sans KR;
     font-size: 16px;
-    font-weight: 900;
+    font-weight: 900;    
     line-height: 23px;
-}
 
-.movie-list article h3 {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+
+    margin-bottom: 12px;
 }
 
-.article-content div {
+.article-content>div {
     display: flex;
     gap: 5px;
     margin: 5px auto 5px 0;
+}
+
+.first-line {
+    justify-content: space-between;
+}
+
+.first-line>div {
+    display: flex;
+    gap: 5px;
 }
 
 .article-content h4 {
@@ -149,7 +165,7 @@ hr {
     height: 40px;
 
     box-sizing: border-box;
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 8px 8px;
     border-top: 1px solid #d9d9d9;
 
     position: absolute;
@@ -186,8 +202,6 @@ hr {
 footer {
     background-color: #F2F2F2;
     width: 100%;
-    position: absolute;
-    bottom: 0;
 }
 
 .upper-part {
