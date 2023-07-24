@@ -46,6 +46,12 @@ header img {
     gap: 18px;
 }
 
+@media (max-width:850px) {
+    .main {
+        flex-direction: column;
+    }    
+}
+
 .vending-machine {
     background-color: #fff;
     width: 360px;
@@ -107,7 +113,7 @@ ul {
     font-weight: 500;
 }
 
-.display-beverage button:hover {
+.display-beverage button.active {
     outline: 3px solid #6327FE;
 }
 
@@ -126,12 +132,12 @@ ul {
     opacity: 80%;
 }
 
-.display-beverage #btn-purple-coke::after {
+.display-beverage #btn-purple-coke.disabled::after {
     content: '품절';
     color: #EAE8FE;
     padding: 0 6px;
-    border: 2px solid #EAE8FE;
-    outline: 2px solid #EAE8FE;
+    border: 4px double #EAE8FE;
+    /* outline: 2px solid #EAE8FE; */
 
     position: absolute;
     top: 50%;

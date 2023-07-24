@@ -18,14 +18,14 @@
                 <!-- 음료 리스트 -->
                 <ul>
                     <li>
-                        <button type="button" id="btn-red-coke">
+                        <button type="button" id="btn-red-coke" class="active">
                             <img src="images/coke-red.png" alt="빨간 콜라">
                             <label for="btn-red-coke">Oringinal-Cola</label>
                             <p class="cost">1000원</p>
                         </button>
                     </li>
                     <li>
-                        <button type="button" id="btn-purple-coke">
+                        <button type="button" id="btn-purple-coke" class="disabled">
                             <img src="images/coke-purple.png" alt="보라 콜라">
                             <label for="btn-purple-coke">purple-Cola</label>
                             <p class="cost">1000원</p>
@@ -46,7 +46,7 @@
                         </button>
                     </li>
                     <li>
-                        <button type="button" id="btn-orange-coke">
+                        <button type="button" id="btn-orange-coke" class="active">
                             <img src="images/coke-orange.png" alt="주황 콜라">
                             <label for="btn-orange-coke">orange-Cola</label>
                             <p class="cost">1000원</p>
@@ -64,7 +64,8 @@
             <div class="machine-interface">
                 <div class="interface-display">
                     <div class="change"><p>잔액 :</p>  <p>1000원</p></div>
-                    <input type="number" class="input-money" placeholder="입금액 입력">
+                    <input type="number" class="input-money" placeholder="입금액 입력" min="1000" value="1000"
+                    step="1000">
                     <div class="selected-beverage">
                         <ul class="beverage-lists">
                             <li class="beverage-list">
