@@ -9,6 +9,7 @@ body {
     font-family: 'Spoqa Han Sans Neo', 'sans-serif';
     font-size: 16px;
     font-weight: 500;
+    /* background: url(./images/modal.png) no-repeat 0 0/520px; */
 }
 
 h1,
@@ -35,19 +36,20 @@ ul, li {
 /* ---- reset css ---- */
 
 main {
-    background: #fff;
+    background: #ffffff95;
     border: 1px solid #c4c4c4;
     border-radius: 10px;
     width: 520px;
-    margin: 30px auto;
+    margin: auto;
     box-sizing: border-box;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
+
 }
 
 /* ---- header ----  */
 .header {
-    padding: 24px;
+    padding: 20px;
     padding-bottom: 18px;
     border-bottom: 1px solid #c4c4c4;
     text-align: center;
@@ -67,7 +69,7 @@ main {
 
     position:absolute;
     right: 24px;
-    top: 0.5em;
+    top: 3px;
     border: 0;
 }
 /* ---- header ----  */
@@ -78,20 +80,21 @@ h2 {
     font-weight: 500;
     line-height: 24px;
 
-    margin: 24px;
+    margin: 25px;
 }
 
 input, 
 [class^="btn"] {
     display: block;
 
-    padding: 16px;
+    padding: 14px;
     border: 1px solid #c4c4c4;
     border-radius: 5px;
     margin: 0 auto;
 
     width: 472px;
     box-sizing: border-box;
+    line-height: 20px;
 }
 
 input {
@@ -111,7 +114,7 @@ input.user-pw:focus {
 }
 
 /* 빈 태그에는 가상요소 사용 불가!!! */
-div.user-id::after {
+/* div.user-id::after {
     content: '아이디를 입력해주세요';
     display: inline-block;
     position: relative;
@@ -130,7 +133,7 @@ div.user-pw::after {
     margin-bottom: 13px;
 
     color: red;
-}
+} */
 
 .a11y-hidden {
     clip: rect(1px, 1px, 1px, 1px);
@@ -144,7 +147,8 @@ div.user-pw::after {
 }
 
 .label-keep-login {
-    margin: 16px 24px;
+    display: block;
+    margin: 16px 27px 20px;
     color: #767676;
 }
 
@@ -170,9 +174,9 @@ div.user-pw::after {
 
 .btn-login {
     background-color: #2F80ED;
-    border: 0;
+    border: 1px solid #2F80ED;
     color: #FFF;
-    margin-top: 20px;
+    margin-top: 22px;
     margin-bottom: 20px;
 }
 
@@ -193,25 +197,27 @@ div.user-pw::after {
 /* ---- 메인 로그인 ---- */
 
 /* ----  중간 구분선 ---- */
+/* 부모요소의 %를 가져올 때에도 position relative 값이 있는 부모요소에서 width값을 가져옴!!! */
 .division-part {
     position: relative;
 }
 
 hr {
     width: 472px;
-    margin: 38px auto;
+    margin: 38px auto 29px;
 }
 
 .div-line-or {
     display: inline-block;
     position: absolute;
     top: -0.5em;
-    left: calc(50% - 0.5em - 8px);
+    left: calc(50% - 0.5em - 22px);
 
-    background-color: #fff;
-    padding: 0 16px;
+    background-color: #ffffff;
+    padding: 0 14px;
 
     color: #767676;
+    font-size: 14px;
     font-weight: 400;
 }
 /* ----  중간 구분선 ---- */
@@ -219,19 +225,22 @@ hr {
 /* ----  소셜 로그인 ---- */
 li {
     color: #767676;
-    margin: 10px auto;
+    margin: 11px auto;
     position: relative;
+
+    text-align: center;
 }
 
-li a {
-    text-align: center;
+.btn-social-login {
+    display: block;
+    padding-left: 36px;
 }
 
 .btn-social-login::before {
     content: '';
     display: block;
     position: absolute;
-    top: 1em;
+    top: calc(1em - 3px);
     left: 2.5em;
 
     width: 24px;
@@ -249,7 +258,7 @@ li a {
 }
 
 .facebook::before {
-    background-position: -89px -10px;
+    background-position: -92px -10px;
 }
 
 .naver {
@@ -269,6 +278,6 @@ li a {
 }
 
 li:last-child {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 /* ----  소셜 로그인 ---- */
