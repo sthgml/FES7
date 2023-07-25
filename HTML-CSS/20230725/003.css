@@ -35,11 +35,14 @@ ul, li {
 /* ---- reset css ---- */
 
 main {
+    background: #fff;
     border: 1px solid #c4c4c4;
     border-radius: 10px;
     width: 520px;
     margin: 30px auto;
     box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 /* ---- header ----  */
@@ -64,7 +67,7 @@ main {
 
     position:absolute;
     right: 24px;
-    top: 0;
+    top: 0.5em;
     border: 0;
 }
 /* ---- header ----  */
@@ -95,6 +98,40 @@ input {
     margin: 10px auto;
 }
 
+input.user-id {
+    position: relative;
+
+}
+
+input.user-id:focus,
+input.user-pw:focus {
+    outline: 2px solid red;
+    outline-offset: -1px;
+    
+}
+
+/* 빈 태그에는 가상요소 사용 불가!!! */
+div.user-id::after {
+    content: '아이디를 입력해주세요';
+    display: inline-block;
+    position: relative;
+    top: 0;
+    left: 25px;
+
+    color: red;
+}
+
+div.user-pw::after {
+    content: '비밀번호를 입력해주세요';
+    display: inline-block;
+    position: relative;
+    top: 0;
+    left: 25px;
+    margin-bottom: 13px;
+
+    color: red;
+}
+
 .a11y-hidden {
     clip: rect(1px, 1px, 1px, 1px);
     clip-path: inset(50%);
@@ -123,6 +160,12 @@ input {
 
 .btn-keep-login:checked+.label-keep-login::before{
     background: url(./images/check-box_checke.svg) no-repeat 0 0/ 22px;
+}
+
+.btn-keep-login:focus-visible+.label-keep-login {
+    outline: 2px solid #000;
+    border-radius: 5px;
+    outline-offset: 4px;
 }
 
 .btn-login {
@@ -193,7 +236,8 @@ li a {
 
     width: 24px;
     height: 24px;
-    background: url(./images/icon_sprites.png) ;
+    background: url(./images/icon_sprites.png);
+    background-size: 117px 84px;
 }
 
 .google::before {
