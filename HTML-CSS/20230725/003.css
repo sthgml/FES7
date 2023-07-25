@@ -1,0 +1,230 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
+* {
+    margin:0;
+    padding:0;
+}
+
+body {
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    font-size: 16px;
+    font-weight: 500;
+}
+
+h1,
+h2,
+h3 {
+    font: inherit;
+}
+
+button,
+input {
+    font: inherit;
+    border: 0;
+    background: transparent;
+}
+
+a{
+    text-decoration: none;
+    color:inherit;
+}
+
+ul, li {
+    list-style: none;
+}
+/* ---- reset css ---- */
+
+main {
+    border: 1px solid #c4c4c4;
+    border-radius: 10px;
+    width: 520px;
+    margin: 30px auto;
+    box-sizing: border-box;
+}
+
+/* ---- header ----  */
+.header {
+    padding: 24px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #c4c4c4;
+    text-align: center;
+    position: relative;
+}
+
+.header>h1 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.header .btn-close {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+
+    position:absolute;
+    right: 24px;
+    top: 0;
+    border: 0;
+}
+/* ---- header ----  */
+
+/* ---- 메인 로그인 ---- */
+h2 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+
+    margin: 24px;
+}
+
+input, 
+[class^="btn"] {
+    display: block;
+
+    padding: 16px;
+    border: 1px solid #c4c4c4;
+    border-radius: 5px;
+    margin: 0 auto;
+
+    width: 472px;
+    box-sizing: border-box;
+}
+
+input {
+    margin: 10px auto;
+}
+
+.a11y-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
+.label-keep-login {
+    margin: 16px 24px;
+    color: #767676;
+}
+
+.label-keep-login::before {
+    content: '';
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background: url(./images/check-box.svg) no-repeat 0 0/ 22px;
+    margin-right: 8px;
+    vertical-align: -5px;
+}
+
+.btn-keep-login:checked+.label-keep-login::before{
+    background: url(./images/check-box_checke.svg) no-repeat 0 0/ 22px;
+}
+
+.btn-login {
+    background-color: #2F80ED;
+    border: 0;
+    color: #FFF;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.link-container {
+    color: #767676;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.link-join::after {
+    content: '|';
+    margin-left: 12px;
+}
+/* ---- 메인 로그인 ---- */
+
+/* ----  중간 구분선 ---- */
+.division-part {
+    position: relative;
+}
+
+hr {
+    width: 472px;
+    margin: 38px auto;
+}
+
+.div-line-or {
+    display: inline-block;
+    position: absolute;
+    top: -0.5em;
+    left: calc(50% - 0.5em - 8px);
+
+    background-color: #fff;
+    padding: 0 16px;
+
+    color: #767676;
+    font-weight: 400;
+}
+/* ----  중간 구분선 ---- */
+
+/* ----  소셜 로그인 ---- */
+li {
+    color: #767676;
+    margin: 10px auto;
+    position: relative;
+}
+
+li a {
+    text-align: center;
+}
+
+.btn-social-login::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 1em;
+    left: 2.5em;
+
+    width: 24px;
+    height: 24px;
+    background: url(./images/icon_sprites.png) ;
+}
+
+.google::before {
+    background-position: -10px -10px;
+}
+
+.facebook {
+    border: 1px solid #2D9CDB;
+}
+
+.facebook::before {
+    background-position: -89px -10px;
+}
+
+.naver {
+    border: 1px solid #00BF18;
+}
+
+.naver::before {
+    background-position: -10px -52px;
+}
+
+.kakao {
+    border: 1px solid #F2C94C;
+}
+
+.kakao::before {
+    background-position:  -52px -10px;
+}
+
+li:last-child {
+    margin-bottom: 20px;
+}
+/* ----  소셜 로그인 ---- */

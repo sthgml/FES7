@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 모달 만들기</title>
+    <link rel="stylesheet" href="003.css">
+</head>
+<body>
+    <main>
+        <header class="header">
+            <h1>로그인 또는 회원가입</h1>
+            <button type="button" class="btn-close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path d="M1.15918 16.9999L17 1.15915" stroke="#767676"/>
+                    <path d="M16.8408 16.8408L1.00003 1" stroke="#767676"/>
+                    </svg>
+            </button>
+        </header>
+        
+        <h2 class="welcome">위니브에서 여러분의 궁금증을 해결하세요! :)</h2>
+        <input type="text" name="user-id" id="user-id" class="user-id" placeholder="아이디">
+        <label for="user-id"></label>
+        <input type="password" name="user-pw" id="user-pw" class="user-pw" placeholder="비밀번호">
+        <input type="checkbox" name="btn-keep-login" id="btn-keep-login" class="btn-keep-login a11y-hidden">
+        <label for="btn-keep-login" class="label-keep-login">로그인 상태 유지</label>
+        <button type="submit" class="btn-login">로그인</button>
+        <div class="link-container">
+            <a href="#" class="link-join">회원가입</a>
+            <a href="#" class="link-find">아이디/비밀번호 찾기</a>
+        </div>
+
+        <div class="division-part">
+            <hr>
+            <p class="div-line-or">또는</p>
+        </div>
+
+        <ul>
+            <li><a href="#" class="btn-social-login google"><p>구글 계정으로 로그인</p></a></li>
+            <li><a href="#" class="btn-social-login facebook"><p>페이스북 계정으로 로그인</p></a></li>
+            <li><a href="#" class="btn-social-login naver"><p>네이버 계정으로 로그인</p></a></li>
+            <li><a href="#" class="btn-social-login kakao"><p>카카오톡 계정으로 로그인</p></a></li>
+        </ul>
+        <!--  3개이상 반복되면 ul li로 묶어줘야함 -->
+        <!-- 창 이동하면 anchor tag, otherwise button -->
+    </main>
+</body>
+</html>
