@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <h1 class="text-3x1 font-bold underline">
+        Hello world!
+    </h1>
+    <!-- class 값 안 넣어준 태그들은 reset.css가 기본으로 적용된 모습을 확인할 수 있습니다.. -->
+    
+    <h1 class="text-3xl">hello</h1>
+    <h2>hello</h2>
+    <h3>hello</h3>
+    <h4>hello</h4>
+    <h5>hello</h5>
+    <h6>hello</h6>
+    <hr>
+    <!-- space-y-8 : 각 요소의 간격, 1이 0.25rem -->
+    <div class="divide-y-2">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    
+    <!--
+        0.25 rem이 아닌 것 중 자주 사용하는 것 
+        board-2 : 2px 
+        divide-y-2 : 2px
+        outline-2 : 2px        
+    -->
+    <!-- bg-red-200 : red color 숫자가 높아질수록 진해짐 -->
+    <div class="border-4 border-red-200">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+    
+    <!-- shadow : 그림자, rounded : radius -->
+    
+    <!--
+        w-96 : 96%나 96px이 아님, 0.25rem*96임
+        https://tailwindcss.com/docs/width
+    -->
+    <div class="space-y-4 bg-red-200 mt-4">
+        <div class="w-96 bg-white">1번째 div요소</div>
+        <div class="w-80 bg-white">2번째 div요소</div>
+        <div class="w-72 bg-white">3번째 div요소</div>
+        <div class="w-64 bg-white">4번째 div요소</div>
+        <div class="w-60 bg-white">5번째 div요소</div>
+        <div class="w-56 bg-white">6번째 div요소</div>
+        <div class="w-52 bg-white">7번째 div요소</div>
+        <div class="w-48 bg-white">8번째 div요소</div>
+    </div>
+
+    <div class="grid grid-cols-10 gap-2 mt-4">
+        <div class="aspect-square bg-sky-50">1번째 div요소</div>
+        <div class="aspect-square bg-sky-100">2번째 div요소</div>
+        <div class="aspect-square bg-sky-200">3번째 div요소</div>
+        <div class="aspect-square bg-sky-300">4번째 div요소</div>
+        <div class="aspect-square bg-sky-400">5번째 div요소</div>
+        <div class="aspect-square bg-sky-500">6번째 div요소</div>
+        <div class="aspect-square bg-sky-600">7번째 div요소</div>
+        <div class="aspect-square bg-sky-700">8번째 div요소</div>
+    </div>
+
+    <div class="flex border-4 border-red-200">
+        <div class="border-red-200">hel border-red-200lo</div>
+        <div class="border-red-200">hel border-red-200lo</div>
+        <div class="border-red-200">hel border-red-200lo</div>
+        <div class="border-red-200">hello</div>
+    </div> 
+
+    <div class="space-y-4">
+        <div class="flex border-4 border-red-500">
+            <div class="border-2 p-2 border-sky-500">hello</div>
+            <div class="border-2 p-2 border-sky-500">hello</div>
+            <div class="border-2 p-2 border-sky-500">hello</div>
+            <div class="border-2 p-2 border-sky-500">hello</div>
+            <div class="border-2 p-2 border-sky-500">hello</div>
+            <div class="border-2 p-2 border-sky-500">hello</div>
+        </div>
+        
+    </div>
+
+    <div class="space-y-4">
+        <div class="flex border-4 border-red-400">
+            <div class="p-2 border-2 border-sky-500">hello</div>
+            <div class="p-2 border-2 border-sky-500">hello</div>
+            <div class="p-2 border-2 border-sky-500">hello</div>
+            <div class="p-2 border-2 border-sky-500">hello</div>
+            <div class="p-2 border-2 border-sky-500">hello</div>
+            <div class="p-2 border-2 border-sky-500">hello</div>
+        </div>
+    </div>
+
+    <div class="flex flex-row-reverse">
+        <div class="border-2 p-2 bg-sky-100">3</div>
+        <div class="border-2 p-2 bg-sky-100">2</div>
+        <div class="border-2 p-2 bg-sky-100">1</div>
+        <div class="border-2 p-2 bg-sky-100">0</div>
+    </div>
+
+    <!-- 
+        space-x-1 > margin-left: 0.25rem; /* 4px */
+        space-y-1 > margin-top: 0.25rem; /* 4px */
+    -->
+    <!-- 
+        gap-px        gap: 1px;
+        gap-x-px    column-gap: 1px;
+        gap-1        gap: 0.25rem; /* 4px */
+    -->
+    
+    <div class="space-y-4">
+        안녕하세요
+        <p class="text-2xl">안녕하세요</p>
+        <div class="grid grid-cols-4 border-2">
+            <div class="border-2 border-sky-500">hello</div>
+            <div class="border-2 border-sky-500">hello</div>
+            <div class="border-2 border-sky-500">hello</div>
+            <div class="border-2 border-sky-500">hello</div>
+            <div class="border-2 border-sky-500">hello</div>
+            <div class="border-2 border-sky-500">hello</div>
+            <div class="border-2 border-sky-500">hello</div>
+            <div class="border-2 border-sky-500">hello</div>
+        </div>
+    </div>
+
+    <div class="space-y-4">
+        <p class="text-3x1">practice</p>
+        <div class="
+        grid 
+        sm:grid-cols-3 
+        md:grid-cols-4 
+        grid-cols-1
+        border-2 border-red-200 m-2
+        ">
+            <div class="border-2 border-sky-500 p-2 m-2">hello</div>
+            <div class="border-2 border-sky-500 p-2 m-2">hello</div>
+            <div class="border-2 border-sky-500 p-2 m-2">hello</div>
+            <div class="border-2 border-sky-500 p-2 m-2">hello</div>
+            <div class="border-2 border-sky-500 p-2 m-2">hello</div>
+            <div class="border-2 border-sky-500 p-2 m-2">hello</div>
+            <div class="border-2 border-sky-500 p-2 m-2">hello</div>
+            <div class="border-2 border-sky-500 p-2 m-2">hello</div>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-4 grid-rows-3 gap-2 border-2 border-red-400">
+        <div class="md:col-start-1 md:col-end-3 md:row-start-1">
+            <div class="border-2 border-red-200">hello</div>   
+            <div class="border-2 border-red-200">hello</div>   
+        </div>
+        <div class="border-2 border-red-200">hello</div>   
+            <div class="border-2 border-red-200">hello</div>   
+            <div class="border-2 border-red-200">hello</div>   
+            <div class="border-2 border-red-200">hello</div>   
+            <div class="border-2 border-red-200">hello</div>   
+            <div class="border-2 border-red-200">hello</div>   
+            <div class="border-2 border-red-200">hello</div>   
+            <div class="border-2 border-red-200">hello</div>   
+    </div>
+</body>
+</html>
