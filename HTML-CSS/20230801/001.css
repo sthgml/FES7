@@ -1,0 +1,237 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
+/* ---- reset-css ---- */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    font: inherit;
+    --pr-tc : #000000;
+}
+
+button,
+input {
+    background: none;
+    border: 0;
+    font: inherit;
+    color: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+li {
+    list-style-type: none;
+}
+
+body {
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--pr-tc);;
+}
+
+.a11y-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
+:root {
+    --pr-tc : #767676;
+    --sc-tc : #c4c4c4;
+}
+
+/* ---- reset-css ---- */
+
+/* ---- section ---- */
+section.modal-login {
+    width: 520px;
+    background-color: #fff;
+}
+
+/* ---- header ---- */
+header.login-or-join {
+    border: 1px solid var(--sc-tc, #c4c4c4);
+    border-radius: 10px 10px 0 0;
+    box-sizing: border-box;
+    padding: 20px 24px 18px;
+    width: 100%;
+    position: relative;
+} 
+
+header.login-or-join h1 {
+    font-weight: 500;
+    color: var(--pr-tc);
+    line-height: 20px;
+
+    width: fit-content;
+    margin: 0 auto;
+}
+
+header.login-or-join .btn-close {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    background-color: black;
+    position: absolute;
+    top: calc(50% - 10px);
+    right: 20px;
+}
+
+/* ---- main ---- */
+main {
+    display: inline-block;
+    width: 520px;
+    border: 1px solid var(--sc-tc, #c4c4c4);
+    border-top: 0;
+    border-radius: 0 0 10px 10px;
+    box-sizing: border-box;
+    padding: 26px 24px 25px;
+    overflow: hidden;
+
+    position: relative;
+}
+
+h2 {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    color: var(--pr-tc);
+}
+
+input,
+[class^="btn"] {
+    display: block;
+    overflow: hidden;
+    
+    font-size: 16px;
+    font-weight: 400;
+    height: 50px;
+    padding: 15px 0 15px 16px;
+
+    width: 472px;
+    border: 1px solid var(--sc-tc);
+    border-radius: 5px;
+    box-sizing: border-box;
+
+    margin-bottom: 10px;
+}
+
+.keep-login-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 16px 4px 20px;
+}
+
+.keep-login {
+    display: block;
+    height: 22px;
+    overflow: hidden;
+}
+
+/* .keep-login::before {
+    content: '';
+    width: 22px;
+    height: 22px;
+    background: url(img/checkbox_sprites.png) -10px -10px;
+    position: absolute;
+    left: 28px;
+}
+
+#keep-login:checked+.keep-login::before {
+    background: url(img/checkbox_sprites.png) -52px -10px;
+} */
+
+#keep-login:checked+svg path {
+    stroke:white;
+}
+
+#keep-login:checked+svg circle {
+    fill: #2F80ED;
+    stroke:white;
+}
+
+[class^="btn"] {
+    text-align: center;
+}
+
+.btn-login {
+    padding: 14px 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    border: 0;
+    background: #2F80ED;
+    margin-bottom: 20px;
+}
+
+.link-container {
+    width: fit-content;
+    margin: 0 auto 30px;
+    display: flex;
+    gap: 12px;
+    font-size: 14px;
+}
+
+/* ---- dividing-part ---- */
+.dividing-part {
+    position: relative;
+    margin-bottom: 29px;
+}
+
+.dividing-part span {
+    position: absolute;
+    display: block;
+    top: -0.5em;
+    left: calc(50% - 1em);
+    background-color: #fff;
+    padding: 0 13px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+/* ---- dividing-part ---- */
+
+/* ---- social login list ---- */
+li {
+    position: relative;
+}
+
+.btn-social-login::before {
+    content: '';
+    width: 28px;
+    height: 28px;
+    background: url(img/social-icons_sprites.png);
+    position: absolute;
+    top: calc(50%);
+    transform: translateY(-50%);
+    left: 12px;
+}
+
+/* ---- social login list ---- */
+.btn-social-login.google::before {
+    background: url(img/social-icons_sprites.png) -58px -58px;
+}
+
+.btn-social-login.facebook::before {
+    background: url(img/social-icons_sprites.png) -58px -10px;
+}
+
+.btn-social-login.naver::before {
+    background: url(img/social-icons_sprites.png) -10px -58px;
+}
+
+.btn-social-login.kakaotalk::before {
+    background: url(img/social-icons_sprites.png) -10px -10px;
+}
