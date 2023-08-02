@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>String 메서드</title>
+    <script>
+        let s = 'paullab CEO 이호준';
+        let ss = 'CTO 김창영';
+        let sss = 'paullab CEO 이호준 CTO 김창영'
+        
+        // replace
+        console.log(s.replace('CEO', 'CFO'));
+        // concat
+        
+        // replace 매우 고급 문법 보강 설명 //
+        const string = `hojun, lee
+        gildong, hong
+        hojung, choi
+        junho, lee
+        sohee, park`
+
+        //character class = word가 들어간단 이야기에요 그러고 ,가 들어가고 또 word가 하나있고 $1이 첫번째 word을 가리키고, $2가 두번째로 등장한 word를 가리킵니다. 따라서 저렇게 바꾸겠다 하면 순서를 바꾸는 것에 해당됩니다.
+        let result1 = string.replace(/(\w+), (\w+)/gm, "제 이름은 $2 $1 입니다");
+        console.log(result1);
+
+        console.log(s.replaceAll('a', '에이'));
+        console.log(
+            sss
+            .replace("CEO","CTO") 
+            .includes("CEO") //아직 남아있다면 True 아니면 False boolean 나옴
+            .toString() //Boolean을 String 으로 바꾼다음
+            .toUpperCase() //대문자로 출력!
+            );
+        // > FALSE
+        
+        let text1 = 'aa bb cc dd'
+        let text2 = 'aa-bb-cc-dd'
+        let text3 = 'aa,bb,cc,dd'
+        let text4 = 'aa,bb-cc-dd' // 중급자 분들만 하세요.
+        // ['aa', 'bb', 'cc', 'dd']
+
+        text1.split(' ');
+        text2.split('-');
+        text3.split(',');
+        text4.split('/[,-]/g'); // 전체 문자열을 탐색해서 모든 일치를 반환하도록 지정하는 전역 탐색 플래그
+        
+        console.log(`10+3=${10+3}`)
+        console.log(`10-3=${10-3}`)
+        console.log(`10/3=${10/3}`)
+        console.log(`10*3=${10*3}`)
+        
+        console.log(`10%3=10을 3으로 나눈 나머지를 출력 == ${10%3}`)
+
+        console.log(`10**3 10의 3승 출력=${10**3}`)
+        console.log(`10**0.5 10의 제곱근(루트) 출력=${10**0.5}`)
+        
+        
+        console.log(`~~ 소수점 제거! 버림임, 반올림 아님 =${~~3.99}`)
+
+        // 증감연산자
+        let num = 3; // 증감연산자는 할당연산자를 통해 할당된 값에만 사용 가능합니다.
+        console.log("증감연산 : ", ++num); // 4
+        console.log("증감연산 : ", num++); // 5 (출력하고 나서 연산을 합니다!)
+        console.log("증감연산 : ", --num); // 4
+        console.log("증감연산 : ", num--); // 3 (출력하고 나서 연산을 합니다!)
+        
+        // why? 출력해보니 다 4로 출력이 될까요? 답은 증감연산자에 위치에 있습니다. 그러나 여러분들이 이 증감연산자에 위치를 고려하실 필요는 실무에서 거의 발생하지 않습니다.
+        // 아래 둘 다 0 ~ 9까지 출력합니다.
+        for (let i = 0; i < 10; ++i) {
+            console.log(i)
+        }
+        for (let i = 0; i < 10; i++) {
+            console.log(i)
+        }
+
+        // 비교연산자
+        console.log("비교연산 : ", 2 > 3);
+        console.log("비교연산 : ", 2 >= 3);
+        console.log("비교연산 : ", 2 < 3);
+        console.log("비교연산 : ", 2 <= 3);
+        console.log("비교연산 : ", 2 == 3); 
+        console.log("비교연산 : ", 2 === 3);
+        
+        // math
+        document.write(Math.PI, "<br>"); // 3.141592653589793
+        document.write(Math.round(10.49), "<br>"); // 10 (반올림)
+        document.write(Math.round(10.77), "<br>"); // 11 (반올림)
+        document.write(Math.abs(-10), "<br>"); // 10 (절대값)
+        document.write(Math.pow(2, 3), "<br>"); // 8 )승수)
+        document.write(Math.pow(4, 0.5), "<br>"); // 2 (승수)
+        document.write(Math.sqrt(16), "<br>"); // 4 (루트)
+        document.write(Math.random(), "<br>"); // 0 ~ 1 사이의 랜덤한 숫자
+        document.write(Math.ceil(10.1), "<br>"); // 11 (올림)
+        document.write(Math.floor(10.9), "<br>"); // 10 (버림)
+        document.write(Math.max(1, 2, 3, 4, 5), "<br>"); // 5
+        document.write(Math.min(1, 2, 3, 4, 5), "<br>"); // 1
+let test = [1, 2, 3]
+        document.write(Math.max(...test), "<br>"); // 3, 전개구문은 뒤에 있습니다.
+        document.write(Math.min(...test), "<br>"); // 1
+    </script>
+</head>
+<body>
+    
+
+    
+</body>
+</html>
