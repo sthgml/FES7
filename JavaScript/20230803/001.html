@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    논리적으로 잘못된 것들이 많으므로 외울 생각하지말고 ECMAScript 2015 에서 추가한 Number.isNan()을 사용하시는 것이 바람직 합니다. 그냥 isNan()말고
+
+    null 은 초기화하는 목적으로 의도적으로 사용한다 실제 값을 초기화 하기 위한 방법으로 null이든 undefined를 사용하든 상관없습니다. undefined는 아직 값이 할당되지 않았음을 의미합니다.
+
+    함수 가기 전에 해야할 게 있어요. 별표 3개짜리..
+
+    boolean
+    >> big integer
+    >> 
+
+    'hello'를 불리언으로 평가하면 true가 나오므로 if의 괄호 안에 그냥 hello만 넣어도 실행이 된다구여
+
+    '' <- 이거는 실행 되냐 안되냐?
+    안돼여 False임 왜냐? 0임
+    숫자 0도 False임
+    문자열 '0' 말고
+
+    JS의 생각 x -> 가리키던 것 [1,2,3] 배열
+    배열 안에 1,2,3 이 없어져도 [ (...) ] 배열을 그대로 가리키고 있기 땜에 True인 거임 
+
+    null 곱하기 백이나 널 플러스 백 이런것도 한 번 해보세요 널은 숫자랑 곱하면 영으로 나와여 왜져 널이 영인가요? 아뇨 그렇지는 않습니다. ㅋㅋㅋㅋㅋㅋㅋㅋ
+
+    여기서 함수가 무엇이니 모르는 분은 없어요 함수는 중등과정이 나오니까요 f에 x
+
+<script>
+    //isNaN
+    isNaN(NaN); //true
+        isNaN(10); //false
+        isNaN('10'); //false
+        isNaN('10px'); //true
+        isNaN([]); //true
+        isNaN({}); //true
+
+        //Number.isNaN 사용을 권고해드립니다.
+        Number.isNaN(NaN); //true
+        Number.isNaN(10); //false
+        Number.isNaN('10'); //false
+        Number.isNaN('10px'); //false
+        Number.isNaN([]); //false
+        Number.isNaN({}); //false
+        
+document.write(NaN === NaN);
+let t = '2'
+document.write(!isNaN(t)) //x는  숫자인가?
+document.write(' [] : ', Boolean([]), ' 빈문자열 : ', Boolean(''))//이건또 트루네.......
+// BigInt ***
+// JS에서 큰 숫자를 사용할 때에는 BigInt를 사용합니다.
+// BigInt를 여러분 회사에서 사용하지 않을 수도 있습니다.(추가된지 3년 되었습니다.) >>왜냐 배달앱도 예를들어서 요기요 몇년되었을까여? 장고 1점대 7년전 버전을 사용하고 있어요 업ㅇ뎅;ㅣ트를 못해요 추가된지 3년 된 것들은 대부분 큰 기업에서 완전히 뒤집어서 새로운 프로젝트를 하지 않는 한 쓰지 못합니다. 내부적으로 쓰는 로직들이 정해져 있어요. 빅인트가 아니라 큰 숫자를 처리할때는 문자열로 처리할 확률이 높아요. 그리고 이거는 모냐면 number. max safe integer라고 쳐보면 2의 53승 마이너스 일 값을 주는뎅 여기 아래까지만 정상적으로 처리학소 이걸 넘어가면 정상 작동하지 않습니다. 
+// The proposal belongs to ECMAScript 2020, which is the 11th edition
+// console.log(Number.MAX_SAFE_INTEGER)  // 2^53 - 1 그래서 이걸 연산을 해주려면 예를 들어 천을 더한다고 하면 4번째 자리 숫자에 1을 더하고 문자열을 교체해주는 방식이었습니다!
+
+// 서비스는 항상 최악의 상황, 악성 유저에 대비를 하셔야 합니다.
+// 아래처럼 정상 작동이 되지 않는 경우들이 있습니다.
+// 2**53 - 1
+// 9007199254740991
+
+
+9007199254740991n + 1n
+
+BigInt(9007199254740991) + BigInt(1)
+// 9007199254740992n
+
+BigInt(9007199254740991) + BigInt(2)
+// 9007199254740993n
+
+BigInt(9007199254740991) + BigInt(3)
+// 9007199254740994n
+
+BigInt(9007199254740991) + BigInt(4)
+// 9007199254740995n
+
+// 참고삼아 기억해주세요.
+// BigInt(5) + 5n
+// BigInt(5) + 5 // error
+// BigInt(5) / 2n // 2n (소수 표현 안됨)
+// BigInt("10") + BigInt("10") // 큰 값을 정수로 입력받을 때에는 string으로 처리해서 받아야 함
+
+// 공식문서 설명
+/*
+    9007199254740991 이 숫자는 Number.MAX_SAFE_INTEGER와 동일 수 입니다. 말 그대로 안전한 숫자입니다. 만약 BigInt 안의 숫자를 이 숫자보다 큰 숫자로 하였을 경우, 정확한 연산이 안됩니다. MDN 문서를 보시죠.
+
+    
+    분명히 다른 숫자를 더했는데 true가 나옵니다.
+
+    이 '안전하지 않은 숫자'를 BigInt 안에 넣어보겠습니다.
+
+   
+
+    보시는 것처럼 제대로 표현하지 못하고 있어요.
+
+    하지만 BigInt 안에 이 숫자를 문자로 넣어주면
+    
+
+    위와 같이 제대로 표현합니다.
+
+    그래서 BigInt로 큰 숫자를 표현하더라도, 그 안에 들어가는 값은 Number.MAX_SAFE_INTEGER 이하일 때만 안전하고 그 이상의 숫자를 넣으면 정확하게 결과값을 내어주지 않습니다. 따라서 BigInt()를 사용하여 더 큰 숫자를 표현하고 싶을 때에는 문자로 넣어주세요.
+*/
+const x = Number.MAX_SAFE_INTEGER + 1;
+    const y = Number.MAX_SAFE_INTEGER + 2;
+
+    console.log(x === y);
+
+    BigInt(9007199254740993) // 9007199254740992n
+    BigInt(9007199254740995) // 9007199254740996n
+
+    BigInt("9007199254740993") // 9007199254740993n
+    BigInt("9007199254740995") // 9007199254740995n
+
+    // function 땅다지기 (삽, 인원){
+    //     console.log(`${삽}개의 삽을 가지고 ${인원}명이 땅을 다진다!`)
+    //     return '다져진 땅'
+    // }
+
+    // function 말뚝세우기 (파라미터) {}
+    // function 기초콘크리트 () {}
+    // function 철근바인딩 () {}
+    // function 기둥세우기 () {}
+    // function 외벽내벽올리기 () {}
+    // function 지붕올리기 () {}
+
+    // 땅다지기(아규먼트)
+
+    function add(x,y){
+        console.log('x + y = ', x+y)
+        return x+y
+    }
+    function subtract(x,y){
+        console.log('x - y = ', x-y)
+        return x-y
+    }
+    function divide(x,y){
+        console.log('x / y = ', x/y)
+        return x/y
+    }
+    function multiply(x,y){
+        console.log('x * y = ', x*y)
+        return x*y
+    }
+
+    
+    function subtractComma(string) {
+        console.log(string.replaceAll(',',''))
+        console.log(string.split(',').join(''))
+        return string.replace(/,/g, '')
+    }
+    
+    //hello를 3번 출력하고 입력된 문자열을 쪼개서 반환하는 함수를 만들어주세요.
+    //입력 : argument ('world')
+    //출력 : return ['w', 'o', 'r', 'l', 'd']
+
+    function hello3SplitWord (word) {
+        for(i=0; i<3; i++){
+            console.log('hello')
+        }
+        console.log(word.split(''))
+        return word.split('')
+    }
+    let argument = ('world')
+    hello3SplitWord(argument)
+
+    
+    function addAndMultiply (num1, num2) {
+        let sum = add(num1,num2);
+        sum *= sum
+        console.log(sum)
+        return sum
+    }
+
+    addAndMultiply(1,2);
+
+    function quadraticEquation (x) {
+        console.log('quadratic Equation 실행~')
+        return x**2 + 4*x - 12;
+    }
+
+    let q = quadraticEquation(3);
+    console.log(q)
+</script>
+</body>
+</html>

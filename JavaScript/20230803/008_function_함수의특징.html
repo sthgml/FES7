@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수의특징</title>
+</head>
+<body>
+    
+    <script>
+        function add (a,b){
+            return a+b;
+        }
+
+        let result = add(10, 20)
+        console.log(result)
+
+        let sohee = console.log;
+        sohee('hi')
+
+        let sh = add;
+        console.log(sh(1,2));
+
+        function addAndMultiply(x, y) {
+            let sum = add(x, y) * add(x, y)
+            return sum
+        }
+    </script>
+</body>
+</html>
