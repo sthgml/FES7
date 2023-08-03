@@ -39,7 +39,9 @@ main {
     background: #ffffff95;
     border: 1px solid #c4c4c4;
     border-radius: 10px;
-    width: 520px;
+    width: 100%;
+    max-width: 520px;
+    min-width: 275px;
     margin: auto;
     box-sizing: border-box;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -92,7 +94,7 @@ input,
     border-radius: 5px;
     margin: 0 auto;
 
-    width: 472px;
+    width: calc(100% - 48px);
     box-sizing: border-box;
     line-height: 20px;
 }
