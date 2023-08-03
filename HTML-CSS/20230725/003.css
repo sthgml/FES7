@@ -204,7 +204,7 @@ div.user-pw:focus-within::after {
 }
 
 hr {
-    width: 472px;
+    width: calc(100% - 48px);
     margin: 38px auto 29px;
 }
 
