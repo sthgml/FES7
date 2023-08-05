@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>재귀함수</title>
+</head>
+<body>
+    <script>
+        function factorial (n) {
+            if(n == 1){
+                return 1;
+            }
+            return n * factorial(n-1);
+        } //내려갔다가 올라가야하고 재귀함수는 권하지 않습니다. 반복문으로 해결할 수 있으면 재귀보다는 반복문을 사용하십시오. 다 가능합니다.
+
+        factorial(5);
+
+        factorial(5) == 5 * factorial(4)
+        factorial(4) == 4 * factorial(3)
+        factorial(3) == 3 * factorial(2)
+        factorial(2) == 2 * factorial(1)
+        factorial(1) == 1
+    </script>
+</body>
+</html>
