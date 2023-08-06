@@ -19,6 +19,10 @@ h1, h2, h3, p, mark {
   color: inherit;
 }
 
+p {
+  display: inline-block;
+}
+
 ul, li {
   list-style: none;
 }
@@ -28,15 +32,16 @@ img {
 }
 /* ---- reset.css ---- */
 
-
 /* ---- bg ---- */
 section.portfolio {
   width: 1080px;
-  height: 100vh;
-  margin: auto;
+  /* height: 100vh; */
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  gap: 100px;
+  padding: 100px;
 }
 /* ---- bg ---- */
 
@@ -60,15 +65,21 @@ section.portfolio {
   box-shadow: inset 0 -0.5em 0 orangered;
 }
 
-.header div.stroke {
+.header .desc::before {
+  content: " ";
   width: 30%;
-  height: 1px;
-  background-color: #bd8fe8;
+  height: 2px;
+  background-color: currentColor;
+  /* currentColor = 부모요소의 폰트색(color속성)을 물려받음 */
 }
 
 .header .desc {
   padding-right: 20%;
   color: #bd8fe8;
+  /* dsipaly flex를 해주면 자식요소인 before after가상요소에도 width height를 지정할 수 있음 */
+  display: flex;
+  align-items: center;
+  gap: 32px;
 }
 /* ---- header ---- */
 
@@ -89,8 +100,15 @@ section.portfolio {
   width: 26%;
   flex-shrink: 0;
   position: relative;
+
+ display: flex;
+ align-items: center;
+ justify-content: center;
 }
 
+/* 이미지가 계속 수정되어야 하는 경우,
+요소마다 들어가는 이미지가 다른 경우에는
+css 보다는 html에서 수정할 수 있도록 img 요소 써주기 */
 .img-wrapper img {
   height: 100%;
   object-fit: cover;
@@ -101,19 +119,25 @@ section.portfolio {
   width: 100%;
   height: 100%;
   position: absolute;
+  /* 1. contents 크기만큼으로 width height 줄어듦
+  2. 위치는 viewport 기준으로 (body아님) top, left 위치이동 */
   background-color: #67339992;
 }
 
-.img-wrapper span {
+.img-wrapper h2 {
   font-size: 30px;
   color: #fff;
   position: absolute;
-  top: calc(50% - 0.5em);
-  left: calc(50% - 1em);
+  /* top: calc(50% - 0.5em);
+  left: calc(50% - 1em); */
 }
 
-.feature-list>li:nth-child(even) .img-wrapper{
+/* .feature-list>li:nth-child(even) .img-wrapper{
   order: 2;
+} */
+
+.feature-list>li:nth-child(even) .feature {
+  flex-direction: row-reverse;
 }
 
 .desc {
@@ -122,7 +146,7 @@ section.portfolio {
   flex-grow: 2;
 }
 
-.desc h2 {
+.desc h3 {
   font-size: 18px;
   font-weight: bold;
   color: #673399;
@@ -133,19 +157,17 @@ section.portfolio {
 .desc li{
   position: relative;
   margin-top: 10px;
+  margin-left: 20px;
 }
 
 .desc li::before{
   content: '';
   width: 10px;
   height: 10px;
-  position: absolute;
-  top: 0.5em;
-  left: 0.5em;
+  /* position: absolute; */
+  display: inline-block;
+  margin-left: calc( -1 * ( 10px + 10px ));
   border-radius: 100%;
   background-color: #bd8fe8;
 }
 
-.desc li p {
-  margin-left: 2em;
-}
