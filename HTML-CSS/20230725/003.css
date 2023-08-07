@@ -9,11 +9,11 @@ body {
     font-family: 'Spoqa Han Sans Neo', 'sans-serif';
     font-size: 16px;
     font-weight: 500;
-    background: url(./images/modal.png) no-repeat 0 0/520px;
-    /* display: flex;
+    /* background: url(./images/modal.png) no-repeat 0 0/520px; */
+    display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; */
+    min-height: 100vh;
 }
 
 h1,
@@ -46,7 +46,7 @@ main {
     width: 100%;
     max-width: 520px;
     min-width: 275px;
-    /* margin: auto; */
+    margin: auto;
     box-sizing: border-box;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
