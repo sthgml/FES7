@@ -211,6 +211,9 @@ div.user-pw:focus-within::after {
 hr {
     width: calc(100% - 48px);
     margin: 38px auto 29px;
+    height: 1px;
+    background-color: #c4c4c4;
+    border: 0;
 }
 
 .div-line-or {
