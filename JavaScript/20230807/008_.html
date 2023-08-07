@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <div id="id"></div>
+
+    <script>
+        let s = '';
+        fetch('https://test.api.weniv.co.kr/mall')
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(v => {
+                s += `
+                <section>
+                    <img src="https://test.api.weniv.co.kr/${v['thnumbnailImg']}">
+                    <h2>${v['productName']}</h2>
+                    <p>${v['price']}</p>
+                </section>
+                `
+            })
+        
+            document.write(s)
+        }).then(()=>{
+            console.log(s);
+            document.getElementById('app').innerHTML = s
+        })
+    </script>
+</body>
+</html>
