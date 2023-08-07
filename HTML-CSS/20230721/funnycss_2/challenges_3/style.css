@@ -41,7 +41,7 @@ section.portfolio {
   flex-direction: column;
   justify-content: space-evenly;
   gap: 100px;
-  padding: 100px;
+  padding: 100px 0;
 }
 /* ---- bg ---- */
 
@@ -144,6 +144,8 @@ css 보다는 html에서 수정할 수 있도록 img 요소 써주기 */
   font-size: 14px;
   padding: 24px;
   flex-grow: 2;
+  --bullet-size : 10px;
+  --font-size-14 : 14px;
 }
 
 .desc h3 {
@@ -158,16 +160,19 @@ css 보다는 html에서 수정할 수 있도록 img 요소 써주기 */
   position: relative;
   margin-top: 10px;
   margin-left: 20px;
+  font-size: var(--font-size-14);
+  line-height: var(--font-size-14);
 }
 
 .desc li::before{
   content: '';
-  width: 10px;
-  height: 10px;
-  /* position: absolute; */
-  display: inline-block;
-  margin-left: calc( -1 * ( 10px + 10px ));
+  width: var(--bullet-size);
+  height: var(--bullet-size);
+  position: absolute;
+  /* display: inline-block; */
+  margin-left: calc( -1 * var(--bullet-size) * 2);
   border-radius: 100%;
   background-color: #bd8fe8;
+  top: calc( var(--font-size-14) - ( var(--bullet-size) ) );
 }
 

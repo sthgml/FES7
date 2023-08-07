@@ -21,20 +21,28 @@
         
         <h2 class="welcome">위니브에서 여러분의 궁금증을 해결하세요! :)</h2>
 
-        <div class="user-id">
-            <input type="text" name="user-id" id="user-id" class="user-id" placeholder="아이디" required>
-            <label for="user-id"></label>
-        </div>
-        <div class="user-pw"><input type="password" name="user-pw" id="user-pw" class="user-pw" placeholder="비밀번호" required></div>
-
-        <input type="checkbox" name="btn-keep-login" id="btn-keep-login" class="btn-keep-login a11y-hidden">
-        <label for="btn-keep-login" class="label-keep-login">로그인 상태 유지</label>
-
-        <button type="submit" class="btn-login">로그인</button>
+        <form action="#" method="post">
+            <div class="user-id">
+                <input type="text" name="user-id" id="user-id" class="user-id" placeholder="아이디" required>
+                <label for="user-id"></label>
+            </div>
+            <div class="user-pw"><input type="password" name="user-pw" id="user-pw" class="user-pw" placeholder="비밀번호" required></div>
+    
+            <input type="checkbox" name="btn-keep-login" id="btn-keep-login" class="btn-keep-login a11y-hidden">
+            <label for="btn-keep-login" class="label-keep-login">로그인 상태 유지</label>
+    
+            <button type="submit" class="btn-login">로그인</button>
+        </form>
 
         <div class="link-container">
-            <a href="#" class="link-join">회원가입</a>
-            <a href="#" class="link-find">아이디/비밀번호 찾기</a>
+            <ul>
+                <li class="list-link-join">
+                    <a href="#" class="link-join">회원가입</a>    
+                </li>
+                <li class="list-link-find">
+                    <a href="#" class="link-find">아이디/비밀번호 찾기</a>
+                </li>
+            </ul>
         </div>
 
         <div class="division-part">
@@ -42,7 +50,7 @@
             <p class="div-line-or">또는</p>
         </div>
 
-        <ul>
+        <ul class="social-login-list">
             <li><a href="#" class="btn-social-login google">구글 계정으로 로그인</a></li>
             <li><a href="#" class="btn-social-login facebook">페이스북 계정으로 로그인</a></li>
             <li><a href="#" class="btn-social-login naver">네이버 계정으로 로그인</a></li>

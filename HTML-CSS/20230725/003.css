@@ -9,7 +9,11 @@ body {
     font-family: 'Spoqa Han Sans Neo', 'sans-serif';
     font-size: 16px;
     font-weight: 500;
-    /* background: url(./images/modal.png) no-repeat 0 0/520px; */
+    background: url(./images/modal.png) no-repeat 0 0/520px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; */
 }
 
 h1,
@@ -42,11 +46,10 @@ main {
     width: 100%;
     max-width: 520px;
     min-width: 275px;
-    margin: auto;
+    /* margin: auto; */
     box-sizing: border-box;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
-
 }
 
 /* ---- header ----  */
@@ -97,6 +100,8 @@ input,
     width: calc(100% - 48px);
     box-sizing: border-box;
     line-height: 20px;
+
+    cursor: pointer;
 }
 
 input {
@@ -105,7 +110,7 @@ input {
 
 input.user-id {
     position: relative;
-
+    cursor: text;
 }
 
 input.user-id:focus,
@@ -177,11 +182,11 @@ div.user-pw:focus-within::after {
     background-color: #2F80ED;
     border: 1px solid #2F80ED;
     color: #FFF;
-    margin-top: 22px;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
-.link-container {
+.link-container ul {
     color: #767676;
     font-size: 14px;
     font-weight: 400;
@@ -191,7 +196,7 @@ div.user-pw:focus-within::after {
     gap: 12px;
 }
 
-.link-join::after {
+.list-link-join::after {
     content: '|';
     margin-left: 12px;
 }
@@ -224,9 +229,9 @@ hr {
 /* ----  중간 구분선 ---- */
 
 /* ----  소셜 로그인 ---- */
-li {
+.social-login-list li {
     color: #767676;
-    margin: 11px auto;
+    margin: 10px auto;
     position: relative;
 
     text-align: center;
@@ -282,7 +287,7 @@ li {
     background-position:  -52px -10px;
 }
 
-li:last-child {
+.social-login-list li:last-child {
     margin-bottom: 25px;
 }
 /* ----  소셜 로그인 ---- */
