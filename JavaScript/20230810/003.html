@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array method - twice~</title>
+</head>
+<body>
+    <script>
+        // 다음 배열에서 score 의 값들만 모아 새로운 배열로 반환해봅시다! 이때 score 값에 하트를 추가합니다.
+
+        // const studentList = [
+        //     {
+        //         id: 1, name: '원범', score: 'great'
+        //     },
+        //     {
+        //         id: 2, name: '김진', score: 'so cute'
+        //     },
+        //     {
+        //         id: 3, name: '혜원', score: 'good good'
+        //     },
+        //     {
+        //         id: 4, name: '재현', score: 'too cool for school'
+        //     }]
+        // const scores = studentList.map(v=>v.score+'💖');''
+
+        //로또 번호 뽑기 문제
+            //난수 출력 -> 파스인트 -> 범위 제한 (1~45) -> 중복 확인 로또 번호 저장 배열에 인클루드? 확인 // 아니면 추가
+            let lottoNums = [];
+            let lottoNum = 0;
+
+            while(lottoNums.length != 6){
+                lottoNum = parseInt((Math.random() * 45+1));
+                if(!lottoNums.includes(lottoNum)){
+                    lottoNums.push(lottoNum);
+                }
+            }
+
+            console.log(...lottoNums)
+    </script>
+</body>
+</html>
