@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this</title>
+</head>
+<body>
+    this는 자기를 가지고 있는 함수를 호출하는 <strong>객체</strong>
+    <button id="btn1">클릭해봐요!</button>
+    <button id="btn2">클릭해봐요!</button>
+    <script>
+        function a() {
+            console.log(this)
+        }
+
+        let myobj = {
+            print : function () {
+                console.log(this)
+            }
+        }
+
+        a();
+        myobj.print();
+        let test2 = myobj.print(); //이거랑
+
+        let myObj = {
+            val1: 100,
+            func1: function () {
+                console.log(this);
+            }
+        }
+
+        let test = myObj.func1; // func1이라는 함수를 test라는 변수에 선언한 것
+        test() // test라는 프린트 함수를 복사한 함수가 실행된 것 어디서? 가장 바깥 = window에서! 
+
+        let button1 = document.getElementById("btn1");
+        button1.addEventListener("click", myObj.func1);
+        let button2 = document.getElementById("btn2");
+        button2.addEventListener("click", test);
+
+        var peter = {
+            name : 'Peter Parker',
+            sayName : function(감탄사){    
+                console.log(this.name + 감탄사);
+            },
+            sayName2 : function(is, is2){    
+                console.log(this.name+ ' is '+ is + ' or ' + is2);
+            }
+        }
+        var bruce = {
+            name : 'Bruce Wayne',
+        }
+
+
+        peter.sayName.call(bruce, "!"); //아규먼트 안에 this로 사용할 객체를 전달해줌. sayName에 필요한 아규먼트도 2번째 아규먼트로 전달
+        peter.sayName2.apply(bruce,['batman', 'richman']); //2개 이상의 아규먼트가 필요하다면 디스트럭쳐링 을 이용합시다.
+        </script>
+</body>
+</html>
