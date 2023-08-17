@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>constructor</title>
+</head>
+<body>
+    <h1>생성자함수 Constructor</h1>
+    - 생성자 함수를 사용하는 이유
+    - 동일한 프로퍼티를 가지는 객체 생성
+    - prototype을 이용하여 메모리 효율을 높일 수 있음
+    <pre>
+        const Cook = function (one, two, three, four) {
+            this.one = one
+            this.two = two
+            this.three = three
+            this.four = four
+        }
+
+        const cook1 = new Cook(1, 2, 3, 4)
+    </pre>
+    <script>
+        let book = {
+    책이름: '알잘딱깔센 JavaScript 비동기 프로그래밍 - 비동기 너 내 동기가 돼라',
+    책가격: 0,
+    저자: ['구나영', '김경림'],
+    출판일: '2022.08.12'
+}
+// 책이 100권이라면?
+
+
+function Book(책이름, 책가격, 저자, 출판일){
+    this.책이름 = 책이름
+    this.책가격 = 책가격
+    this.저자 = 저자
+    this.출판일 = 출판일
+}
+
+let book1 = Book('JS', 0, ['이호준'], '2099.10.30') 
+let book2 = Book('Python', 100000, ['이호준'], '2099.11.30')
+// book1과 book2는 반환값이 나와버림
+let book3 = new Book('React', 1000000, ['이호준'], '2099.12.30')
+
+console.log(book1, book2, book3)
+    </script>
+</body>
+</html>

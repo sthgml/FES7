@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hoisting</title>
+</head>
+<body>
+    <h1>hoisting</h1> 이란 한국어로 번역하면 끌어올리기 로 변수나 함수 선언문이 해당 스코프의 최상단으로 끌어올려지는 현상을 말합니다. 즉, 코드에서 변수나 함수를 선언하기 전에 해당 변수나 함수를 사용할 수 있는 것 처럼 보이는 현상을 말합니다.
+
+    <h2>변수</h2>
+    <h4>실제로 작성된 코드</h4>
+    <pre>
+        console.log(x);
+        console.log(y);
+        console.log(z);
+
+        var x = 1;
+        let y = 10;
+        const z = 100;
+    </pre>
+    <script>
+        console.log(x);
+        console.log(y);
+        console.log(z);
+
+        var x = 1;
+        let y = 10;
+        const z = 100;
+    </script>
+    <h4>코드가 해석된 방식</h4>
+    <pre>
+        var x;
+        console.log(x);
+        console.log(y);
+        console.log(z);
+
+        var x = 1;  // Undefined
+        let y = 10; // error : Cannot access 'y' before initialization
+        const z = 100;
+    </pre>
+    var x 는 hoisting 현상에 의해서 스크립트의 맨 위로 끌어올려졌음.
+    원래 선언되지 않은 변수는 is not defined 라고 뜨는데 선언 전에 '접근할 수 없다'는 에러를 띄움
+    즉, 호이스팅이 되긴 했지만 TDZ라는 곳에 들어가있어서 '접근'이 안됨
+    <blockquote style="background-color: aliceblue;">비교적 최근에 등장한 let, const, class를 이용한 선언문은 <strong>일시적 사각지대(Temporal Dead Zone)</strong>라는것을 만들어서 호이스팅이 되었지만 안된 것처럼 동작하게 합니다. 그 이유는 호이스팅은 <strong>개발자가 의도하지 않은 결과를 만들기 때문에, 코드의 가독성과 유지보수성을 해치</strong>므로, 호이스팅이 발생하지 않도록 하기 위해서입니다.</blockquote>
+    
+    <h2>함수</h2>
+    함수는 밑에서 선언되어도 위에서 실행도 됨!
+    <pre>
+        test()
+
+        function test () {
+            console.log('test')
+        }
+    </pre>
+    <h4>실행 결과</h4>
+    <pre>
+        > 'test'
+    </pre>
+    <h4>예방법</h4>
+    <pre>
+        test()
+
+        const test = function () {
+            console.log('test')
+        }
+    </pre>
+    <h4>실행결과</h4>
+    <script>
+        test()
+
+        const test = function () {
+            console.log('test')
+        }
+    </script>
+    <pre style="color:red;">
+        > Cannot access 'test' before initialization
+    </pre>
+</body>
+</html>

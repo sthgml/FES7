@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map and Set</title>
+</head>
+<body>
+    <h1>Map and Set</h1>
+    <h2>map</h2>
+    <script>
+        let m = new Map();
+        m.set('one', '1') //'one' is gonna be a key for the value, '1'
+    </script>
+    <h2>set</h2>
+    중복 허용 안함
+    map처럼 for of를 사용해서 내부를 순환할 수도 있습니다.
+    <script>
+        let s = new Set('abc ded ded ed'.split(' '));
+        s.add('f');
+        //있던 거 또 넣으려 그러면 무시
+        s.add('f')
+    </script>
+</body>
+</html>
