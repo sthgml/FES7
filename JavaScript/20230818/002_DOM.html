@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1>DOM</h1>dom = document, window 객체 전역객체 브라우저 
+    bom = 브라우저에게 무언가 요청할 수 있읍니다.
+    예를들어 .. location이라는 객체 안에 려러가지 정보들이 이쓴ㄴ데,
+    브라우저를 통해서 현재 보고있는 정보들을 얻을 수 있습니다.
+    window의 navigator = browser의 app version, app name 등을 알 수 있습니다.
+    device-pixel-ratio 를 통해 사용하고 있는 모니터의 픽셀밀도가 얼마인지 알 수 있읍니다.
+    <ul>
+        <li class="list-item1" id="hello">안녕</li>
+        <li>안녕</li>
+        <li>안녕</li>
+    </ul>
+    <!-- <script>
+        console.log(document.getElementsByTagName('li'))
+        document.getElementById("hello").innerHTML = '안녕못해!'
+    </script> -->
+
+    <h3>예제</h3>
+    아래 HTML에서 유산슬과 김치찌개를 선택해보세요
+        점심 식단
+        <article id="container">
+            <ul>
+                <li>탕수육</li>
+                <li class="item-second">유산슬</li>
+                <li>짜장면</li>
+            </ul>
+        </article>
+        저녁 식단
+        <article>
+            <ul>
+                <li>된장국</li>
+                <li class="item-second">김치찌게</li>
+                <li>해장국</li>
+            </ul>
+        </article>
+    <pre>
+        console.log(document.getElementsByClassName("item-second")[0]);
+        console.log(document.getElementsByTagName("li")[0])
+        document.getElementsByTagName("li")[0].innerHTML += " 못해!!"
+        document.getElementsByClassName("item-second")[0].innerHTML += "[품절]";
+        document.getElementsByClassName("item-second")[1].innerHTML += "[품절]";
+    </pre>
+    <script>
+        console.log(document.getElementsByClassName("item-second")[0]);
+        console.log(document.getElementsByTagName("li")[0]);
+        document.getElementsByTagName("li")[0].innerHTML += " 못해!!"
+        document.getElementsByClassName("item-second")[0].innerHTML += "[품절]";
+        document.getElementsByClassName("item-second")[1].innerHTML += "[품절]";
+        
+    </script>
+
+    <h3>querySelector</h3>
+    querySelector(이 안에는 css 선택자)
+    선택자를 넣을 수 있어용~!~!
+    가장 처음에 나온거 하나만 반환합니다.
+    여러개 반환하고 싶으면
+    querySelectorAll을 사용합시다
+    <pre>
+        document.querySelectorAll('.item-second')[1].innerHTML += ' 1년만 기다려 주세요'
+    </pre>
+    <script>
+        document.querySelectorAll('.item-second')[1].innerHTML += ' 1년만 기다려 주세요~!~!'
+    </script>
+    
+    <h3>html collection</h3>
+    <script>
+        const lis = document.getElementsByTagName('li') //HTMLCollection 라이브돔 - 리스트가 추가되면 바로 반영됩니다. 하지만 재현강사님의 타입은 아님.. // 리액트가 탄생하게 된 계기가 돔의 문제점 때문.. //그래서 등장한게 template literal .. 아무튼 그렇다 html collection이라는 것도 있고, node list 도 있다~
+        
+        const lis2 = document.querySelectorAll('li')
+
+        const container = document.querySelector('#container ul')
+        container.append(document.createElement('li'))
+    </script>
+</body>
+</html>

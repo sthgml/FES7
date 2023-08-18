@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addEventListener</title>
+    <style>
+        @font-face {
+                font-family: 'Pretendard';
+                src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+                    format('woff');
+                font-weight: 400;
+                font-style: normal;
+        } 
+        
+        body {
+            font-family: "Pretendard";
+        }
+        
+        ul, li {
+            list-style-type: none;
+            padding: 0;
+        }
+        .blue {
+            background-color: royalblue;
+            color: aliceblue;
+        }
+
+        .red {
+            background-color: salmon;
+        }
+
+        .yellow {
+            background-color: sandybrown;
+        }
+
+        .green {
+            background-color: seagreen;
+        }
+
+        .a11y-hidden {
+            clip: rect(1px, 1px, 1px, 1px);
+            clip-path: inset(50%);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+        }
+
+        [class^='btn'] {
+            font-weight: bold;
+            width: 100%;
+            font: inherit;
+            line-height: 20px;
+            padding: 14px;
+            border-radius: 50px;
+            border: 0;
+            background: linear-gradient(#66656b, #272424);
+            box-shadow: inset -4px -4px 0 #201f1f;
+            color: #d9d8e2;
+        }
+        
+        [class^='btn']:hover  {
+            background: linear-gradient(#8b8991, #3d3838);
+            box-shadow: inset -4px -4px 0 #413e3e;
+            color: white;
+        }
+
+        [class^='btn']:active  {
+            background: linear-gradient(#3d3838, #8b8991);
+            box-shadow: inset -1px -1px 0 #413e3e;
+            color: white;
+            
+        }
+
+        .color-paper {
+            transition: all 0.3s;
+        }
+
+    </style>
+</head>
+<body>
+    <button>버튼</button>
+    <script>
+        const btn = document.querySelector('button')
+        // btn.addEventListener(type, listener함수)
+        // type - 자리에는 mouseover, wheel, keydown등이 들어갈 수 있습니다. 엄청 많이 ~!~! 있음 게임패드를 연결했을 때와 관련된 api, fullscreen, form, focus, clipboard, gesture도 있음~ 멋지다~
+
+        btn.addEventListener('click', function (){
+            console.log('a button has been clicked')
+        })
+    </script>
+
+    <h3>class 제어</h3>
+    <button id="make-this-blue">Make me Blue!</button>
+    <script>
+        const blueBtn = document.querySelector('#make-this-blue');
+        console.log(blueBtn);
+        blueBtn.addEventListener('click' , function () {
+            blueBtn.classList.toggle("blue");
+        }) //classList.toggle("blue") - 있으면 제거하고, 없으면 붙여줘라
+    </script>
+    
+    <h3>예제</h3>
+    <p>아래 세가지 버튼을 클릭하면 색깔이 바뀌는 색종이를 만들어보세요</p>
+    
+    <ul style="display: flex; justify-content: center; gap: 35px;">
+        <li>
+            <button class="btnColors">빨강</button>
+        </li>
+        <li>
+            <button class="btnColors">노랑</button>
+        </li>
+        <li>
+            <button class="btnColors">초록</button>
+        </li>
+    </ul>
+    <div class="color-paper blue" style="
+    width: 500px; 
+    height: 500px; 
+    margin: 0 auto;"><span class="a11y-hidden">color of this part will be changed</span></div>
+    <script>
+        const btnColors = document.querySelectorAll(".btnColors")
+        const btnR = btnColors[0];
+        const btnY = btnColors[1];
+        const btnG = btnColors[2];
+        const paper = document.querySelector(".color-paper")
+        btnR.addEventListener('click', function(){
+            if(paper.classList.contains("green")){
+                paper.classList.toggle("green")
+            }else if(paper.classList.contains("yellow")){
+                paper.classList.toggle("yellow");
+            }
+            paper.classList.toggle("red")
+        })
+        btnY.addEventListener('click', function(){
+            if(paper.classList.contains("green")){
+                paper.classList.toggle("green")
+            }else if(paper.classList.contains("red")){
+                paper.classList.toggle("red");
+            }
+            paper.classList.toggle("yellow")
+        })
+        btnG.addEventListener('click', function(){
+            if(paper.classList.contains("yellow")){
+                paper.classList.toggle("yellow")
+            }else if(paper.classList.contains("red")){
+                paper.classList.toggle("red");
+            }
+            paper.classList.toggle("green")
+        })
+    </script>
+</body>
+</html>

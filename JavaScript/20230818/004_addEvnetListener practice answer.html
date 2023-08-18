@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addEvnetListener practice answer</title>
+    <style>
+        .canvas{
+            width: 100px;
+            height: 100px;
+        }
+        .btn-red { background-color: red;}
+        .btn-yellow { background-color: yellow;}
+        .btn-green { background-color: green;}
+    </style>
+</head>
+<body>
+    <div class="canvas"></div>
+    <ul>
+        <li><button type="button" class="btn-red">빨강</button></li>
+        <li><button type="button" class="btn-yellow">노랑</button></li>
+        <li><button type="button" class="btn-green">초록</button></li>
+    </ul>
+
+
+
+    <script>
+        const canvas =document.querySelector('.canvas'),
+        btnRed = document.querySelector(".btn-red"),
+        btnYellow = document.querySelector(".btn-yellow"),
+        btnGreen = document.querySelector(".btn-green"),
+        btns = document.querySelectorAll("[class^='btn']");
+
+        btns.forEach(item=>{
+            item.addEventListener('click', () => {
+                canvas.classList.remove('yellow', 'red', 'green');
+                // if (item.classList.contains('btn-red')) { //클릭된 아이템의 클래스가 btn-red라면........
+                //     canvas.classList.add('red')
+                // }else if(item.classList.contains('btn-yellow')){
+                //     canvas.classList.add('yellow')
+                // }else if(item.classList.contains('btn-green')){
+                //     canvas.classList.add('green')
+                // }
+                canvas.className = 'canvas';
+                canvas.classList.add(item.className)
+            })
+        })
+
+        // btnRed.addEventListener('click', function(){
+        // canvas.classList.remove('yellow', 'red', 'green')
+        //     canvas.classList.add('red');
+        // })
+        // btnYellow.addEventListener('click', function(){
+        // canvas.classList.remove('yellow', 'red', 'green')
+        //     canvas.classList.add('yellow');
+        // })
+        // btnGreen.addEventListener('click', function(){
+        // canvas.classList.remove('yellow', 'red', 'green')
+        //     canvas.classList.add('green');
+        // })
+    </script>
+</body>
+</html>

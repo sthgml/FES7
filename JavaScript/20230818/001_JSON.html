@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json 배우기</title>
+</head>
+<body>
+    <h1>JSON</h1>
+    <h2>깊은복사 parse & stringify</h2>
+    <pre style="background-color: rgb(53, 53, 53); color: aliceblue;">
+        const json = '{"result":true, "count":42}'
+        //json은 위의 변수에 선언된 내용처럼 문자열 기반의 데이터입니다.
+        const objJson = JSON.parse(json)
+        //parse를 해주면 문자열을 객체로 바꾸어 줍니다!
+        const strJson = JSON.stringify(json)
+        //stringify를 해주면 다시 문자열로 바꿔줍니당
+
+        const obj2 = {result : true, count: 42};
+        const json2 = JSON.stringify(obj2)
+
+        //json 을 활용한 깊은복사
+        const obj3 = {one:1, two:2};
+        const obj4 = obj3; //얕은복사, 둘 중 하나를 수정하면 둘 다 수정된다.
+        //...전개구문 활용한 깊은복사,
+        const obj5 = {...obj3};
+        // > 결과
+        // obj4.one = 10 
+        // > 10
+        // obj4 
+        // > {one: 10, two: 2}
+        // obj3 
+        // > {one: 10, two: 2} 4 바꾸면 3도 바뀜
+        // obj5
+        // > {one: 1, two: 2} 안바뀜
+
+        //뎁스가 한 단 계만 깊어져도 전개 구문이 안먹힘
+        obj6 = {one:1, two:2, three: {three:3}};
+        obj7 = {...obj6};
+        obj6.three.three = 6;
+        // > 결과
+        // obj6 > {one: 1, two: 2, three: {three: 6}}
+        // obj7 > {one: 1, two: 2, three: {three: 6}}
+        let l = [1, 2, 3]
+        let ll = JSON.stringify(l) //문자열을 만들고
+        let lll =JSON.parse(JSON.stringify(l)) //만든 문자열을 다시 객체로 만들어조! 하면 됨
+        //새 메서드 나옴 이렇게 할 필요 없어짐~</pre>
+    <script>
+        const json = '{"result":true, "count":42}'
+        //json은 위의 변수에 선언된 내용처럼 문자열 기반의 데이터입니다.
+        const objJson = JSON.parse(json)
+        //parse를 해주면 문자열을 객체로 바꾸어 줍니다!
+        const strJson = JSON.stringify(json)
+        //stringify를 해주면 다시 문자열로 바꿔줍니당
+
+        const obj2 = {result : true, count: 42};
+        const json2 = JSON.stringify(obj2)
+
+        //json 을 활용한 깊은복사
+        const obj3 = {one:1, two:2};
+        const obj4 = obj3; //얕은복사, 둘 중 하나를 수정하면 둘 다 수정된다.
+        //...전개구문 활용한 깊은복사,
+        const obj5 = {...obj3};
+        // > 결과
+        // obj4.one = 10 
+        // > 10
+        // obj4 
+        // > {one: 10, two: 2}
+        // obj3 
+        // > {one: 10, two: 2} 4 바꾸면 3도 바뀜
+        // obj5
+        // > {one: 1, two: 2} 안바뀜
+
+        //뎁스가 한 단 계만 깊어져도 전개 구문이 안먹힘
+        obj6 = {one:1, two:2, three: {three:3}};
+        obj7 = {...obj6};
+        obj6.three.three = 6;
+        // > 결과
+        // obj6 > {one: 1, two: 2, three: {three: 6}}
+        // obj7 > {one: 1, two: 2, three: {three: 6}}
+        let l = [1, 2, 3]
+        let ll = JSON.stringify(l) //문자열을 만들고
+        let lll =JSON.parse(JSON.stringify(l)) //만든 문자열을 다시 객체로 만들어조! 하면 됨
+        //새 메서드 나옴 이렇게 할 필요 없어짐~
+
+    </script>
+
+<h2>ajax 쓰는 법..</h2>
+heroes.json을 받아와 볼게요
+<pre style="background-color: rgb(53, 53, 53); color: aliceblue;">
+    function xhrRequest () {
+        const requestObj = new XMLHttpRequest();
+        //라인이 뚫렷음을 알리자
+        requestObj.open('GET','heroes.json');
+        // requestObj.open('통신방법(메서드)', '해당서버의 주소')
+        requestObj.send();
+        requestObj.onreadystatechange = () => {
+            if(requestObj.readyState === 4 && requestObj.status === 200){
+                console.log(JSON.parse(requestObj.responseText)) //여기에 heroes.json이 담겨있을 것.
+            }
+        }
+        //뭔가 변화가 감지되면 뒤의 함수를 실행시킵니다.
+    }
+    // 이 함수를 실행시키면 리스폰스로 json파일이 출력됩니다.!!!
+    xhrRequest ()
+</pre>
+<p>
+    통신을 수행할 객체가 필요해요. <br>
+    이 안에 통신에 필요한 메서드들이 있음<br>
+    객체를 생성할 땐 항상 생성자함수를 이용하자<br>
+    위의 xhrRequest는 오래된거라서 코드가 긴데 요새는 훨씬 짧은 코드로 가능합니다! <br>
+</p>
+<script>
+    function xhrRequest () {
+        const requestObj = new XMLHttpRequest();
+        //라인이 뚫렷음을 알리자
+        requestObj.open('GET','heroes.json');
+        // requestObj.open('통신방법(메서드)', '해당서버의 주소')
+        requestObj.send();
+        requestObj.onreadystatechange = () => {
+            if(requestObj.readyState === 4 && requestObj.status === 200){
+                console.log(JSON.parse(requestObj.responseText)) //여기에 heroes.json이 담겨있을 것.
+            }
+        }
+        //뭔가 변화가 감지되면 뒤의 함수를 실행시킵니다.
+    }
+    // 이 함수를 실행시키면 리스폰스로 json파일이 출력됩니다.!!!
+    xhrRequest ()
+</script>
+
+ps. 최신 코드
+<pre style="background-color: rgb(53, 53, 53); color: aliceblue;">
+    async function fetchRequest(){
+        const response = await fetch();
+        const jsonData = await response.json();
+    }
+</pre>
+<script>
+    async function fetchRequest(){
+        const response = await fetch();
+        const jsonData = await response.json();
+    }
+</script>
+</body>
+</html>
