@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>adjacent</title>
+</head>
+<body>
+    <article>
+        <h1>안녕하세요 저는 박소희입니다.</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non mollitia voluptatem soluta dolore, quo aspernatur sunt enim veritatis obcaecati eum similique deleniti voluptates deserunt repellat, consequuntur aliquid asperiores repudiandae repellendus.</p>
+        <strong>감사합니다!</strong>
+    </article>
+    <strong class="sayHi">
+        /// 반갑습니다. ///
+    </strong>
+    <script>
+        const sayHi = document.querySelector('.sayHi');
+        sayHi.insertAdjacentHTML('beforebegin', '<span> 시작해볼까~ </span> ') //태그 이전 - 태그 열기 전이라서 strong적용 안됨
+        sayHi.insertAdjacentHTML('afterbegin', '<span> 안녕! </span>'); //여는 태그 다음 - 태그 안쪽이라서 strong 적용됨
+        sayHi.insertAdjacentHTML('beforeend', '<span> 시작해볼까~ </span> ') //닫는 태그 이전 - 태그 닫기 전이라서 strong적용 됨
+        sayHi.insertAdjacentHTML('afterend', '<span> 안녕! </span>'); //닫는 태그 다음 - 태그 바깥쪽이라서 strong 적용 안됨
+
+        const container = document.querySelector('article')
+        container.firstElementChild // h1
+        container.firstChild // #text
+        container.lastElementChild // strong
+        container.nextElementSibling // (container+) strong.sayHi
+        container.previousElementSibling // 없음
+        container.children // [h1, p, strong]
+        container.parentNode // body
+
+        container.querySelector('strong').closest('article') //클로지스트 메서드 : "자기 자신"부터 시작해서 부모까지 타고 올라가면서 가장 가까운 요소를 찾습니다. + 형제요소는 탐색하지 않습니다!
+    </script>
+</body>
+</html>

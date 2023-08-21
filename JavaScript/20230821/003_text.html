@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>content</title>
+    <style>
+        .hidden {
+            clip: rect(1px, 1px, 1px, 1px);
+            clip-path: inset(50%);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <figure>
+        <img src="" alt="청바지 삼종세트">
+        <figcaption>
+            <p>29900원</p>
+            <span class="hidden">
+                vip 회원이라면 얼마~
+            </span>
+        </figcaption>
+        <input type="text">
+    </figure>
+
+    <p></p>
+    <input class="input2" type="text">
+    <button>Write Something!</button>
+    
+    <script>
+        //innerText와 textContent와의 차이점
+        const cost = document.querySelector("figcaption")
+        console.log('textContent : ', cost.textContent)
+        console.log('innerHTML : ', cost.innerHTML)
+        console.log('innerText : ', cost.innerText)
+
+        //innerHTML은 동적으로 html구조 안에 태그를 넣는 것이기 대문에 사용자에 의해서 입력값을 받는 일만 없도록 하면 돼요. 
+       
+// 문제상황 -----------------------------
+        const myBtn = document.querySelector("button");
+        const myP = document.querySelector("p");
+        const myInput = document.querySelector(".input2");
+        myBtn.addEventListener('click', function(){
+            myP.innerHTML = myInput.value;
+            console.log(myInput.value)
+        });
+        // `<img src='x' onerror='alert(1)'>` 사용자가 이런거 넣어버리면
+
+// 해결방법------------------------------
+        // myBtn.addEventListener('click', function(){
+        //     myP.textContent = myInput.value;
+        //     console.log(myInput.value)
+        // });
+        
+    </script>
+</body>
+</html>

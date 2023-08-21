@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attribute</title>
+</head>
+<body>
+    <p id="myText">hello lions</p>
+    <div><img src="" alt=""></div>
+    <script>
+        const myimg = document.querySelector('img')
+        const idAttr = myimg.getAttribute('src')
+        // myimg.setAttribute('src', 'https://www.sgsda.in/wp-content/uploads/2023/02/jpg-vcgc-1-1024x402.jpg')
+        
+        const mydiv = document.querySelector('div')
+        mydiv.innerHTML = `<img src="https://www.sgsda.in/wp-content/uploads/2023/02/jpg-vcgc-1-1024x402.jpg" alt="">`
+    </script>
+</body>
+</html>
