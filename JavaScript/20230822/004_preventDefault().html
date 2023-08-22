@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prevent Default기능</title>
+</head>
+<body>
+    브라우저는 기본 이벤트 동작을 제공합니다. 하지만 때때로 그러한 기능이 방해가 되는 경우가 있습니다. 
+    ssr은 화면을 새로고침하지 않고 전달받은 데이터를 통해서 동적으로 html zhe코드를 생성하는 것처럼 singlepage application은 가고 있다. ssr로 가고있습니다. 
+   <!-- 앵커의 기본 동작을 중지 -->
+<a href="https://www.naver.com" class="link">네이버 링크입니다만..</a>
+<form action="">
+    <button type="submit" class="submit">제출</button>
+</form>
+
+<script>
+    const link = document.querySelector('.link');
+    link.addEventListener('click', (event) => {
+        console.log('clicked');
+        event.preventDefault();
+    })
+
+    const myForm = document.querySelector('form')
+    myForm.addEventListener('submit', e=>{
+        event.preventDefault();
+        console.log('submit')
+    })
+
+    
+    document.addEventListener("contextmenu",e=>{
+        event.preventDefault();
+        alert("이 페이지에서는 오른쪽 클릭을 제한합니다")
+    })
+</script>
+</body>
+</html>

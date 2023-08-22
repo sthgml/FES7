@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event Deligation</title>
+</head>
+<body>
+    //이벤트 리스너가 없는 요소의 이벤트가 발생했을 때도 해당요소에 접근할 수 있다는 것을 알게 되었습니다. 이를 통해 이벤트 리스너가 없어도 리스너가 있는 것처럼 사용할 수 있습니다. 마치 이벤트리스너가 달린 것처럼 활용할 수 있따~부모요소에 이벤트리스너를 붙여서 event.target.nodeName == 'BUTTON'
+event.target.textContent = '수정'
+    <article class="parent">
+        <ol>
+            <li><button class="btn-first" type="button">버튼1</button></li>
+            <li><button type="button">버튼2</button></li>
+            <li><button type="button">버튼3</button></li>
+        </ol>
+    </article>
+
+    <script>
+        const parent = document.querySelector('.parent');
+        parent.addEventListener('click', function (event) {
+            console.log(this)//상위
+            console.log(event)
+            console.log(event.target) //이벤트가 발생한 타겟
+            console.log(event.currentTarget) //이벤트리스너를 달아놓은 타겟 = this
+            if(event.target.nodeName === "BUTTON"){
+                event.target.textContent = '버튼4'
+                // event.target은 지금 <button>노드 고 이 안에 텍스트 컨텐츠를 가져오는 것이 textContent.
+
+            }
+            if(event.target.nodeName === "LI"){
+                event.target.textContent = '버튼4'
+
+                // event.target은 지금 <li>노드 고 이 안에 텍스트 컨텐츠를 가져오는 것이 textContent. 이걸 바꿔버리니까 안에 있던 자식요소를 삭제해버리고 '버튼4'라는 문자열만 안에 넣어버림
+                    
+            }
+
+            // 보통의 함수는 전역공간을 가리키고 객체 안에서 호출되면 (메서드)
+            // 이벤트리스너 안에 디스 - 상위스코프
+            //이름만 봐도 스코프를 알거같은 걸 렉시컬 스코프라고 한다.
+        })
+
+        myObj = {
+            name: 'jaehyun',
+            walk() {
+                console.log(this)
+                parent.addEventListener('click', () => {
+                    console.log(this.name, 'is walking');
+                });
+            }
+        }
+
+        myObj.walk();
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stopPropagation() 실습</title>
+</head>
+<body>
+    <h1>나의 todo list</h1>
+    <ul class="list">
+        <li><p>1. 오늘 저녁에는 부대찌개를 끓여먹겠다. <button type="button">삭제</button></p></li>
+        <li><p>2. 후식은 쫀떡궁합 <button type="button">삭제</button></p></li>
+        <li><p>3. 자기 전에 반드시 내일 아침메뉴를 생각해두겠다. <button type="button">삭제</button></p></li>
+    </ul>
+
+    <script>
+        
+        const list = document.querySelector('.list');
+
+        list.addEventListener('click',(e)=>{
+            // click된게 button태그면
+            if(e.target.nodeName==="BUTTON"){
+                if(confirm('삭제하시겠습니까?')){
+                    // 방법 1 e.target.parentElement.parentElement.remove()
+                    // 방법 2
+                    console.log(e.target.closest("li").remove())
+                };
+            }
+
+            // 클릭된게 p태그면 아래를 실행합니다.
+            if(e.target.nodeName==="P"){
+                // 방법1 
+                // alert(e.target.innerText.slice(0,-2));
+
+                // 방법2
+                // alert(e.target.firstChild.nodeValue)
+
+                // 방법3
+                alert(e.target.firstChild.textContent)
+            }
+        })
+    </script>
+</body>
+</html>

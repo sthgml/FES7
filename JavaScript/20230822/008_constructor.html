@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>constructor</title>
+</head>
+<body>
+    <script>
+        //생성자 함수의 this는 생성자를 통해 만들어지는 instance를 참조합니다.
+        //고럼 어떤 함수든 new 키워드와 같이 쓰면 객체를 생성하는 생성자 함수가 되는 건가요?
+        function Sohee (name, age) {
+            this.name = name;
+            this.age = age;
+            this.mind;
+            this.aging = function(){
+                console.log('age 1 more year old')
+                this.age += 1;
+            };
+            this.favor = function(word){
+                this.mind = word;
+                word = '싫은데!';
+                console.log(word);
+            }
+        }
+
+        let sohee = new Sohee('sohee', 27);
+        sohee.aging();
+        sohee.favor('나갈뤠~');
+
+        function Cook (name){
+
+        }
+
+        let cook = new Cook('sohee')
+    </script>
+</body>
+</html>

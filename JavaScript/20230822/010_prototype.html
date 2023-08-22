@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype</title>
+</head>
+<body>
+    자 그런데 문제가 하나 있습니다. 우리는 손쉽게 객체를 생산할 수 있지만, 객체의 메서드를 등록 할때마다 새로운 함수를 생성하고 있습니다.
+    <pre>
+        this.sayYourName = function(){
+            console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+        }
+    </pre>
+    우리는 100개의 객체를 생성할때마다 역시 100개의 함수를 새로 만들고 있는것 입니다. 이러한 자원의 낭비를 해결하기 위해 등장한 것이 바로 프로토타입입니다.
+    생성자 함수의 바깥에서 프로토타입의 객체를 활용해 메서드를 할당할 수 있습니다.
+    <pre>
+        function NewFactory2(name){
+            this.name = name;
+        }
+        
+        NewFactory2.prototype.sayYourName = function(){
+            console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+        }
+    </pre>
+    이렇듯 프로토타입은 모든 인스턴스가 하나의 메서드를 공유하도록 만들어 자원을 더 효율적으로 사용하도록 도와줍니다. 생성된 객체끼리 메서드를 비교하여 같은 곳을 참조하는지 살펴보는것도 이해하는데 도움이 됩니다.
+
+    - 실습: 우리가 만들었던 음식 로봇객체의 메서드를 프로토타입으로 분리해보세요, 그리고 객체의 메서드가 서로 동일한 주소를 참조하는지 확인해보세요.
+
+    - 실습2: 우리가 객체지향 개념에서 만들었던 ‘나’ 와 ‘대상’ 객체를 생성자를 통해서 만들어 볼 수 있도록 코드를 수정해봅시다.
+    <script>
+        
+    </script>
+</body>
+</html>

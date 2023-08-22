@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object = abstract</title>
+</head>
+<body>
+    <script>
+        const sohee = {
+            name: 'sohee',
+            age: 27,
+            realMind: '',
+            aging: function(){
+                console.log('한 살 더 먹기')
+                this.age += 1;
+            },
+            swallow: function (word) {
+                this.realMind = word;
+                return '...';
+            }
+        }
+
+        console.log(sohee.swallow('바보야'))
+        console.log(sohee.realMind)
+        sohee.aging()
+
+        console.log(sohee)
+
+    </script>
+</body>
+</html>

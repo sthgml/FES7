@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>robot object practice</title>
+</head>
+<body>
+    <script>
+        function RobotFactory(foodArr) {
+            this.menu = foodArr
+            this.order = function () {
+                return foodArr[parseInt(Math.random() * this.menu.length)]
+            }
+        }
+
+        const vendingMachine = new RobotFactory(['아이스아메리카노', '바닐라라테', '마카롱'])
+        vendingMachine.order()
+    </script>
+</body>
+</html>
