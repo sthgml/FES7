@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상속</title>
+</head>
+<body>
+    <h1>inheritance</h1>
+    prototype을 통해 상속이 일어납니다. 
+
+    <h2>Arr가 Obj를 상속받음</h2>
+    <script>
+        const obj = {
+            name : 'test'
+        }
+
+        console.log(obj.hasOwnProperty('name'))
+
+        const arr = [1,2,3]
+
+        console.log(arr.hasOwnProperty('name'))
+        
+        //Array 타입에서도 hasOwnProperty라는 미리 설정해놓은 메서드를 쓸 수 있구나. 
+    </script>
+
+    여기서 forEach를 살펴봅시다. 각 객체에 forEach라는 메서드가 등록이 되어있기 때문에 사용할 수 있는 거예요.
+
+    Nodelist, arr, object 등!
+
+    그런데, hasOwnProperty는 Object의 prototype 에만 등록된 메서드란 말이죠? 
+    이게 어떻게 된 일인가 살펴보면,
+
+    arr 에는 __proto__가 있고, [[Property]]를 참조하고 있어요! 이프로토타입의 메서드를 사용할 수 있고, 이 안에 Object의 프로토타입이 상속되어있음!
+    = 스코프 체이닝과 비슷
+    = 프로토타입 체이닝
+    > 자기가 상속받은 프로토타입을 상위로 계쏙 찾아 올라가는 특성이 있음.
+    > array가 object의 프로토타입을 상속받는다. 
+    > 프로토타입에 등록하게되면 상속을 받을 수 있따.
+
+    배열 인스턴스의 __proto__가
+    Array함수의 __proto__를 참조하고,
+    <!-- 함순데 왜 proto가 있어?! 함수는 prototype이라며! 왜냐면 함수도 객체니까 ㅋ 함수도 무언가의 인스턴스라는 말이에요. 함수는 무엇의 인스턴스임? new function..그래서 함수도 __proto__ 가질 수 잇음-->
+    이 Array함수의 __proto__가
+    Object 함수의 __proto__를 참조하고 있기 때문에 Array에 존재하지 않는 Object의 메서드를 사용할 수 있다.
+
+    Array.prototype.__proto__ === Object.prototype
+
+    <h2>Child가 Parent를 상속받음</h2>
+    지정된 프로토타입 객체를 갖는 새 객체를 만든다. 그래서 child의 prototype에 할당해주면 parent의 프로토타입과 child의 프로토타입이 연결이 돼요. 
+    <br>객체를 생성할 때 같은 프로퍼티를 무한정 써야할 수 있지만 효율적으로 객체를 생성하기 위해서 쓰는 것처럼..
+    <br> 프로토타입에 메서드를 등록하면 모든 인스턴스가 같은 함수를 참조하게 된다. > 효율성을 위한 것, 하지만 쓰면 효율적인 코드를 작성할 수 있다. 
+    <br>이 내용은 면접 때문에 중요한 '개념'입니다. 
+    <script>
+        function Parent () {
+            this.name = '재현'
+        }
+
+        Parent.prototype.rename = function (name) {
+            this.name = name;
+        }
+
+        Parent.prototype.sayName = function () {
+            console.log(this.name);
+        }
+
+        function Child() {
+            Parent.call(this); //this의 대상을 this로 바꿨다. Parent를 child..
+        }
+
+        Child.prototype = Object.create(Parent.prototype); 
+
+        Child.prototype.hello = function () {
+            console.log('hello')
+        }
+        
+        const child = new Child();
+        const parent = new Parent();
+
+    </script>
+    <blockquote>JS는 문법적으로 다중상속을 지원하지는 않습니다. 다중상속이 가능한 언어도 있습니다. 상속에 상속도 가능합니다. 오브젝트가 그렇게 하고 있어요. 프로토타입 체이닝은 조상이 몇 대가 있던지 상관없습니다.</blockquote>
+
+    코드 내부의 효율성을 따지면 프로토타입을 쓰는게 맞지만, 가독성으로만 따지면 그냥 옹기종기 모여있던 객체의 모습이 더 좋습니다.
+
+    
+</body>
+</html>

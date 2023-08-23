@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클래스 상속</title>
+</head>
+<body>
+    <script>
+        class Parent {
+            constructor (name) {
+                this.name = name;
+            }
+
+            sayTheName () {
+                console.log(`제 이름은 ${this.name} 입니다.`)
+            }
+        }
+
+        class Child extends Parent{
+            constructor (name) {
+                super(name); //constructor 를 super로 바꾼 것임..
+            }
+        }
+
+        const parent = new Parent('s.coups');
+        const child = new Child('dino')
+
+        parent.sayTheName()
+        child.sayTheName()
+    </script>
+</body>
+</html>

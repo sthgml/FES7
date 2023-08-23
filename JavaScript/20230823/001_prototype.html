@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype</title>
+</head>
+<body>
+    모든 인스턴스가 참조할 수 있는 공통의 공간을 만들면 좋지 않을까?
+    여기에 그러면 함수를 어떻게 추가 및 등록할 수 있을까요?
+    생성자함수명.prototype.메서드명 = function(){
+        실행할 코드
+    }
+    숨겨진 프로퍼티인 [[Property]]가 존재합니다.
+    대괄호 두개 + Property의 initial P = Capital letter
+
+    <script>
+        function NewFactory2(name){
+            this.name = name;
+        }
+
+        NewFactory2.prototype.sayYourName = function(){
+            console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+        }   
+
+        let robot = new NewFactory2('sohee')
+
+        //이 프로토타입에 코드로 접근하고 싶다면 robot.__proto__를 하면 값등에 접근할 수 있다. 자신이 만든 생성자 함수의 prototype을 참조하는 역할을 합니다. 즉, new라는 키워드를 통해 생성자 함수의 prototype과 인스턴스의 __proto__가 연결됩니다 . 이것이 new가 하는 두번째 일입니다. new 키워드의 일 첫 번 째 : 생성자 함수의 this가 인스턴스를 가리키게 합니다.
+        robot.__proto__ === NewFactory2.prototype // > true
+        // > 어쩔티비입니다만, 같은 대상을 가리키고 있는 것은 맞는데, 함수 안에만 존재하는 참조값입니다. 마치 this와 같2죠. this도 참조하는 대상이 항상 변하잖아요. proto라는 객체는 객체안에 존재하는 숨겨진 프로퍼티입니다. 인스턴스는 프로토를 통해 생성자 함수의 prototype에 접근하는게 가능햊
+        //prototype은 함수에 있다 proto는 인스턴스에 있따. 둘은 같은 곳을 참조한다. 
+    </script>
+</body>
+</html>

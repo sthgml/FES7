@@ -36,16 +36,16 @@ event.target.textContent = '수정'
                     
             }
 
-            // 보통의 함수는 전역공간을 가리키고 객체 안에서 호출되면 (메서드)
-            // 이벤트리스너 안에 디스 - 상위스코프
-            //이름만 봐도 스코프를 알거같은 걸 렉시컬 스코프라고 한다.
+            // 보통의 함수는 전역공간을 가리키지만, 화살표 함수로 선언하면
+            // 이벤트리스너 안에 디스 = 상위스코프가 되어서
+            // 이름만 봐도 스코프를 알거같은 걸 렉시컬 스코프라고 한다.
         })
 
         myObj = {
             name: 'jaehyun',
             walk() {
                 console.log(this)
-                parent.addEventListener('click', () => {
+                parent.addEventListener('click', function () {
                     console.log(this.name, 'is walking');
                 });
             }

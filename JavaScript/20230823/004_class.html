@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class</title>
+</head>
+<body>
+    <script>
+        class Robot {
+            constructor(name){
+                this.name = name;
+            }
+
+            sayYourName() {
+                console.log(`제 이름은 ${this.name} 입니다.`)
+            }
+        }
+
+        const robot = new Robot('sohee');
+        //생성자 함수를 이용하는 것과 정확히 같습니다.
+
+        console.log(robot)
+        robot.sayYourName()
+    </script>
+
+    자바스크립트 만의 사용자 정의 타입 생성(객체 생성) 방법을 다른 언어의 클래스 무넙처럼 바꿔준 것이 바로 자바스크립트의 클래스(classes)입니다
+
+    위의 코드에서 객체지향의 중요한 개념중 하나인 인캡슐레이션을 만나볼 수 있습니다. 인캡슐레이션은 객체지향 프로그래밍의 개념 중 하나로, 데이터와 해당 데이터를 조작하는 메서드를 하나의 단위로 묶는 것을 말합니다.
+
+    이처럼 내부적인 동작은 동일하지만 더 보기좋고 편리하게 개선된 문법을 Syntactic sugar라고 부릅니다. (달달하다~) classes 문법은 단순한 설탕 문법은 아닙니다. 여러가지 추가된 문법이 있습니다. (단순히 생성자함수를 바꿨다고만 볼 수는 없음)
+
+    실습 - 생성자 함수를 class 문법으로 바꾸어 봅시다!
+
+    <script>
+        // classes 문법을 통해 constructor함수와 메서드를 함께 encapsulation 캡슐화 함!
+        class RobotFactory {
+
+            constructor (foodArr) {
+                this.menu = foodArr
+            }
+
+            order () {
+                console.log( this.menu[ parseInt( Math.random()*this.menu.length ) ])
+            }
+
+            function
+        }
+
+        
+        // 생성자 함수를 통해 인스턴스 생성한 것과 정확히 같은 표현으로 클래스의 인스턴스 생성 후 메서드 실행
+        const vendingMachine = new RobotFactory(['아이스아메리카노', '바닐라라테', '마카롱'])
+        vendingMachine.order()
+
+        class Sohee {
+            constructor (name, age) {
+                this.name = name;
+                this.age = age;
+                this.mind = '';
+            }
+
+            aging () {
+                this.age += 1;
+            }
+
+            sayNo (favor) {
+                this.mind = favor;
+                console.log(favor, '? 싫은데!')
+            }
+        }
+        
+        let sohee = new Sohee('sohee', 27);
+        sohee.aging();
+        sohee.sayNo('나갈뤠~');
+
+        // -----------------------------------------주연님의 예시--------------------------------------------------------
+
+        class Slave{
+            constructor(이름, 경력) {
+            this.이름 = 이름;
+            this.경력 = 경력;
+            console.log(`새로운 Slave가 도착하였습니다. 집사이름 : ${this.이름} 집사경력 : ${this.경력}`);
+            }
+
+            serving (lord) {
+                lord.CIAO();
+            }
+        }
+
+        const sohee2 = new Slave('sohee2', 7);
+
+        class Lord {
+            constructor(name, happy = 10, angry  = 10, tired  = 10, bored = 10) {
+                this.name = name;
+                this.happy = happy;
+                this.angry = angry;
+                this.tired = tired;
+                this.bored = bored;
+                console.log(`${this.name}주인님의 현재 행복지수는 ${happy}, 짜증지수는 ${angry}, 피곤함은 ${tired}, 지루함은 ${bored} 이렇습니다. 집사는 얼른 맛있는 츄르를 가져다드리세요 `);
+            }
+
+            CIAO () {
+                this.happy++;
+                this.angry--;
+                this.tired--;
+                this.bored--;
+                console.log(`츄르를 가져다 드렸습니다. ${this.name}주인님의 현재 행복지수는 ${this.happy++}, 짜증지수는 ${this.angry--}, 피곤함은${this.tired--}, 지루함은${this.bored--}으로 변화되었습니다!`)
+            }
+        }
+
+        const 세모 = new Lord('세모');
+        sohee2.serving(세모)
+    </script>
+</body>
+</html>

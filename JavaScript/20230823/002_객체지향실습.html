@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object oriented programming</title>
+</head>
+<body>
+    prototype은 생성자 함수에, __proto__는 객체에!
+    로봇 - 메서드를 프로토타입으로 분리한 뒤, 객체의 메서드가 서로 동일한 주소를 참조하는지 확인
+
+    소희 - 생성자를 통해서 만들어 볼 수 있도록 수정!
+    <script>
+        // 생성자함수
+        function RobotFactory(foodArr) {
+            this.menu = foodArr
+        }
+        
+        // 생성자랑 프로토타입으로 메서드 분리
+        RobotFactory.prototype.order = function () {
+            console.log( this.menu[ parseInt( Math.random() * this.menu.length) ] )
+            return this.menu[ parseInt( Math.random() * this.menu.length) ]
+        }
+
+        // 인스턴스 생성
+        const vendingMachine = new RobotFactory(['아이스아메리카노', '바닐라라테', '마카롱'])
+
+        // 인스턴스에는 선언한 적 없는 메서드 실행
+        vendingMachine.order()
+
+
+        // 생성자함수
+        function Sohee (name, age) {
+            this.name = name;
+            this.age = age;
+            this.mind;
+        }
+
+        // 생성자랑 프로토타입 메서드 분리
+        Sohee.prototype.aging = function() {
+            this.age += 1;
+        }
+
+        Sohee.prototype.favor = function(word){
+            this.mind = word;
+            console.log('싫은데!')
+        }
+
+        // 인스턴스 생성
+        let sohee = new Sohee('sohee', 27);
+
+        // 인스턴스에는 선언한 적 없는 메서드 실행
+        sohee.aging();
+        sohee.favor('나갈뤠~');
+
+        
+    </script>
+</body>
+</html>
