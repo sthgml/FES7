@@ -1,0 +1,87 @@
+// @mixin 변수명 (파라미터) {
+    // @if(파라미터="문자열"){
+    //     실행될 코드
+    // }@else if(){
+
+    // }...}
+
+// 선택자 {
+    //  @include 변수명 (문자열);
+    // }
+
+@mixin flex($align) {
+    display: flex;
+    background-color: salmon;
+    height: 200px;
+    margin: 10px;
+    flex-direction: row; //입력 받는 것이 좋을 것입니다(뭔솔?)
+    @if($align == 'center'){
+        background-color: sandybrown;
+        justify-content: center;
+        align-items: center;
+    }@else if($align == 'space'){
+        background-color: seagreen;
+        justify-content: space-between;
+        align-items: center;
+    }@else if($align == 'around'){
+        background-color: slateblue;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+.one {
+    @include flex('space')
+}
+.two {
+    @include flex('center')
+    
+}
+.three {
+    @include flex('around')
+    
+}
+
+//연습문제1
+//input: box(100,r)
+//output:
+.one{
+    width: 100px;
+    height: 1100px;
+    border: 1px solid black;
+    background-color: blue;
+}
+
+.one {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+@mixin box($width, $shape){
+    width: #{$width};
+    height: #{$width};
+    background-color: royalblue;
+    @if($shape == c) {
+        border-radius: 50%;
+    }
+}
+
+.square {
+    @include box(100, r);
+}
+
+.circle {
+    @include box(100, c);
+}
+
+@mixin box2($size, $style) {
+    width: #{$size};
+    height: #{$size};
+    background-color: royalblue;
+    @if($style == c){
+        border-radius: 50%;
+    }
+}

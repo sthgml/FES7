@@ -1,0 +1,13 @@
+.one {
+    color: red;
+    .two{
+        color: green;
+        .three{
+            color: blue;
+            @at-root.four{
+                color: pink;
+            }
+            //@at-root을 사용하면 상속 안됨
+        }
+    }
+}

@@ -1,0 +1,47 @@
+.one {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background-color: royalblue;
+}
+
+.two {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background-color: salmon;
+}
+
+.one2 {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  height: 200px;
+  background-color: saddlebrown;
+}
+
+.two2 {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  height: 200px;
+  background-color: slateblue;
+}
+
+.border-top {
+  border-top: 1px solid #000;
+}
+
+.border-right {
+  border-right: 1px solid #000;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #000;
+}
+
+.border-left {
+  border-left: 1px solid #000;
+}/*# sourceMappingURL=025.css.map */
