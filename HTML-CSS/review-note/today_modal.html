@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>today_modal</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="modules.css">
+    <link rel="stylesheet" href="today_modal.css">
+</head>
+<body>
+    <section class="today">
+        <h2 class="title typing"><img src="./images/quote-start.png" alt="quote-start" class="quote-start"><span class="mark">당장</span>&nbsp;기록해서 복습하기<img src="./images/quote-end.png" alt="quote-end" class="quote-end"></h2>
+        <h3 class="title"><img src="./images/icon/heart.svg" alt="icon-heart" class="icon-heart"><strong>당장</strong> &nbsp;기록해서 복습하면&nbsp; <strong>42%</strong>&nbsp;를 더 기억할 수 있어요!</h3>
+    
+        <form class="form" action="#" method="post" name="user-info-join">
+            <div class="input-user-flex">
+                <input type="text" id="user-title" name="user-title" placeholder="제목을 적어주세요!" class="user-title">
+                <p class="warning-text">warning text</p>
+            </div>
+            <div class="input-user-flex">
+                <textarea id="user-content" name="user-content"  class="user-content" rows="17" placeholder="50분간 배웠던 내용을 기억나는대로 적어보세요!"></textarea>
+                <p class="warning-text">warning text</p>
+            </div>
+            <button type="submit" class="btn-save">
+                저장하기
+            </button>
+        </form>
+    </section>
+    <script>
+        const form = document.querySelector("form");
+        form.addEventListener("submit", (e)=>{
+            e.preventDefault();
+            location.href='./'
+            location.replace('./')
+        })
+    </script>
+</body>
+</html>

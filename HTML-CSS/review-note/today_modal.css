@@ -1,0 +1,38 @@
+body{
+    height: 100vh;
+    display: flex;
+}
+
+[class^="quote"] {
+    width: 60px;
+}
+
+.today h2 {
+    
+    margin: 0 auto;
+    margin-bottom: 32px;
+}
+
+.today {
+    padding: 32px 24px;
+    width: 464px;
+    display: flex;
+    flex-direction: column;
+
+    min-width: 464px;
+    max-width: 100%;
+    margin: auto;
+    background: var(--bg-2);
+    border-radius: 16px;
+}
+
+.form {
+    background: var(--bg);
+    padding: 16px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 100%;
+    min-width: 368px;
+}

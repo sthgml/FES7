@@ -9,8 +9,12 @@
     position: absolute;
 }
 
+.off {
+    display: none;
+}
+
 header {
-    background: var(--bg-2, #2F3B4B);
+    border-bottom: 2px solid var(--bg);
 }
 
 .container {
@@ -32,15 +36,14 @@ h1 {
 }
 
 .logo-sm {
-    width: 69px;
+    width: 135px
 }
 
 h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 104px;
-    height: 53px;
+
 }
 
 .info {
@@ -64,35 +67,136 @@ h1 {
     color: var(--em);
 }
 
-/* ---- 오늘의 기록 ---- */
-
-.today h2 {
-    margin-bottom: 32px;
-}
+/* ---- main & nav ---- */
 
 .main {
     display: flex;
     justify-content: center;
 }
 
-.today {
-    padding: 32px 48px;
-    width: 464px;
-    display: flex;
-    flex-direction: column;
+.nav {
+    padding: 48px 0;
 }
 
-.form {
-    margin: 0 auto;
+.nav ul {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    width: 368px;
+    gap: 8px;
+
+    font-size: 16px;
+}
+
+.nav ul li {
+    cursor: pointer;
+    color: var(--medium);
+    background: var(--bg-4);
+    padding: 8px 24px 8px 16px;
+    border-radius: 8px 0 0 8px;
+    transition: all 0.2s;
+}
+
+.nav ul li.opened {
+    color: var(--em);
+    background: var(--bg-2);
+    font-weight: bold;
+}
+
+.nav ul li::before {
+    content: '';
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    vertical-align: -0.6em;
+    background: url("./images/icon/heart_60.svg") ;
+}
+
+.nav ul li.opened::before {
+    background: url("./images/icon/heart.svg") ;
+}
+
+.nav ul li:hover {
+    background-color: var(--bg);
+}
+
+.nav ul li.opened:hover {
+    background-color: var(--bg-2);
+}
+
+@media (max-width:748px) {
+    .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav {
+        padding: 0;
+    }
+    .nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .nav ul li {
+        width: 100px;
+        border-radius: 8px 8px 0 0;
+    }
+
+    section.old {
+        margin-top: 0;
+    }
+}
+
+/* ---- 새기록 만들기 ---- */
+
+.btn-new{
+
+    position:fixed;
+    bottom: 40px;
+    right: 40px;
+
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+
+    box-shadow: 0 0 16px var(--bg-4);
+    z-index: 10;
+}
+
+.guide {
+    color: var(--em);
+    position: absolute;
+    width: 120px;
+    text-align: center;
+    background-color: var(--bg-2);
+    opacity: 0;
+
+    top: -2em;
+    left: calc(0px - 10px - 1em);
+
+    border-radius: 8px;
+    padding: 8px;
+    transition: all 0.3s;
+}
+
+.btn-new:hover .guide{
+    opacity: 1;
+    transform: translateY(-1em);
 }
 
 /* ---- 오래된 기록들 ---- */
+
+[class^="quote"] {
+    width: 60px;
+}
+
 .old {
+    max-width: 100%;
+    margin: 32px 0;
     padding: 32px 48px;
+    background: var(--bg-2);
+    border-radius: 16px;
 }
 
 .old h2 {
@@ -113,10 +217,19 @@ h1 {
     flex-direction: column;
     align-items: center;
     gap: 16px;
+
+    max-width: 100%;
     width: 478px;
     padding: 30px 28px 35px;
-    border: 1px solid var(--medium);
-    border-top: 4px solid var(--medium);
+    border-radius: 16px;
+    background-color: var(--bg);
+    box-shadow: 0 0 8px var(--bg);
+    transition: all 0.2s;
+}
+
+.note-list article:hover {
+    box-shadow: 0 0 50px var(--bg);
+    transform: scale(1.02);
 }
 
 .note-title {
@@ -126,6 +239,7 @@ h1 {
     width: 100%;
     text-align: center;
     white-space: pre-wrap;
+    line-height: 20px;
 }
 
 .note-content {
@@ -140,5 +254,5 @@ h1 {
 }
 
 .note-content:hover {
-    background-color: #171c22;
+    background-color: var(--bg-3);
 }

@@ -73,3 +73,10 @@ img {
 	width: 100%;
 	vertical-align: top;
 }
+
+button {
+	background: none;
+	font: inherit;
+	color: inherit;
+	cursor: pointer;
+}

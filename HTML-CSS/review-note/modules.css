@@ -7,13 +7,15 @@
     --bg : #263140;
     --primary : #96F2D7;
     --bg-2 : #2F3B4B;
+    --bg-3 : #1d242c;
+    --bg-4 : #10141a;
 }
 
 body {
     font-family: 'Pretendard';
     font-size: 14px;
 
-    background-color: var(--bg, #263140);
+    background-color: var(--bg-3, #263140);
     color: var(--em);
 }
 

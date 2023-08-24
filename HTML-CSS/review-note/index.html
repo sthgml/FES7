@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="modules.css">
     <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="./favicon.ico">
 </head>
 <body class="body">
 
     <header>
 
         <div class="container">
-            <h1><p class="a11y-hidden">당장복습헤_logo</p><a href="./"><img src="./images/당장복습헤_logo 1.png" alt="당장복습헤 로고" class="logo-sm"></a></h1>
+            <h1><p class="a11y-hidden">당장복습헤_logo</p><a href="./"><img src="./images/당장복습헤_logo @4x.png" alt="당장복습헤 로고" class="logo-sm"></a></h1>
             
             <div class="info">
                 <div class="welcome-text">
@@ -32,42 +33,35 @@
     </header>
 
     <main class="main">
-
-        <section class="today">
-            <h2 class="title"><img src="./images/icon/heart.svg" alt="icon-heart" class="icon-heart">오늘의 기록</h2>
-            <h3 class="title"><img src="./images/icon/heart.svg" alt="icon-heart" class="icon-heart"><strong>당장</strong> &nbsp;기록해서 복습하면&nbsp; <strong>42%</strong>&nbsp;를 더 기억할 수 있어요!</h3>
-    
-            <form class="form">
-                <div class="input-user-flex">
-                    <input type="text" id="user-title" name="user-title" placeholder="제목을 적어주세요!" class="user-title">
-                    <p class="warning-text">warning text</p>
-                </div>
-                <div class="input-user-flex">
-                    <textarea id="user-content" name="user-content"  class="user-content" rows="17" placeholder="50분간 배웠던 내용을 기억나는대로 적어보세요!"></textarea>
-                    <p class="warning-text">warning text</p>
-                </div>
-                <button type="submit" class="btn-">
-                    저장하기
-                </button>
-            </form>
-        </section>
+        <nav class="nav">
+            <ul>
+                <li class="tap-all opened">모든 기록</li>
+                <li class="tap-24hr"><img src="./images/icon/icon-d-of-day.png" alt="icon-d-of-day" class="icon-d-of-day">24시간</li>
+                <li class="tap-week"><img src="./images/icon/icon-w-of-week.png" alt="icon-w-of-week" class="icon-w-of-week">일주일</li>
+                <li class="tap-month"><img src="./images/icon/icon-m-of-month.png" alt="icon-m-of-month" class="icon-m-of-month">한 달</li>
+            </ul>
+        </nav>
+        <button type="button" class="btn-new">
+            <img src="./images/icon/icon-edit-bk.png" alt="btn-new">
+            <p class="guide">당장 복습하기!</p>
+        </button>
 
         <section class="old">
-            <h2 class="title"><img src="./images/icon/heart.svg" alt="icon-heart" class="icon-heart">옛날 기록 | 다시 타이핑 해보면서 복습해보세요!</h2>
-            <div class="one-day">
-                <h3 class="title"><img src="./images/icon/heart.svg" alt="icon-heart" class="icon-heart"><strong>24시간 </strong> &nbsp;| 지금 복습하면&nbsp; <strong style="color:var(--primary)">60%</strong>&nbsp;를 더 기억할 수 있어요!</h3>
+            <h2 class="title typing"><img src="./images/quote-start.png" alt="quote-start" class="quote-start"><span class="mark">당장</span>&nbsp;기록했던 내용들을 다시 타이핑 해보면서 복습해보세요!<img src="./images/quote-end.png" alt="quote-end" class="quote-end"></h2>
+            <div class="category-24hr">
+                <h3 class="title"><img src="./images/icon/icon-d-of-day.png" alt="icon-d-of-day" class="icon-d-of-day"><strong>24시간 </strong> &nbsp;| 지금 복습하면&nbsp; <strong style="color:var(--primary)">60%</strong>&nbsp;를 더 기억할 수 있어요!</h3>
                 <ul class="note-list">
                     <li>
                         <article>
                             <h4 class="note-title ell-1">이는 청춘 어쩌구이는 청춘 어쩌구이는 청춘 어쩌구</h4>
                             <p class="note-date assistive-text">2023.02.24.THU</p>
-                            <textarea class="note-content" placeholder="이는 청춘의 것은 그들의 운다. 동산에는 수 것이 있는 뼈 이상의 쓸쓸하랴? 없으면, 날카로우나 뛰노는 풀이 아니다. 황금시대를 무한한 따뜻한 청춘이 같으며, 속잎나고, 운다. 위하여서 커다란 영락과 따뜻한 피고 안고, 뼈 봄바람이다. 가는 곧 아니한 눈에 얼마나 있음으로써 지혜는 대한 얼마나 봄바람이다. 때까지 위하여 가지에 열락의 것이다. 그림자는 꽃이 천하를 우리 찬미를 원대하고, 인생을 때에, 황금시대다. 목숨을 할지니, 청춘은 용기가 말이다." rows="6">이는 청춘의 것은 그들의 운다. 동산에는 수 것이 있는 뼈 이상의 쓸쓸하랴? 없으면, 날카로우나 뛰노는 풀이 아니다. 황금시대를 무한한 따뜻한 청춘이 같으며, 속잎나고, 운다. 위하여서 커다란 영락과 따뜻한 피고 안고, 뼈 봄바람이다. 가는 곧 아니한 눈에 얼마나 있음으로써 지혜는 대한 얼마나 봄바람이다. 때까지 위하여 가지에 열락의 것이다. 그림자는 꽃이 천하를 우리 찬미를 원대하고, 인생을 때에, 황금시대다. 목숨을 할지니, 청춘은 용기가 말이다.</textarea>
+                            <textarea class="note-content" placeholder="이는 청춘의 것은 그들의 운다. 동산에는 수 것이 있는 뼈 이상의 쓸쓸하랴? 없으면, 날카로우나 뛰노는 풀이 아니다. 황금시대를 무한한 따뜻한 청춘이 같으며, 속잎나고, 운다. 위하여서 커다란 영락과 따뜻한 피고 안고, 뼈 봄바람이다. 가는 곧 아니한 눈에 얼마나 있음으로써 지혜는 대한 얼마나 봄바람이다. 때까지 위하여 가지에 열락의 것이다. 그림자는 꽃이 천하를 우리 찬미를 원대하고, 인생을 때에, 황금시대다. 목숨을 할지니, 청춘은 용기가 말이다." rows="8">이는 청춘의 것은 그들의 운다. 동산에는 수 것이 있는 뼈 이상의 쓸쓸하랴? 없으면, 날카로우나 뛰노는 풀이 아니다. 황금시대를 무한한 따뜻한 청춘이 같으며, 속잎나고, 운다. 위하여서 커다란 영락과 따뜻한 피고 안고, 뼈 봄바람이다. 가는 곧 아니한 눈에 얼마나 있음으로써 지혜는 대한 얼마나 봄바람이다. 때까지 위하여 가지에 열락의 것이다. 그림자는 꽃이 천하를 우리 찬미를 원대하고, 인생을 때에, 황금시대다. 목숨을 할지니, 청춘은 용기가 말이다.</textarea>
                         </article>
                     </li>
                 </ul>
             </div>
-            <div class="one-week">
-                <h3 class="title"><img src="./images/icon/heart.svg" alt="icon-heart" class="icon-heart"><strong>일주일</strong> &nbsp;| 지금 복습하면&nbsp; <strong style="color:var(--primary)">70%</strong>&nbsp;를 더 기억할 수 있어요!</h3>
+            <div class="category-week">
+                <h3 class="title"><img src="./images/icon/icon-w-of-week.png" alt="icon-w-of-week" class="icon-w-of-week"><strong>일주일</strong> &nbsp;| 지금 복습하면&nbsp; <strong style="color:var(--primary)">70%</strong>&nbsp;를 더 기억할 수 있어요!</h3>
                 <ul class="note-list">
                     <li>
                         <article class="ell-1">
@@ -78,8 +72,8 @@
                     </li>
                 </ul>
             </div>
-            <div class="one-month">
-                <h3 class="title"><img src="./images/icon/heart.svg" alt="icon-heart" class="icon-heart"><strong>한 달</strong> &nbsp;| 지금 복습하면&nbsp; <strong style="color:var(--primary)">70%</strong>&nbsp;를 더 기억할 수 있어요!</h3>
+            <div class="category-month">
+                <h3 class="title"><img src="./images/icon/icon-m-of-month.png" alt="icon-m-of-month" class="icon-m-of-month"><strong>한 달</strong> &nbsp;| 지금 복습하면&nbsp; <strong style="color:var(--primary)">80%</strong>&nbsp;를 더 기억할 수 있어요!</h3>
                 <ul class="note-list">
                     <li>
                         <article>
@@ -101,6 +95,46 @@
                 }else{
                     e.preventDefault();
                 }
+            })
+
+            const category24 = document.querySelector(".category-24hr");
+            const category1W = document.querySelector(".category-week");
+            const category1M = document.querySelector(".category-month");
+            const lis = document.querySelectorAll(".nav ul li");
+            const h2 = document.querySelector(".title.typing");
+
+            const nav = document.querySelector(".nav");
+            nav.addEventListener("click",e=>{
+                
+                if(e.target.className=="tap-24hr"){
+                    h2.classList.add("off")
+                    category24.classList.remove("off")
+                    category1W.classList.add("off")
+                    category1M.classList.add("off")
+                }else if(e.target.className=="tap-week"){
+                    h2.classList.add("off")
+                    category24.classList.add("off")
+                    category1W.classList.remove("off")
+                    category1M.classList.add("off")
+                }else if(e.target.className=="tap-month"){
+                    h2.classList.add("off")
+                    category24.classList.add("off")
+                    category1W.classList.add("off")
+                    category1M.classList.remove("off")
+                }else if(e.target.className=="tap-all"){
+                    h2.classList.remove("off")
+                    category1M.classList.remove("off")
+                    category1W.classList.remove("off")
+                    category24.classList.remove("off")
+                }
+                lis.forEach(e=>e.classList.remove("opened"));
+                e.target.classList.add("opened")
+            })
+
+            const btnNew = document.querySelector(".btn-new");
+            btnNew.addEventListener("click",()=>{
+                location.href='./today_modal.html'
+                location.replace('./today_modal.html')
             })
         </script>
     </main>

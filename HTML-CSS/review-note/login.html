@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="modules.css">
     <link rel="stylesheet" href="join.css">
+    <link rel="icon" href="./favicon.ico">
 </head>
 <body>
     <main class="main">
@@ -47,8 +48,8 @@
         <p class="assistive-text">Copyright 2023. Sohee Park All rights reserved.</p>
     </main>
     <script>
-        const btnJoin = document.querySelector('form');
-        btnJoin.addEventListener("submit", (e)=>{
+        const form = document.querySelector('form');
+        form.addEventListener("submit", (e)=>{
             e.preventDefault();
             location.href='./'
             location.replace('./')
