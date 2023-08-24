@@ -28,12 +28,30 @@
                 로그인
             </button>
         </form>
+        <div class="division">
+            <hr class="division-line">
+            <p class="or">또는</p>
+        </div>
+        <div class="social-login">
+            <button type="submit" class="btn-join">
+                로그인
+            </button>
+            <button type="submit" class="btn-join">
+                로그인
+            </button><button type="submit" class="btn-join">
+                로그인
+            </button><button type="submit" class="btn-join">
+                로그인
+            </button>
+        </div>
         <p class="assistive-text">Copyright 2023. Sohee Park All rights reserved.</p>
     </main>
     <script>
         const btnJoin = document.querySelector('form');
         btnJoin.addEventListener("submit", (e)=>{
             e.preventDefault();
+            location.href='./'
+            location.replace('./')
         })
     </script>
 </body>

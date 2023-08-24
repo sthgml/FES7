@@ -22,7 +22,7 @@
                     <p class="mark">홍길동님</p>
                 </div>
         
-                <a class="logout">
+                <a href="./login.html" class="logout">
                     <img src="./images/icon/icon-logout.svg" alt="icon-logout" class="icon-logout">
                     <p class="text-logout">로그아웃</p>
                 </a>
@@ -91,6 +91,18 @@
                 </ul>
             </div>
         </section>
+
+        <script>
+            const logout = document.querySelector('.logout');
+            logout.addEventListener('click',e=>{
+                if(window.confirm('정말 로그아웃 하시겠습니까?')){
+                    location.href='./login.html'
+                    location.replace('./login.html')
+                }else{
+                    e.preventDefault();
+                }
+            })
+        </script>
     </main>
 </body>
 </html>
