@@ -150,11 +150,29 @@ h1 {
 
 /* ---- 새기록 만들기 ---- */
 
-.btn-new{
+.x-1,
+.x-2 {
+    width: 32px;
+    height: 3px;
+    background-color: var(--bg-2);
+    position: absolute;
+    top: 31px;
+    left: 16px;
+    transition: all 0.4s;
+}
 
-    position:fixed;
-    bottom: 40px;
-    right: 40px;
+.x-1 {
+    transform: rotate(90deg);
+}
+
+.x-2 {
+    transform: rotate(0deg);
+}
+
+.btn-new{
+    position: sticky;
+    margin-left: 16px;
+    top: 88vh;
 
     width: 65px;
     height: 65px;
@@ -162,6 +180,7 @@ h1 {
 
     box-shadow: 0 0 16px var(--bg-4);
     z-index: 10;
+    order: 10;
 }
 
 .guide {
@@ -170,6 +189,7 @@ h1 {
     width: 120px;
     text-align: center;
     background-color: var(--bg-2);
+    box-shadow: 0 0 16px var(--bg-3);
     opacity: 0;
 
     top: -2em;
@@ -185,10 +205,28 @@ h1 {
     transform: translateY(-1em);
 }
 
+.btn-new:hover .x-1 {
+    transform: rotate(180deg);
+}
+
+.btn-new:hover .x-2 {
+    transform: rotate(90deg);
+}
+
 /* ---- 오래된 기록들 ---- */
 
-[class^="quote"] {
+h2.title::before {
+    content: '';
+    background: url("./images/quote-start.png") center/contain no-repeat;
     width: 60px;
+    height: 60px;
+}
+
+h2.title::after {
+    content: '';
+    background: url("./images/quote-end.png") center/contain no-repeat;
+    width: 60px;
+    height: 60px;
 }
 
 .old {
