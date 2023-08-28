@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+    height: 1500px;
+    background: linear-gradient(to bottom, gold, royalblue);
+}
+
+path {
+    fill: none;
+    stroke: white;
+    stroke-width: 5px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.wrap {
+    width: 100%;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+
+    /* text-align: center; */
+}
+
+.btn-open {
+    display: block;
+    margin: 16px auto;
+    text-align: center;
+    font-family: 'Pretendard';
+    font-size: 18px;
+    border-radius: 30px;
+    padding: 12px 80px;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.btn-open:disabled {
+    background: #b4b4b4;
+    border: 1px solid #8a8a8a;
+    border-radius: 30px;
+    padding: 12px 80px;
+    color: rgb(141, 141, 141);
+    opacity: 0;
+}
+
+.btn-open:enabled {
+    background: #ffffff30;
+    border: 1px solid #ffffff;
+    color: white;
+    cursor: pointer;
+
+}
+
+
+.btn-open:hover {
+    background: #ffffff90;
+    color: royalblue;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard.woff')
+        format('woff');
+    font-weight: 400;
+    font-style: normal;
+} 
+
+
+
+.modal {
+    display: none;
+    
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: royalblue;
+    color: white;
+    width: 300px;
+    height: 240px;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 16px;
+    box-shadow: 0 0 30px #00000020;
+    
+    text-align: center;
+    font-family: "Pretendard";
+
+    z-index: 10;
+}
+
+.modal ul {
+    display: flex;
+    justify-content: center;
+
+    list-style: none;
+    padding: 0;
+    gap: 8px;
+
+    padding-top: 20px;
+    border-top: 1px solid #ffffff50;
+}
+
+.modal ul li a {
+    background-color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    color: royalblue;
+    border-radius: 40px;
+    font: inherit;
+
+}
+
+.btn-close {
+    background: none;
+    border: none;
+    border-radius: 10px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.btn-close path {
+    stroke: white;
+}
+
+/* 검은 배경 */
+.dim {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    background-color: #00000050;
+    backdrop-filter: blur(1px);
+    display: none;
+}
+
+.modal.active,
+.modal.active + .dim {
+    display: block;
+}    
