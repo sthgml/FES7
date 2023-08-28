@@ -1,0 +1,67 @@
+body {
+    min-height: 100vh;
+    background: linear-gradient(45deg, lime, yellow);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+}
+
+h1 {
+    font-weight: normal;
+    font-family: 'Neonderthaw', cursive;
+    color: green;
+    width: min-content;
+    line-height: 0.7;
+    font-size: 160px;
+
+}
+
+.a11y-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
+ul, li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+.drop-target {
+    padding: 20px;
+
+}
+.drag-item {
+    border: 1px solid #ddd;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.drag-item img {
+    width: 48px;
+    height: 48px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 50%;
+
+}
