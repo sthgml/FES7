@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Filter</title>
+</head>
+<body>
+    <ul>
+        <li>0: hello <strong>world</strong></li>
+        <li class="item">1: hello world</li>
+        <li class="item">2: hello world</li>
+        <li>3: <strong>hello</strong> world</li>
+        <li>: hello world 3</li>
+        <li>: hello world</li>
+        <li>: hello world</li>
+        <li style="display: none;">7: hello world</li>
+        <li></li>
+    </ul>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        // document.querySelector("li:nth-Child(4)").style.color = "blue"
+        // 아래 JQuery code 와 같음
+        $("li").eq("6").css("color",'royalblue');
+
+        //JQuery 3읖 포함하지 않은? / 3번째가 아닌?이 아닌 요소들
+        $("li").not(':eq(5)').css("color", "green");
+
+        //JS로 하면~
+        document.querySelectorAll("li").forEach((el,i)=> {
+            if(i != 3){
+                el.style.color = "green";
+            }
+        })
+
+        //Another way
+        $("li:lt(4)").css("color","blue");
+        $("li:gt(5)").css("color","red");
+
+        //find elements with certain property 
+        $("[class]").css("border","1px solid green")
+
+        //find elements containing certain text
+        $("li:contains('3')").css("background-color","grey")
+
+        //JS로 바꾸면
+        const lis = document.querySelectorAll('li');
+        console.log(lis)
+        lis.forEach(v=>{
+            // 방법 1 : includes (true or false)
+            if(v.textContent.includes("3")){
+                console.log(v)
+                v.style.backgroundColor = "grey"
+            }
+
+            // 방법 2 : indexOf (indexNumber or -1)
+            if(v.textContent.indexOf("3") !== -1){
+                v.style.backgroundColor = "gold"
+            }
+
+        })
+
+
+    </script>
+</body>
+</html>

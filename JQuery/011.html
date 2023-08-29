@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 조작</title>
+</head>
+<body>
+    <li>ㅣㅑㄴㅅ1</li>
+    <li>ㅣㅑㄴㅅ2</li>
+    <li>ㅣㅑㄴㅅ3</li>
+    <li>ㅣㅑㄴㅅ4</li>
+
+    <script>
+        const ulEl = document.querySelector('ul')
+        const liEl = document.createElement("li")
+
+        ulEl.insertBefore(liEl, ulEl.querySelector('li:nth-Child(1)'))
+        //노드.insertBefore(넣을 요소, 참고가 될 요소 이거 앞에 넣을 거야)
+
+        const pEl = document.createElement('p')
+        ulEl.parentElement.insertBefore(pEl, ulEl);
+        
+    </script>
+</body>
+</html>

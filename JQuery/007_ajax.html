@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax attr</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+</head>
+<body>
+    <label>
+        아이디
+        <input type="text" value="weniv" />
+      </label>
+
+    <script>
+        const input = document.querySelector("input")
+        input.getAttribute('type')
+        console.log('type',input.getAttribute('type'))
+
+        console.log('type, jquery',$("input").attr("type")) //getAttribute("type")
+        console.log('value, jquery',$("input").val("type")) //
+        console.log('remove Attribute, jquery',$("input").removeAttr("type"))
+        
+        const inputText = document.querySelector("input")
+        inputText.setAttribute('value', 'FES7')
+        inputText.removeAttribute('value')
+
+        localStorage.setItem("프론트엔드", '서동현')
+        console.log(localStorage.getItem("프론트엔드"))
+        // 개발자도구의 애플리케이션 탭에 있음 쿠키랑 비슷한데 로컬스토리지에서 사용자데이터에 저장을 시켜서 쓸 수 있게끔 브라우저를 끄면 사라지는 세션스토리지, 로컬스토리지는 별도로 삭제하지 않는 한 저장되어있음
+
+        inputText.style.color='royalblue'
+        console.log(inputText.value)
+        inputText.classList.value//클래스에 속한 값들을 문자열로 뽑아냄
+        
+
+
+    </script>
+</body>
+</html>

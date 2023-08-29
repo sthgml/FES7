@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery filter2</title>
+</head>
+<body>
+    <ul>
+        <li>0: hello <strong>world</strong></li>
+        <li class="item">1: hello world</li>
+        <li class="item">2: hello world</li>
+        <li>3: <strong>hello</strong> world</li>
+        <li id="hello">: <p>hello world 3</p><p>hello world 3</p><p>hello world 3</p></li>
+        <li>: hello world</li>
+        <li>: hello world</li>
+        <li style="display: none;">7: hello world</li>
+        <li></li>
+    </ul>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        $('li:empty').css('background','pink')
+
+        //직계 부모요소 탐색
+        $("li").parent().css("background-color","royalblue")
+
+        //자식요소 중 첫, 마지막 요소 탐색
+        $("#hello").children().first().css("background-color", "salmon")
+        $("#hello").children().last().css("background-color", "salmon")
+
+        //형제요소
+        $("#hello").prev().css("background-color", "gold")
+        $("#hello").next().css("background-color", "gold")
+
+        //closest
+        console.log($("#hello").closest("ul"))
+    </script>
+</body>
+</html>
