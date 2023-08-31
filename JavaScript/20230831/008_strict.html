@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stricct</title>
+</head>
+<body>
+    <script>
+        //배열이나 객체를 불변하는 객체처럼 다루기
+        // 배열 객체는 const를 써도 다른 값을 추가하거나 빼는 것이 가능한데, 그럼에도 불구하고 불가능 한 것 처럼 다루어라~
+        // 기존에 사용했던 원본 데이터는 그대로 두고 새로운 데이터를 만들어 사용하는 습관을 들이세용~ (깊은 복사! stringify > object화)
+        'use strict'//엄격모드 사용하기!
+        //일반에서는 조용한 에러(무시처리)가 나지만, 엄격모드를 해서 에러가 나게 할 수 잇음
+
+        // 1. 엄격모드에서는 선언하지 않은 변수에 값을 할당할 수 없습니다.
+        let age;
+        age = 100;
+
+        //2. 읽기 전용 객체에 값을 할당하면 안됩니다
+        var undefined = "undefined";
+        Math.PI = 0;
+        var Infinity = 0;
+
+        //3. 지울 수 없는 값을 지우려고 하면 안됩니다.
+        const employee = {
+
+        }
+
+        //4. 함수 파라미터에 중복된 이름을 사용할 수 없습니다.
+
+        //일치 연산자는 등호 세개의 사용을 습관화 하세요!
+        //
+    </script>
+</body>
+</html>

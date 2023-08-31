@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>moving practice</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(45deg, rgb(161, 252, 161), skyblue) no-repeat;
+            overflow: hidden;
+        }
+
+        .unicorn {
+            display: inline-block; 
+            position: absolute;
+            top: calc(50% - 10em);
+            left: calc(50% - 10em);
+        }
+
+        img {
+            max-width: 300px; 
+        }
+
+        .cloud1 {
+            top: 0;
+            animation: moveLeft 10s linear infinite alternate both;
+        }
+
+        .cloud2 {
+            top: 450px;
+            animation: moveLeft 10s ease infinite alternate-reverse ;
+        }
+
+        @keyframes moveLeft {
+            0% {
+                transform: translate(0px);
+            }50%{
+                transform: translate(-50vh);
+            }100%{
+                transform: translate(50vh)
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="cloud1"><img src="img/clouds-8177214_1280.png" alt=""></div>
+    <div class="unicorn"><img src="img/BrowserPreview_tmp.gif" alt=""></div>
+    <div class="cloud2"><img src="img/clouds-8177208_1280.png" alt=""></div>
+    <script>
+        const unicorn = document.querySelector(".unicorn");
+        let x = 0; y = 0;
+
+        document.addEventListener("keydown", move);
+
+        //방법1
+        /* function move (e) {
+            if(e.key == "ArrowLeft"){
+                x -= 15;
+            }
+            if(e.key == "ArrowRight"){
+                x += 15;
+                
+            }
+            if(e.key == "ArrowUp"){
+                y -= 15;
+            }
+            if(e.key == "ArrowDown"){
+                y += 15;
+            }
+            unicorn.style = `transform: translate(${x}px, ${y}px)`
+        } */
+
+        document.addEventListener("keydown", move); //여기에 펑션이름 옆에 괄호 넣으면 안됨 그럼 실행됨
+        document.addEventListener("keyup", stop);
+
+        function move(event){
+            keys = event.key;
+        }
+        
+        function stop(){
+            keys = "";
+        }
+
+        function play() {
+            //key값을 감시합니다.
+            console.log(keys)
+            requestAnimationFrame(play)
+        }
+
+        requestAnimationFrame(play)
+
+    </script>
+</body>
+</html>
