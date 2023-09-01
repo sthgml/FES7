@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise to fetch</title>
+</head>
+<body>
+    <script>
+        'use strict';
+
+        class UserStorage {
+            // 사용자가 입력한 값과 유저 정보가 일치하는 유저를 찾습니다.
+            searchUser(userName, password) {
+
+                return new Promise((resolve, reject) => {
+                    fetch("users.json").then((response)=>{
+                        
+                    })
+                })
+            }
+
+            // 유저에 맞는 인사말을 출력합니다.
+            sayHi(user) {
+                return new Promise ((resolve, reject) => {
+                    fetch("greetings.json").then((response)=>{
+                        return response.json();
+                    }).then((data)=>{
+                        const result = data.user.find((item)=>{
+                            
+                        })
+                    })
+
+                    })
+            }
+        }
+
+
+        const userStorage = new UserStorage();
+
+        const userName = prompt('이름을 입력하세요.');
+        const password = prompt('비밀번호를 입력하세요.');
+
+        userStorage
+        .searchUser(userName, password)
+            .then((userName)=>{
+                userStorage.sayHi(userName)
+                    .then((result)=>{
+                        alert(`안녕하세요 ${result.userName}님, ${result.greetings}`)
+                    })
+                    .catch((error)=>{
+                        console.log(error)
+                    })
+            })
+
+    </script>
+</body>
+</html>

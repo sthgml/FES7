@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <button type="button">
+        클릭
+    </button>
+    <p></p>
+
+    <script>
+        const button = document.querySelector("button");
+        const txt = document.querySelector('p')
+        button.addEventListener("click", xhrRequest);
+
+        function xhrRequest (){
+            const requestObj = new XMLHttpRequest();
+
+            requestObj.open('GET', 'message.txt');
+            requestObj.onreadystatechange = () => {
+                //readyState가 변화하면 실행되는 이벤트 리스너임
+                if(requestObj.readyState === 4 && requestObj.status === 200){
+                    const result = requestObj.responseText;
+                    txt.textContent = result
+                }
+            }
+            requestObj.send();
+        }
+
+       
+        // requestObj.send(); 
+        // 서버로 요청을 보냅니다. send 메소드가 실행되어야만 우리가 위에서 설정한 내용들이 의미를 가지게 됩니다.
+
+        
+    </script>
+</body>
+</html>
