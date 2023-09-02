@@ -9,10 +9,6 @@
     position: absolute;
 }
 
-.off {
-    display: none;
-}
-
 header {
     border-bottom: 2px solid var(--bg);
 }
@@ -146,71 +142,6 @@ h1 {
     section.old {
         margin-top: 0;
     }
-}
-
-/* ---- 새기록 만들기 ---- */
-
-.x-1,
-.x-2 {
-    width: 32px;
-    height: 3px;
-    background-color: var(--bg-2);
-    position: absolute;
-    top: 31px;
-    left: 16px;
-    transition: all 0.4s;
-}
-
-.x-1 {
-    transform: rotate(90deg);
-}
-
-.x-2 {
-    transform: rotate(0deg);
-}
-
-.btn-new{
-    position: sticky;
-    margin-left: 16px;
-    top: 88vh;
-
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-
-    box-shadow: 0 0 16px var(--bg-4);
-    z-index: 10;
-    order: 10;
-}
-
-.guide {
-    color: var(--em);
-    position: absolute;
-    width: 120px;
-    text-align: center;
-    background-color: var(--bg-2);
-    box-shadow: 0 0 16px var(--bg-3);
-    opacity: 0;
-
-    top: -2em;
-    left: calc(0px - 10px - 1em);
-
-    border-radius: 8px;
-    padding: 8px;
-    transition: all 0.3s;
-}
-
-.btn-new:hover .guide{
-    opacity: 1;
-    transform: translateY(-1em);
-}
-
-.btn-new:hover .x-1 {
-    transform: rotate(180deg);
-}
-
-.btn-new:hover .x-2 {
-    transform: rotate(90deg);
 }
 
 /* ---- 오래된 기록들 ---- */

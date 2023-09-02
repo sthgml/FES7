@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="modules.css">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="today_modal.css">
     <link rel="icon" href="./favicon.ico">
 </head>
 <body class="body">
@@ -91,57 +92,28 @@
             </div>
         </section>
 
-        <script>
-            const logout = document.querySelector('.logout');
-            logout.addEventListener('click',e=>{
-                if(window.confirm('정말 로그아웃 하시겠습니까?')){
-                    location.href='./login.html'
-                    location.replace('./login.html')
-                }else{
-                    e.preventDefault();
-                }
-            })
+        <section class="today hidden">
+            <h2 class="title typing"><span class="mark">당장</span>&nbsp;기록해서 복습하기</h2>
+            <h3 class="title"><img src="./images/icon/heart.svg" alt="icon-heart" class="icon-heart"><strong>당장</strong> &nbsp;기록해서 복습하면&nbsp; <strong>42%</strong>&nbsp;를 더 기억할 수 있어요!</h3>
+        
+            <form class="form new" action="#" method="post" name="user-info-join">
+                <div class="input-user-flex">
+                    <input type="text" id="user-title" name="user-title" placeholder="제목을 적어주세요!" class="user-title">
+                    <p class="warning-text">warning text</p>
+                </div>
+                <div class="input-user-flex">
+                    <textarea id="user-content" name="user-content"  class="user-content" rows="17" placeholder="50분간 배웠던 내용을 기억나는대로 적어보세요!"></textarea>
+                    <p class="warning-text">warning text</p>
+                </div>
+                <button type="submit" class="btn-save">
+                    저장하기
+                </button>
+            </form>
+        </section>
+        <div class="dim hidden"></div>
 
-            const category24 = document.querySelector(".category-24hr");
-            const category1W = document.querySelector(".category-week");
-            const category1M = document.querySelector(".category-month");
-            const lis = document.querySelectorAll(".nav ul li");
-            const h2 = document.querySelector(".title.typing");
-
-            const nav = document.querySelector(".nav");
-            nav.addEventListener("click",e=>{
-                
-                if(e.target.className=="tap-24hr"){
-                    h2.classList.add("off")
-                    category24.classList.remove("off")
-                    category1W.classList.add("off")
-                    category1M.classList.add("off")
-                }else if(e.target.className=="tap-week"){
-                    h2.classList.add("off")
-                    category24.classList.add("off")
-                    category1W.classList.remove("off")
-                    category1M.classList.add("off")
-                }else if(e.target.className=="tap-month"){
-                    h2.classList.add("off")
-                    category24.classList.add("off")
-                    category1W.classList.add("off")
-                    category1M.classList.remove("off")
-                }else if(e.target.className=="tap-all"){
-                    h2.classList.remove("off")
-                    category1M.classList.remove("off")
-                    category1W.classList.remove("off")
-                    category24.classList.remove("off")
-                }
-                lis.forEach(e=>e.classList.remove("opened"));
-                e.target.classList.add("opened")
-            })
-
-            const btnNew = document.querySelector(".btn-new");
-            btnNew.addEventListener("click",()=>{
-                location.href='./today_modal.html'
-                location.replace('./today_modal.html')
-            })
-        </script>
+        <script src="today_modal.js"></script>
+        <script src="index.js"></script>
     </main>
 </body>
 </html>
