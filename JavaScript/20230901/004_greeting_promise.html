@@ -70,13 +70,13 @@
         const userStorage = new UserStorage();
 
         const userName = prompt("이름 : jaehyun");
-        const password = prompt("비밀번호 : wade")
+        const password = prompt("비밀번호 : wade");
 
         //처리-데이터>알럿창에 띄우기
         userStorage.searchUser(userName, password)
             .then(
-                (useName)=>{
-                    userStorage.sayHi(useName)
+                (user)=>{
+                    userStorage.sayHi(user)
                         .then(
                             (result)=>{
                                 alert(`${result.userName}님, ${result.greetings}`)

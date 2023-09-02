@@ -11,13 +11,14 @@
         'use strict';
 
         class UserStorage {
+
             // 사용자가 입력한 값과 유저 정보가 일치하는 유저를 찾습니다.
             searchUser(userName, password, onSuccess, onError) {
 
-                const requestObj = new XMLHttpRequest();
-                requestObj.open('GET', 'users.json'); // 요청 초기화
-                requestObj.onreadystatechange = () => {
-                    if (requestObj.readyState === 4 && requestObj.status === 200) { //응답이 정상적으로 수신되면
+                const requestObj = new XMLHttpRequest(); // 서버와 비동기 통신을 가능하게 하는 객체 생성 -> readyState == 0
+                requestObj.open('GET', 'users.json'); // 요청 초기화 -> readyState == 1
+                requestObj.onreadystatechange = () => { // 다운로드 중 -> readyState == 3
+                    if (requestObj.readyState === 4 && requestObj.status === 200) { // 통신 완료 -> readyState ==4 응답이 정상적으로 수신되면
                         const result = JSON.parse(requestObj.responseText).user.find((item) => {; //리스폰스 텍스트를 파싱해서 객체 배열로 만든 뒤에 id와 password가 모두 일치하는 아이템을 리턴합니다.
                             return item.userName === userName && item.password === password
                         }) 
@@ -31,7 +32,7 @@
                     }
                 }
 
-                requestObj.send();
+                requestObj.send(); // 요청 전송 -> readyState == 2
             }
 
             // 유저에 맞는 인사말을 출력합니다.

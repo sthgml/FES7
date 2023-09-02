@@ -80,8 +80,10 @@
             unicorn.style = `transform: translate(${x}px, ${y}px)`
         } */
 
+        //방법2
         document.addEventListener("keydown", move); //여기에 펑션이름 옆에 괄호 넣으면 안됨 그럼 실행됨
         document.addEventListener("keyup", stop);
+        let keys = '';
 
         function move(event){
             keys = event.key;
@@ -93,7 +95,25 @@
 
         function play() {
             //key값을 감시합니다.
-            console.log(keys)
+            // console.log(keys)
+            switch (keys) {
+                case "ArrowLeft" : 
+                    x -= 10;
+            unicorn.style = `transform: translate(${x}px, ${y}px)`
+                    break;
+                case "ArrowRight" :
+                    x += 10;
+            unicorn.style = `transform: translate(${x}px, ${y}px)`
+                    break;
+                case "ArrowUp" :
+                    y -= 10;
+            unicorn.style = `transform: translate(${x}px, ${y}px)`
+                    break;
+                case "ArrowDown" :
+                    y += 10;
+            unicorn.style = `transform: translate(${x}px, ${y}px)`
+                    break;    
+            }
             requestAnimationFrame(play)
         }
 

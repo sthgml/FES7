@@ -16,7 +16,24 @@
 
                 return new Promise((resolve, reject) => {
                     fetch("users.json").then((response)=>{
-                        
+                        if(!response.ok){
+                            throw new Error(`HTTP ERROR!! Status: ${response.stauts}`);
+                        }else{
+                            return response.json
+                        }
+                    }).then((data)=>{
+                        console.log(data.user)
+                        // const result = da ta.user.find((item) => {
+                        //     return item.userName === userName && item.password === password
+                        // })
+
+                        if (result) {
+                            resolve(userName);
+                        } else {
+                            reject(new Error('user not found'));
+                        }
+                    }).catch((error) => {
+                        console.error(error)
                     })
                 })
             }
@@ -27,9 +44,17 @@
                     fetch("greetings.json").then((response)=>{
                         return response.json();
                     }).then((data)=>{
-                        const result = data.user.find((item)=>{
-                            
+                        const result = data.greetings.find((item)=>{
+                            return item.userName === user;
                         })
+
+                        if (result) {
+                            resolve(result);
+                        } else {
+                            reject(new Error('no greetings'))
+                        }
+                    }).catch((error) => {
+                        console.error(error);
                     })
 
                     })
@@ -39,21 +64,18 @@
 
         const userStorage = new UserStorage();
 
-        const userName = prompt('이름을 입력하세요.');
-        const password = prompt('비밀번호를 입력하세요.');
+        const userName = prompt('jaehyun');
+        const password = prompt('wade');
 
         userStorage
         .searchUser(userName, password)
             .then((userName)=>{
-                userStorage.sayHi(userName)
-                    .then((result)=>{
-                        alert(`안녕하세요 ${result.userName}님, ${result.greetings}`)
-                    })
-                    .catch((error)=>{
-                        console.log(error)
-                    })
+                return userStorage.sayHi(userName)
+            }).then((result)=>{
+                alert(`안녕하세요 ${result.userName}님, ${result.greetings}`)
+            }).catch((error)=>{
+                console.log(error)
             })
-
     </script>
 </body>
 </html>
