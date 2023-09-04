@@ -1,0 +1,307 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    border: 0;
+    background: #fff;
+    font: inherit;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.50);
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+li {
+    list-style: none;
+}
+
+/* ---- 초기화 ---- */
+
+body {
+    background-color: #EAE8FE;
+    font-family: Noto Sans CJK KR;
+}
+
+header {
+    width: 100vw;
+}
+
+header img {
+    width: 436px;
+    padding: 0px 24px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* <!-- 음료 리스트 --> */
+
+
+.main {
+    display: flex;
+    width: fit-content;
+    margin: 44px auto;
+    gap: 18px;
+}
+
+@media (max-width:850px) {
+    .main {
+        flex-direction: column;
+    }    
+}
+
+.vending-machine {
+    background-color: #fff;
+    width: 360px;
+    box-sizing: border-box;
+    padding: 31px 27px 28px 27px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.display-beverage {
+    width: fit-content;
+}
+
+ul {
+    display: flex;
+    width: fit-content;
+    flex-wrap: wrap;
+    gap: 12px
+}
+
+.display-beverage button{
+    width: 94px;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px ;
+    padding: 10px;
+   
+    border-radius: 10px;
+
+    position: relative;
+    margin: 0 auto;
+}
+
+.display-beverage img {
+    width: 36px;
+    height: 65px;
+}
+
+.display-beverage label {
+    color: #333;
+    font-family: Noto Sans KR;
+    font-size: 9px;
+    font-weight: 500;
+    line-height: 10px;
+}
+
+.display-beverage p {
+    padding: 6px 15px;
+    background: #6327FE;
+    border-radius: 50px;
+    
+    color: #fff;
+    font-size: 12px;
+    line-height: 12px;
+    color: #FFF;
+    font-weight: 500;
+}
+
+.display-beverage button.active {
+    outline: 3px solid #6327FE;
+}
+
+.display-beverage #btn-purple-coke::before {
+    content: '';
+    background-color: #000;
+
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    border-radius: 10px;
+    opacity: 80%;
+}
+
+.display-beverage #btn-purple-coke.disabled::after {
+    content: '품절';
+    color: #EAE8FE;
+    padding: 0 6px;
+    border: 4px double #EAE8FE;
+    /* outline: 2px solid #EAE8FE; */
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-18deg) ;
+    
+
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 900;
+
+}
+/* <!-- 음료 리스트 --> */
+
+/* <!-- machine-interface --> */
+.machine-interface {
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19px;
+}
+
+.machine-interface>*>* {
+    border-radius: 5px;
+    padding: 6px;
+}
+
+.interface-display {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.change {
+    display: flex;
+    justify-content: space-between;
+    background-color: #EAE8FE;
+}
+
+.input-money {
+    border: 1px solid #BDBDBD;
+    font:inherit
+}
+
+.selected-beverage {
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 5px;
+    padding: 6px;
+    background-color: #EAE8FE;
+    border: 1px solid #BDBDBD;
+    
+    height: 106px;
+    box-sizing: border-box;
+    overflow: scroll;
+}
+
+li.beverage-list {
+    border-radius: 5px;
+
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    background: #fff;
+    border-radius: 5px;
+    padding: 6px 10px;
+    width: 100%;
+    height: 46px;
+    box-sizing: border-box;
+    
+    color: #333;
+    font-size: 9px;
+}
+
+li.beverage-list img {
+    width: 18px;
+    height: 33px;
+}
+
+li.beverage-list .beverage-count {
+    margin-left: auto;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 30px;
+    color: #000;
+    font-weight: 500;
+}
+
+.interface-button {
+    width: 94px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.interface-button [type="submit"]{
+    background-color: #6327FE;
+    color: #FFF;
+    height: 106px;
+}
+
+/* ---- status ---- */
+.status {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    width: 360px;
+}
+
+.status .current-money {
+    background-color: #fff;
+    padding: 9px 27px;
+
+}
+
+.current-money div {
+    display: flex;
+    justify-content: space-between;
+    background-color: #EAE8FE;
+
+    padding: 6px 10px;
+    border-radius: 5px;
+}
+
+.current-money div p {
+    font-weight: bold;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+/* ---- obtained beverage ---- */
+.obtained-beverage {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 13px;
+    height: 474px;
+    box-sizing: border-box;
+    padding: 25px 27px 26px 27px;
+}
+
+.obtained-beverage ul.selected-beverage.obtained {
+    height: 100%;
+    width: 100%;
+}
+
+.obtained-beverage h2 {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.obtained-beverage p {
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: auto;
+}
