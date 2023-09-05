@@ -44,3 +44,13 @@ nav.addEventListener("click",e=>{
     e.target.classList.add("opened")
 })
 
+// 햄버거 버튼
+const hamburger = document.querySelector("#hamburger");
+const paperList = document.querySelector(".paper-list");
+console.log(hamburger, paperList)
+hamburger.addEventListener("click",e=>{
+    // console.log(e.target)
+    // console.log(paperList)
+    paperList.classList.toggle("opened")
+    hamburger.classList.toggle("opened")
+})
