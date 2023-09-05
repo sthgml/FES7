@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>벤딩머신</title>
-    <link rel="stylesheet" href="./001.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <header>
@@ -17,75 +17,45 @@
             <div class="display-beverage">
                 <!-- 음료 리스트 -->
                 <ul class="list-cola">
-                    <li>
-                        <button type="button" id="btn-red-coke" class="active">
-                            <img src="images/cola-original.png" alt="빨간 콜라">
-                            <label for="btn-red-coke">Oringinal-Cola</label>
-                            <p class="cost">1000원</p>
-                        </button>
-                    </li>
-                    <li>
+                    
+                    <!-- <li>
                         <button type="button" id="btn-purple-coke" class="disabled">
                             <img src="images/cola-violet.png" alt="보라 콜라">
                             <label for="btn-purple-coke">purple-Cola</label>
                             <p class="cost">1000원</p>
                         </button>
-                    </li>
-                    <li>
-                        <button type="button" id="btn-blue-coke">
-                            <img src="images/cola-cool.png" alt="파란 콜라">
-                            <label for="btn-blue-coke">blue-Cola</label>
-                            <p class="cost">1000원</p>
-                        </button>
-                    </li>
-                    <li>
-                        <button type="button" id="btn-green-coke">
-                            <img src="images/cola-green.png" alt="초록 콜라">
-                            <label for="btn-green-coke">green-Cola</label>
-                            <p class="cost">1000원</p>
-                        </button>
-                    </li>
-                    <li>
-                        <button type="button" id="btn-orange-coke" class="active">
-                            <img src="images/cola-orange.png" alt="주황 콜라">
-                            <label for="btn-orange-coke">orange-Cola</label>
-                            <p class="cost">1000원</p>
-                        </button>
-                    </li>
-                    <li>
-                        <button type="button" id="btn-yellow-coke">
-                            <img src="images/ccola-yellow.png" alt="노란 콜라">
-                            <label for="btn-yellow-coke">yellow-Cola</label>
-                            <p class="cost">1000원</p>
-                        </button>
-                    </li>
+                    </li> -->
+                    
                 </ul>
             </div>
+
             <div class="machine-interface">
                 <div class="interface-display">
-                    <div class="change"><p>잔액 :</p>  <p>1000원</p></div>
+                    <div class="change"><h2>잔액 :</h2>  <p>10000원</p></div>
                     <input type="number" class="input-money" placeholder="입금액 입력" min="1000" value="1000"
                     step="1000">
+
+                    <!-- 선택되어 장바구니에 담긴 음료 리스트 -->
                     <div class="selected-beverage">
                         <ul class="beverage-lists">
-                            <li class="beverage-list">
+                            <!-- <li class="beverage-list">
                                 <img src="images/cola-original.png" alt="red-coke">
                                 <p class="beverage-title">original_coke</p> 
                                 <p class="beverage-count">1</p>
-                            </li>
-                            <li class="beverage-list">
+                            </li> -->
+                            <!-- <li class="beverage-list">
                                 <img src="images/cola-green.png" alt="green-coke">
                                 <p class="beverage-title">green_coke</p> 
                                 <p class="beverage-count">1</p>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
 
                 <div class="interface-button">
-                    <button type="button" class="btn-return-charge">거스름돈 반환</button>
-                    <button type="button">입금</button>
-                    <button type="submit">획득</button>
+                    <button type="button" class="btn-return">거스름돈 반환</button>
+                    <button type="button" class="btn-input">입금</button>
+                    <button type="submit" class="btn-obtain">획득</button>
                 </div>
             </div>
         </section>
@@ -93,13 +63,13 @@
             <div class="current-money">
                 <div>
                     <p>소지금 :</p>
-                    <p>25,000 원</p>
+                    <p class="current-money-cost">25,000 원</p>
                 </div>
             </div>
             <div class="obtained-beverage">
                 <h2>획득한 음료</h2>
                 <ul class="selected-beverage obtained">
-                    <li class="beverage-list">
+                    <!-- <li class="beverage-list">
                         <img src="images/cola-original.png" alt="red-coke">
                         <p class="beverage-title">original_coke</p> 
                         <p class="beverage-count">1</p>
@@ -118,9 +88,9 @@
                         <img src="images/cola-violet.png" alt="purple-coke">
                         <p class="beverage-title">purple_coke</p> 
                         <p class="beverage-count">5</p>
-                    </li>
+                    </li> -->
                 </ul>
-                <p>총금액 : 9,000 원</p>
+                <p>총금액 : <span>0</span> 원</p>
             </div>
         </section>
     </main>

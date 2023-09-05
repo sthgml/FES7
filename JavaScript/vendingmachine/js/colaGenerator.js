@@ -26,12 +26,12 @@ export class ColaGenerator {
         const docFrag = new DocumentFragment();
         data.forEach(element => {
             const item = document.createElement("li");
-            let name = element.name;
-            let cost = element.cost;
-            let count = element.count;
-            let img = element.img; 
+            let name = element.name,
+            cost = element.cost,
+            count = element.count,
+            img = element.img; 
             const itemTemplate = `
-                <button type="button" id="btn-${name}" class="active">
+                <button type="button" id="btn-${name}" data-item="${name}" data-count="${count}" data-price="${cost}" data-img='${img}'">
                     <img src="images/${img}" alt=${name}>
                     <label for="btn-${name}">${name}</label>
                     <p class="cost">${cost}원</p>
@@ -45,3 +45,4 @@ export class ColaGenerator {
 
 export default ColaGenerator;
 //import ColaGenerator from "./001.js"
+//data-xx = dataset.xx 으로 접근이 가능한데, HTML에 추가적인 정보를 저장하여 마치 프로그램 가능한 객체처럼 사용할 수 있게 합니다. data-xx 에서 xx에 콜론이나 영문 대문자가 들어가서는 안됩니다. ui에서 선택한 속성의 값들을 가져오기 위해서 객체처럼 ㅅ

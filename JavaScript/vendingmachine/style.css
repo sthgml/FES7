@@ -36,6 +36,10 @@ header img {
     margin: 0 auto;
 }
 
+h1,h2,p {
+    font: inherit;
+}
+
 /* <!-- 음료 리스트 --> */
 
 
@@ -68,7 +72,6 @@ header img {
 
 ul {
     display: flex;
-    width: fit-content;
     flex-wrap: wrap;
     gap: 12px
 }
@@ -81,11 +84,12 @@ ul {
     align-items: center;
     gap: 6px ;
     padding: 10px;
-   
+    
     border-radius: 10px;
 
     position: relative;
     margin: 0 auto;
+    transition: all 0.6s;
 }
 
 .display-beverage img {
@@ -113,11 +117,13 @@ ul {
     font-weight: 500;
 }
 
-.display-beverage button.active {
+.display-beverage button:active {
     outline: 3px solid #6327FE;
+    background-color: #a581ff;
+    transition: all 0.005s;
 }
 
-.display-beverage #btn-purple-coke::before {
+.display-beverage :disabled::before {
     content: '';
     background-color: #000;
 
@@ -132,7 +138,7 @@ ul {
     opacity: 80%;
 }
 
-.display-beverage #btn-purple-coke.disabled::after {
+.display-beverage :disabled::after {
     content: '품절';
     color: #EAE8FE;
     padding: 0 6px;
