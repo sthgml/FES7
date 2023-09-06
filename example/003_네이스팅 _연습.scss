@@ -1,0 +1,33 @@
+nav {
+    background-color: #eee;
+    padding: 10px;
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+
+        li {
+            list-style: none;
+
+            &:hover {
+                background-color: wheat;
+            }
+
+            .one {
+                color:red;
+                background: {
+                    image: url(../example/src/img/house-solid.svg);
+                    position: center;
+                };
+            }
+
+            .two {
+                color:green;
+            }
+            
+            .three {
+                color:orange;
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+nav {
+  background-color: #eee;
+  padding: 10px;
+}
+nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+nav ul li {
+  list-style: none;
+}
+nav ul li:hover {
+  background-color: wheat;
+}
+nav ul li .one {
+  color: red;
+  background-image: url(../example/src/img/house-solid.svg);
+  background-position: center;
+}
+nav ul li .two {
+  color: green;
+}
+nav ul li .three {
+  color: orange;
+}/*# sourceMappingURL=003_네이스팅 _연습.css.map */

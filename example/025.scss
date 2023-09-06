@@ -1,0 +1,45 @@
+@mixin sample {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+.one {
+    @include sample;
+    background-color:royalblue;
+}
+
+.two {
+    @include sample;
+    background-color: salmon;
+}
+
+// ---- 이렇게 표현하는 것을 다음고 ㅏ같이 바꿀 ㅅ수 있스   ㅂ니다. Content를 활용해서~!~!
+
+@mixin sample2 {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    height: 200px;
+    @content;
+}
+
+.one2 {
+    @include sample2 {
+        background-color: saddlebrown;
+    }}
+.two2 {
+    @include sample2 {
+        background-color: slateblue;
+    }
+}
+
+$test-arr: 'top' 'right' 'bottom' 'left';
+
+@each $position in $test-arr {
+    .border-#{$position} {
+        border-#{$position} 
+    : 1px solid #000;
+    }
+}
