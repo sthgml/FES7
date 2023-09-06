@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>react Why we use React</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    JS 만 사용한 경우
+    <script>
+        const root = document.querySelector('#root');
+        const header = '<div>header</div>';
+        const main = '<div>main</div>';
+        const product = '<div>product</div>';
+        const footer = '<div>footer</div>';
+
+        root.innerHTML =
+            `
+                ${header} 
+                ${main}
+                ${product}
+                ${footer}
+            `;
+    </script>
+
+    JSX 를 사용한 경우
+    <div id="root2"></div>
+
+    <script type="text/babel">
+
+        const header2 = <div>header</div>;
+        const main2 = <div>main</div>;
+        const product2 = <div>product</div>;
+        const footer2 = <div>footer</div>;
+
+        // JSX에서 코드의 개행이 필요할 경우 소괄호를 사용하여 묶습니다.
+        // html = ();
+        // js = {};
+        const body = (
+            <div>
+                {header2}
+                {main2}
+                {product2}
+                {footer2}
+            </div>
+        );
+
+        const domContainer2 = document.querySelector('#root');
+        const root2 = ReactDOM.createRoot(domContainer2);
+        root2.render(body);
+
+    </script>
+</body>
+</html>

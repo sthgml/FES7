@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>react one step more</title>
+    <!-- react -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <!-- react-dom -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- 바벨 -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function Header({menuOne, menuTwo}){
+            console.log(menuOne, menuTwo)
+            return ( // 
+                <div>Header
+                    <div>menu</div>
+                    <div>{menuOne}</div> <div>{menuTwo}</div>
+                </div>
+            )
+        }
+
+        function 로그아웃() {
+            return <button>로그아웃</button>
+        }
+
+        function 로그인() {
+            return (
+                <div>
+                    <input type="text" />
+                    <input type="password" />
+                    <button>로그인</button>
+                </div>
+            )
+        }
+
+        const login = false;
+// 사용자 장의 태그의 속성과 값으로 Header 함수에 전달 될 아규먼트처럼 사용가능
+        const body = ( 
+            <div>
+                {Header("about", "menu")}
+                <Header menuOne="about" menuTwo="product"> 
+                    </Header>
+                    {console.log('hello js')}
+                    {'helo' + 'world'}
+                    <br/>
+                    <h1>hello!</h1>
+                    {login ? <로그아웃 /> : <로그인 />}
+                    </div>
+        )
+
+        const root = ReactDOM.createRoot(document.querySelector("#root"));
+        root.render(body);
+    </script>
+</body>
+</html>

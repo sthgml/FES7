@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React 써보기</title>
+    <!-- react -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <!-- react-dom -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- 바벨 -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+        const link = <li>링크1</li>;
+        const bestseller = <li>best seller 옷1</li>
+    
+        const div = (
+            <div>
+                <header>
+                    <h1>hello world shop</h1>
+                    <nav>
+                        <ul>
+                            {link}
+                            {link}
+                            {link}
+                            {link}
+                            {link}
+                        </ul>
+                    </nav>
+                </header>
+
+                <main>
+                    <h2>hello wrold!</h2>
+                        <p>product list</p>
+                    <ul>
+                        {bestseller}
+                        {bestseller}
+                        {bestseller}
+                        {bestseller}
+                        {bestseller}
+                        {bestseller}
+                        {bestseller}
+                        {bestseller}
+                        {bestseller}
+                        {bestseller}
+                        {bestseller}
+                    </ul>
+                </main>
+
+                <footer>
+                    <h2>hello footer</h2>    
+                    <address>제주시 인다 1길</address>
+                </footer>
+            </div>
+        );
+
+        const domContainer = document.querySelector("#root")
+        const root = ReactDOM.createRoot(domContainer)
+        root.render(div)
+
+    </script>
+    
+
+</body>
+</html>

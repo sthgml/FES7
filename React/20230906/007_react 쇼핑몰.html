@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>쇼핑몰</title>
+    <!-- react -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <!-- react-dom -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- 바벨 -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script>
+     
+    </script>
+
+    <script type="text/babel">       
+        (async ()=>{
+            const data = await fetch('http://test.api.weniv.co.kr/mall')
+                .then((response)=>{
+                    if(!response.ok){
+                        throw new Error("데이터를 찾을 수 없습니다")
+                    }else{
+                        return response.json();
+                    }
+                }).then((result)=>{
+                    return result;
+                })
+
+            const Card = (props) => {
+                const name = props.productdata.productName
+                const price = props.productdata.price
+                const url = "http://test.api.weniv.co.kr/" + props.productdata.thumbnailImg
+
+                console.log(name,price,url)
+                return (
+                    <li>
+                        <img src={url} alt="{name}" />
+                        <h3>{name}</h3>
+                        <p>{price}</p>
+                    </li>
+                )
+            }
+
+            const Product = (props) => {
+                const goods=props.items
+
+                return (
+                    <div>
+                        <Card productdata={goods[0]} />
+                        <Card productdata={goods[1]} />
+                        <Card productdata={goods[2]} />
+                        <Card productdata={goods[3]} />
+                        <Card productdata={goods[4]} />
+                        <Card productdata={goods[5]} />
+                        <Card productdata={goods[6]} />
+                    </div>
+                )
+            }
+        
+            const body = (
+                <div>
+                    <Product items={data}/>
+                </div>
+            )
+            
+            const domContainer = document.querySelector("#root");
+            const root = ReactDOM.createRoot(domContainer);
+            root.render(body)
+
+        })()
+            
+            
+    </script>
+</body>
+</html>

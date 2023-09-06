@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React란!~!@~@!!?</title>
+    <!-- react -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <!-- react-dom -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- 바벨 -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    라이브러리 도구 개발자가 개발의 통제권을 가지고 개발할 수 있음
+    프레임워크 틀 애플리케이션의 전반적인 구조와 흐름을 제공하며 그 규칙과 구조 안에서 개발을 수행해야함 - 개발 통제권 없음 - ui 가 서로 상호작용 하는 방식이 정해져있음 이걸 잘 익혀서 그대로 따라하면 애플리케이션을 만들 수 있게 됩니다. Angular, Vue.js, Spring 등이 있음. 설명서를 보고 똑같이 만들어야 구현할 수 있음
+    <h1>내 html에 리액트 1분만에 추가해보기!</h1>
+    <p>단 1분만에 설치없이 리액트를 추가할 수 있다구요?</p>
+    <div id="root"></div>
+    
+    
+    <script type="text/babel">
+        //안에 작성한 스크립트를 바벨이 정상적으로 해석하기 위해서는 타입 속성에 babel 값을 넣어줘야함.
+
+        // 1. react 컴포넌트 정의하기
+
+        const el = React.createElement;
+        // 리액트 객체의 프로퍼티!를 사용해 요소를 생성합니다
+
+        //클래스로 버튼만들기
+        // class HelloButton extends React.Component {
+        //     constructor(props) {
+        //         super(props);
+
+        //         this.state = {liked:false};
+
+        //     }
+
+        //     render() {
+        //         //react.componet에서 상속받은 메소드
+
+        //         if(this.state.liked) {
+        //             return <p>hello world</p>
+        //         }
+        //         return ( //버튼을 클릭하면 this의 setState를 실행 =>> setState = 상속 = React 제공
+        //         // html에서는 onclick의 c가 대문자가 아님
+        //         // this.state 속성을 괄호 안의 객체로 바꿔준다.
+        //         // 즉, liked:false => liked: true; 가 됨
+        //             <button onClick={()=> this.setState({liked:true})}> 
+        //                     안녕 이라고~ 내게 말하 지마~
+        //                 </button>
+        //         )
+        //     }
+
+
+        // }
+        
+        //함수로 버튼만들기
+        function HelloButton (props) {
+
+            const [text, setText] = React.useState("hello")
+
+            function handleClickButton(){
+                setText('clicked!')
+            }
+            return (
+                <button onClick={handleClickButton}> 
+                    {text}
+                    </button>
+                    // js안에서 HTML쓸 수 잇는 것은 JSX 문법이기 때문이다
+            )
+        }
+
+        const app = ( //컴포넌트는 사용자 정의 JSX 태그가 되어 HTML안에서 태그처럼 사용할 수 있다
+            <div>
+                <HelloButton /> 
+                <HelloButton /> 
+                <HelloButton /> 
+                <HelloButton /> 
+                <HelloButton /> 
+                </div>
+        )
+
+            
+        const domContainer = document.querySelector("#root")
+        
+        //React-DOM 두 번째로 다운받은 라이브러리로 ui 수어요소를 만들고 관리하는 목적의 라이브러리 입니다.
+        // ReactDOM.render(el(HelloButton), domContainer)
+        ReactDOM.render(app, domContainer)
+        //el이라는 요소를 HelloButton 클래스로 만들어서, domContainer 자리에 넣겠다.
+
+
+
+
+
+
+
+
+
+
+
+        // const el = React.createElement;
+
+        // class HelloButton extends React.Component {
+        //     constructor(props) {
+        //         super(props);
+
+        //         this.state = { liked: false };
+        //     }
+
+        //     render() {
+        //         if (this.state.liked) {
+        //             return 'Hello World!';
+        //         }
+
+        //         return (
+        //         <button onClick={() => this.setState({ liked: true })}>
+        //             Hello
+        //         </button>
+        //     );
+        //     }
+        // }
+
+        // // DOM에 리액트 컴포넌트 랜더링하기
+        //         const domContainer = document.querySelector('#root');
+                
+        //         // ReactDOM.createRoot 함수는 React 18부터 도입된 함수로, React 애플리케이션에서 루트 노드를 만들고, 그 루트 노드를 기반으로 리액트 앱을 렌더링하는 데 사용됩니다.
+        //         const root = ReactDOM.createRoot(domContainer);
+        //         root.render(el(HelloButton));
+    </script>
+
+react를 cdn방식으로 다운받아서 간단하게 바로 사용하는 것이 가능합니다.
+</body>
+</html>
