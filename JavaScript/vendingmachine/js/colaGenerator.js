@@ -31,7 +31,7 @@ export class ColaGenerator {
             count = element.count,
             img = element.img; 
             const itemTemplate = `
-                <button type="button" id="btn-${name}" data-item="${name}" data-count="${count}" data-price="${cost}" data-img='${img}'">
+                <button type="button" id="btn-${name}" data-name="${name}" data-count="${count}" data-price="${cost}" data-img='${img}'">
                     <img src="images/${img}" alt=${name}>
                     <label for="btn-${name}">${name}</label>
                     <p class="cost">${cost}원</p>

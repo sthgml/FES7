@@ -33,7 +33,7 @@ export class VendingMachineFunc {
     listUpSelectedBeverage (target) {
         const selectedBeverage = document.createElement("li");
         selectedBeverage.setAttribute("class", "beverage-list");
-        selectedBeverage.dataset.name = target.dataset.item;
+        selectedBeverage.dataset.name = target.dataset.name;
         selectedBeverage.dataset.img = target.dataset.img;
         selectedBeverage.dataset.price = target.dataset.price;
         selectedBeverage.dataset.count = target.dataset.count;
@@ -43,7 +43,7 @@ export class VendingMachineFunc {
             <p class="beverage-title">${selectedBeverage.dataset.name}</p> 
             <p class="beverage-count">1</p>
         `
-        // console.log(this.getList, target.dataset.item)
+        // console.log(this.getList, target.dataset.name)
         this.getList.append(selectedBeverage)
     }
 
@@ -122,7 +122,7 @@ export class VendingMachineFunc {
                     
                     // 장바구니 목록 카운트 추가
                     for( const beverage of selectedBeverage ){ // 장바구니 리스트에..
-                        if(beverage.dataset.name === btnCola.dataset.item){
+                        if(beverage.dataset.name === btnCola.dataset.name){
                             let modifiedCount = parseInt(beverage.querySelector(".beverage-count").textContent) + 1;
                             beverage.querySelector(".beverage-count").textContent = modifiedCount;
                             isStaged = true;
@@ -146,7 +146,7 @@ export class VendingMachineFunc {
             })
         })
 
-        /** 3. 획득하기
+        /** 4. 획득하기
          * 획득 버튼을 누르면 선택한 음료수 목록이 획득한 음료 개수로 이동합니다~
          * 획득한 음료의 금액을 모두 합하여 총 금액을 업데이트 합니다.
         */
