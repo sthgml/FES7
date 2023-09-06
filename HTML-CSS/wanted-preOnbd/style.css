@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Oswald:wght@500&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+ul, li {
+    list-style: none;
+}
+
+button {
+    border: 0;
+    background: none;
+    cursor: pointer;
+    font: inherit;
+}
+
+.a11y-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+/* ---- reset.css ---- */
+
+body {
+    width: 1445px;
+    height: 1603px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+/* ---- header ---- */
+.header {
+    padding : 29px 38px;
+    background-color: #fff;
+    border-bottom: 1px solid #EBEBEB;
+    box-sizing: border-box;
+}
+
+.header,
+.left-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 58px;
+}
+
+.left-container {
+    justify-content: left;
+}
+
+.logo {
+    width: 60px;
+    height: 30px;
+}
+
+.navigation {
+    display: flex;
+    gap: 59px;
+    color: #D2D2D3;
+}
+
+.hamburger {
+    width: 27px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger div {
+    width: 100%;
+    height: 2px;
+    background-color: #1D1F24;
+}
+/* ---- header ---- */
+
+/* ---- main ---- */
+.main {
+    height: 100%;
+    padding: 40px 45px;
+    display: grid;
+    gap: 32px;
+    grid-template-areas:
+    "carousel carousel carousel finance"
+    "carousel carousel carousel ad"
+    "featured entertain entertain ad"
+    "featured finance2 gaming tech"
+}
+
+.card {
+    width: 100%;
+    background-color: red;
+}
+
+.card.carousel {
+    grid-area: carousel;
+}
+.card.finance {
+    grid-area: finance;
+}
+.card.entertain {
+    grid-area: entertain;
+}
+.card.gaming {
+    grid-area: gaming;
+}
+.card.tech {
+    grid-area: tech;
+}
+.card.finance2 {
+    grid-area: finance2;
+}
+.card.ad {
+    grid-area: ad;
+}
+.card.featured {
+    grid-area: featured;
+}
+/* ---- main ---- */
+
+/* ---- footer ---- */
+.footer {
+    background-color: #1D1F24;
+    padding: 38px;
+    color: #BBBBBD;
+    display: flex;
+    gap: 82px;
+    align-items: center;
+}
+
+.wrap {
+    width: 657px;
+    color: #fff;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 12px;
+}
+/* ---- footer ---- */
+
+.oswald {
+    font-family: 'Oswald', sans-serif;
+}
