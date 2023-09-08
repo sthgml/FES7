@@ -33,6 +33,6 @@
 📄	:page_facing_up:	라이센스 추가/수정	Add or update license.
 💡	:bulb:	주석 추가/수정	Add or update comments in source code.
 🍻	:beers:	술 취해서 쓴 코드	Write code drunkenly.
-🗃	:card_file_box:	데이버베이스 관련 수정	Perform database related changes.
+🗃	:card_file_box:	데이터베이스 관련 수정	Perform database related changes.
 🔊	:loud_sound:	로그 추가/수정	Add or update logs.
 🙈	:see_no_evil:	.gitignore 추가/수정	Add or update a .gitignore file.
