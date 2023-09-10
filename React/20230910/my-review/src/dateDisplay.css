@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+        format('woff');
+    font-weight: 400;
+    font-style: normal;
+} 
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Pretendard';
+    text-align: center;
+    height: 100vh;
+
+    background: linear-gradient(45deg, rgb(211, 118, 132), rgb(139, 182, 197));
+}
+
+h1 {
+    margin-top: 20vh;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+}
+
+.date-display-div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn-date-display {
+    font: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+
+    cursor: pointer;
+    padding: 16px 64px;
+    border: 0;
+    border-radius: 32px;
+    
+    background: linear-gradient(45deg, rgb(249, 75, 255), rgb(135, 165, 255));
+    box-shadow: inset -2px -2px 0 rgb(88, 101, 136);
+}
+
+.btn-date-display:hover {
+    background: linear-gradient(45deg, rgb(252, 151, 255), rgb(182, 200, 255));
+    box-shadow: inset -2px -2px 0 rgb(150, 159, 184);
+}
+
+.btn-date-display:active {
+    background: linear-gradient(45deg, rgb(173, 63, 177), rgb(76, 96, 158));
+    box-shadow: inset 0px 0px 0 rgb(109, 123, 163);
+}
+
+.date-display {
+    margin-top: 16px;
+    color:rgb(255, 255, 255);
+    
+    transition: all 0.4s;
+    opacity: 0;
+    transform: translateY(17px);
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0px);
+}
