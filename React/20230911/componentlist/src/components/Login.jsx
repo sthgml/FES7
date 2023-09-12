@@ -4,7 +4,8 @@ import { useState } from "react";
 function Login (props) {
     let infoUser = props.infoUser;
     let setLogin = props.setLogin;
-    console.log(infoUser)
+    let setJoin = props.setJoin;
+    console.log(props)
 
     let [id, setId] = useState('');
     let [pw, setPW] = useState("");
@@ -35,7 +36,9 @@ function Login (props) {
         // console.log(e.target.value);
         setPW(e.target.value);
     }
-
+    function handleJoin () {
+        setJoin(true)
+    }
     return (
         <form>
             <label htmlFor="id">아이디</label>
@@ -44,6 +47,7 @@ function Login (props) {
             <input type="text" onChange={handlePWInput} id="pw"/>
 
             <button type="submit" onClick={handleSubmit} >로그인</button>
+            <button type="button" onClick={handleJoin} >회원가입</button>
         </form>
     )
 

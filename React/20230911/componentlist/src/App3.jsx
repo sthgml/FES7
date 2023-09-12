@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Login from "./components/Login";
 import Homepage from "./components/Homepage";
+import Modal from "./components/Modal";
 
 function App3 () {
         
@@ -10,10 +11,12 @@ function App3 () {
     }
 
     const [login, setLogin] = useState(false);
+    const [join, setJoin] = useState(false);
 
     return (
         <>
-            {login ? <Homepage/> : <Login infoUser={user} setLogin={setLogin}/>}
+            {login ? <Homepage setLogin={setLogin}/> : <Login infoUser={user} setLogin={setLogin} setJoin={setJoin}/>}
+            {join ? <Modal setJoin={setJoin}/> : null}
         </>
     )
 }
