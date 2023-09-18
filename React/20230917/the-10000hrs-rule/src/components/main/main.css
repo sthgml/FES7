@@ -1,0 +1,71 @@
+/* main 스타일 끝 */
+main {
+    margin-bottom : 24px;
+    font-size: 24px;
+    line-height: 24px;
+}
+
+.cont-input .txt-wannabe {
+    margin-bottom: 30px;
+    line-height: 48px;
+}
+
+.txt-time {
+    line-height: 48px;
+    margin-bottom: 120px;
+}
+
+.cont-input input {
+    width: 224px;
+    height: 48px;
+    
+    border: 0;
+    border-radius: 12px;
+    
+    font-size: 24px;
+    font: inherit;
+
+    text-align: center;
+}
+
+.cont-input .btn-exc {
+    position: relative;
+}
+
+.cont-input .btn-exc::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: -50px;
+
+    width: 48px;
+    height: 48px;
+    /* background: url("./img/hand.png") no-repeat center/contain; */
+}
+
+.a11y-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
+.cont-result .txt-wannabe {
+    margin: 147px 0 127px;
+    line-height: 72px;
+}
+
+.txt-wannabe strong{
+    font-size: 72px;
+    font-family: 'GmarketSansBold';
+}
+
+.btn-share {
+    margin-left: 16px;
+    background-color: #fff;
+}
+/* main 스타일 끝 */
