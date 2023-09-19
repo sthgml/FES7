@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bb</title>
+    <style>
+        /* div {
+            box-shadow: inset 0 0 39px red;
+            height: 100px;
+            width: 100px;
+            display: flex;
+            justify-content: center;
+            background: url(./HTML-CSS/review-note/images/main_0827.png) 0 -25px no-repeat;
+        } */
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <section></section>
+    <script>
+        class Sohee {
+            hi () {
+                console.log(hi)
+            }
+        }
+        'abcde1abc12abb'.split('').filter(v=>v.match(/[0-9]/)).reduce((a,c)=>parseInt(a)+parseInt(c));
+
+        //h1
+        const ir = document.createElement("h1");
+        ir.setAttribute("class","ir");
+        ir.textContent = "테스트페이지";
+
+        //section
+        const section = document.createElement('section');
+        const sectionTitle = document.createElement("h2");
+        sectionTitle.setAttribute("class", "section-title")
+        sectionTitle.textContent = '섹션제목';
+
+        const sectionImg = document.createElement("img");
+        sectionImg.setAttribute("src", "img.jpg");
+        sectionImg.setAttribute("class", "section-img");
+        sectionImg.setAttribute("alt", "섹션이미지");
+
+        const sectionContents = document.createElement("p");
+        sectionContents.setAttribute("class","section-contents");
+        sectionContents.textContent = "내용"
+
+        section.append(sectionTitle,sectionImg,sectionContents);
+
+        //container
+        const container = document.createElement("div");
+        container.setAttribute("class","container");
+        container.append(ir, section);
+
+        const root = document.querySelector("#root");
+        root.append(container)
+    </script>
+</body>
+</html>

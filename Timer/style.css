@@ -1,0 +1,190 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+        format('woff');
+    font-weight: 400;
+    font-style: normal;
+} 
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Pretendard";
+}
+
+body {
+    background: var(--gradient2, radial-gradient(293.21% 130.49% at 3.59% 5.28%, #F0F4FF 0%, #A5B6EE 100%)) no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+}
+
+header {
+    margin-top: 72px;
+}
+
+header img {
+    width: 244px;
+    height: 48px;   
+}
+
+main {
+    width: 400px;
+    height: 360px;
+    border-radius: 16px;
+    background: var(--gradient, linear-gradient(144deg, #5572BB 2.13%, #374B7C 102.97%));
+    padding: 48px 44px 40px;
+    box-sizing: border-box;
+
+    /* shadow */
+    box-shadow: 20px 20px 60px 10px rgba(55, 75, 124, 0.40);
+
+    /* layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: #FFF;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.division-line {
+    width: 100%;
+    margin-bottom: 32px;
+}
+
+.division-line hr {
+    height: 1px;
+    border: 0;
+    border-bottom: 1px solid #5B75B4;
+    background: #3D538A;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+.container-input {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+label {
+    color:#A5B6EE;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+input {
+    width: 80px;
+    height: 80px;
+
+    background: linear-gradient(314deg, #304577 0%, #4C65A0 83%);
+    border: 1px solid #354971;
+    border-radius: 4px;
+
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 48px;
+}
+
+input::placeholder {
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 48px;
+}
+
+.dots {
+    font-size: 48px;
+    color: #8198D0;
+}
+
+.container-btn {
+    display: flex;
+    gap: 12px;
+}
+
+/* button 시작 */
+button {
+    width: 112px;
+    height: 48px;
+
+    padding: 16px 24px;
+    border-radius: 42px;
+    border: 0;
+
+    display: flex;
+    gap: 5px;
+}
+
+button:disabled {
+    background-color: #324577;
+    color: #617199;
+}
+
+.btn-start:enabled {
+    background-color: #5180FF;
+    color: white;
+}
+.btn-start:enabled svg path{
+    fill: white;
+}
+.btn-start.started {
+    background-color: #15C2B8;
+    color: white;
+}
+.btn-reset:enabled {
+    background-color: #FB7099;
+    color: white;
+}
+.btn-reset:enabled svg path{
+    stroke: white;
+}
+
+
+/* button 끝 */
+
+
+footer {
+    color: #8596BF;
+    text-align: center;
+}
+
+.regular_14px {
+    /* Regular_14px */
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+[class *= "bold"] {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+[class *= "12px"] {
+    font-size: 12px;
+}
+
+[class *= "14px"] {
+    font-size: 14px;
+}
+
+[class *= "24px"] {
+    font-size: 24px;
+}
