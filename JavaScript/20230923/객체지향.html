@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체지향</title> 
+</head>
+<body>
+    객체지향이란
+    데이터와 그것을 다루는 함수를 하나의 객체 안에 정리해놓는 것
+    // encapsulation == 캡슐화 하다.
+    // 데이터와 데이터를 조작하는 메서드를 하나의 단위로 묶는 것.
+
+    <script>
+        const knight = {
+            name: 'jaehyun',
+            weapon: "sword",
+            attack() {
+                return `${knight.name}이 ${knight.weapon}으로 공격합니다!`
+            },
+            // 여기서 this를 빼버릴 경우 name, weapon은 undefined variable syntax error 발생!
+            // 이 경우는 생성자함수가 아니기 때문에 딱 하나의 객체만을 가리키기 때문에 this가 아닌 객체이름인 knight를 바로 써도 된당.
+            changeWeapon(newWeapon){
+                knight.weapon = newWeapon;
+                return `${knight.weapon}으로 무기가 교체되었습니다!`;
+            }
+        }
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple to do list</title>
+</head>
+<body>
+    <script>
+        class Todo{
+            constructor(desc){
+                this.itemDesc = desc;
+                this.finished = false;
+            }
+
+            changeStatus(){
+                this.finished = !this.finished;
+            }
+        }
+
+        class TodoManager {
+            constructor(){
+                this.itemList = [];
+            }   
+            
+            displayAll(){
+                return `모든 할 일: ${[...this.itemList.map(v=>v.itemDesc)]}`
+            }
+
+            addTodo(desc){
+                let newTodo = new Todo(desc);
+                this.itemList.push(newTodo);
+                return `${desc}가 새로운 할일로 등록되었습니다.`
+            }
+
+            remainItem(){
+                return `남은 할 일: ${this.itemList.filter(v=>v.finished !== true).map(v=>v.itemDesc)}`;
+            }
+
+            deleteTodo(desc){
+                //this.itemList.itemDesc === desc 이면
+                //this.itemList.finished === true로 만들기
+                this.itemList.forEach(v=>{
+                    // console.log('v.itemDesc:',v.itemDesc, 'desc:',desc)
+                    if(v.itemDesc === desc){
+                        v.changeStatus();
+                    }
+                })
+                return `${desc}가 완료되었습니다.`
+            }
+        }
+
+        let myTodoList = new TodoManager();
+        console.log(myTodoList.addTodo('리액트 강의 녹화본 듣기'));
+        console.log(myTodoList.displayAll())
+        console.log(myTodoList.remainItem())
+        console.log(myTodoList.deleteTodo('리액트 강의 녹화본 듣기'))
+        console.log(myTodoList.displayAll())
+        console.log(myTodoList.remainItem())
+    </script>
+</body>
+</html>
