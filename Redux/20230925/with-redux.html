@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.1/redux.js"></script>
+</head>
+
+<body>
+    <style>
+        .container {
+            border: 5px solid black;
+            padding: 1rem;
+            margin-bottom:1rem;
+        }
+        body{
+            margin:1rem;
+        }
+    </style>
+
+    <h1>With redux</h1>
+    <div id="red"></div>
+    <div id="blue"></div>
+    <div id="green"></div>
+
+    <script>
+
+        // <---- reducer 함수 정의 ----> 
+        // = 상태를 변경하는 함수
+        function reducer(state, action){
+            console.log('state:',state, ',', 'action:',action)
+            // state는 현재(이전) 상태, action은 상태를 어떻게 바꾸라는 내용이 든 객체!
+            // > state: undefined , action: {type: '@@redux/INITc.s.o.f.6'}
+        
+            // state 초기화 : 값이 없으면 YELLOW 넣어라
+            if(state === undefined){
+                return {color:'yellow'}
+            }
+
+            // 
+            var newState;
+            if(action.type === 'CHANGE_COLOR'){
+                newState = Object.assign({}, state, {color:action.color}); 
+                // Object.assign() > 객체를 (얕은) 복사하는 메소드
+                // state : 이전 상태, {} : state 값을 복사해서 넣어줄 대상 > 빈 객체에 state를 넣어줄 거야
+            }
+            console.log(action.type, action, state, newState);
+            return newState;
+        }
+        // <---- reducer 함수 정의 끝----> 
+
+        // <---- 창고 생성 시작 ----> 
+        var store = Redux.createStore( // cdn으로 생깁니다.
+            reducer,
+            window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() // 리덕스 개발자 도구를 사용하기 위한 함수
+        );
+        // <---- 창고 생성 끝 ----> 
+
+        // <---- 컬러별 함수 시작 ----> 
+        function red() {
+            var state = store.getState(); // store 객체의 상태를 호출하는 메서드
+            document.querySelector('#red').innerHTML = `
+                <div class="container" id="component_red" style="background-color:${state.color}">
+                    <h1>red</h1>
+                    <input type="button" value="fire" onclick="
+                        store.dispatch({type:'CHANGE_COLOR', color:'red'});
+                    ">
+                </div>
+            `;
+        }
+        // 창고가 red 함수를 구독합니다. >> 값이 바뀔 때마다 red함수 호출 >> 
+        store.subscribe(red);
+        red();
+
+        function blue() {
+            var state = store.getState();
+            document.querySelector('#blue').innerHTML = `
+                <div class="container" id="component_blue" style="background-color:${state.color}">
+                    <h1>blue</h1>
+                    <input type="button" value="fire" onclick="
+                        store.dispatch({type:'CHANGE_COLOR', color:'blue'});
+                    ">
+                </div>
+            `;
+        }
+        store.subscribe(blue);
+        blue();
+
+        function green() {
+            var state = store.getState();
+            document.querySelector('#green').innerHTML = `
+                <div class="container" id="component_green" style="background-color:${state.color}">
+                    <h1>green</h1>
+                    <input type="button" value="fire" onclick="
+                        store.dispatch({type:'CHANGE_COLOR', color:'green'});
+                    ">
+                </div>
+            `;
+        }
+        store.subscribe(green);
+        green();
+        // <---- 컬러별 함수 끝 ----> 
+
+    </script>
+</body>
+
+</html>
