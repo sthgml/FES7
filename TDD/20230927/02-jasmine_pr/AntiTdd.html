@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDD가 불가능한 파일</title>
+    <style>
+        article{
+            display: inline-block;
+            border: 3px solid beige;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .viewr { 
+            display: block;
+            font-size: 24px;
+            color : teal;
+            margin :50px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <strong class="viewr"></strong>
+        <input type="text" class="inp-txt">
+        <button class="btn-push" onclick="push()">적용</button>
+    </article>
+
+    <script>
+        // 전역변수
+        // 애초에 함수가 아니기 때문에 불가능!
+        const text = 'hello lions';
+        const viewer = document.querySelector(".viewr")
+        viewer.textContent = txt;
+
+        // 재사용성이 떨어짐 (inp-txt라는 클래스를 가진 요소가 있어야지만 사용가능)
+        function push(){
+            const inpTxt = document.querySelector(".inp-txt");
+
+            viewer.textContent = inpTxt.value;
+        }
+
+        // JS와 HTML 코드가 섞여있음
+    </script>
+</body>
+</html>
