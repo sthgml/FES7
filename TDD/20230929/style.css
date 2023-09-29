@@ -1,0 +1,22 @@
+#root,
+.inputTxt,
+.btnSubmit {
+    padding: 12px; 
+    border-radius: 12px;  
+    border: 1px solid salmon;
+    line-height: 16px;
+}
+
+#root {
+    width: fit-content; 
+}
+
+.container {
+    height: 150px;
+}
+
+.btnSubmit {
+    background-color: salmon; 
+    color: white; 
+    font-weight: bold;
+}
