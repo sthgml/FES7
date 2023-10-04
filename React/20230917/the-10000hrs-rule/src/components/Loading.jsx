@@ -13,7 +13,7 @@ function Loading ({setLoading}) {
     `
 
     const Clock = styled.img`
-    margin: 0 auto;
+    margin: 147px auto;
     animation: rotation 3s linear infinite forwards;
     `
     

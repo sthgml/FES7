@@ -1,0 +1,93 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+        format('woff');
+    font-weight: 400;
+    font-style: normal;
+} 
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Pretendard';
+    color: #222;
+}
+
+h1, h2, h3, p, button {
+    font: inherit;
+}
+
+.a11y-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
+/* ---- 요소별 기본설정 ---- */
+li {
+    list-style: none;
+    line-height: 14px;
+    padding: 8px;
+    background-color: #fff;
+    border-radius: 4px;
+
+    justify-content: space-between;
+    width: calc(100% - 18px);
+}
+
+input, button {
+    line-height: 16px;
+    padding: 8px 16px;
+    border: 1px solid #9dcaad;
+    border-radius: 30px;
+}
+
+.flex-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+/* ---- 요소별 기본설정 ---- */
+
+/* ---- font 기본설정 ---- */
+label {
+    font-size: 12px;
+    color: #000000;
+}
+/* ---- font 기본설정 ---- */
+/* ---- 초기화 ---- */
+
+
+/* ---- 개별 설정 ---- */
+body {
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    padding: 16px;
+    background-color: wheat;
+    margin-bottom: 8px;
+}
+
+main {
+    margin: 8px;
+    background-color: #9dcaad;
+    box-sizing: border-box;
+}
+
+.expense-list {
+    gap: 4px;
+}
