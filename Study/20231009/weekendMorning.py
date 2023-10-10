@@ -6,7 +6,6 @@ from datetime import datetime, time, timedelta
 intents = discord.Intents.default()
 bot = commands.Bot(command_prefix='!', intents=intents)
 
-token = "MTE2MDc3MTUwMjMwODg2NDExMw.G8eWpO.x0YG8BG0m9lotpkEz5ma2STRWCc-L6vrTLEOm8"
 channel_id = 813000208467361867  # 스레드를 생성할 채널 ID
 
 @bot.event
