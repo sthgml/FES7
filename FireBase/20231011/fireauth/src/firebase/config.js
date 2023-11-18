@@ -21,6 +21,6 @@ const timestamp = Timestamp;
 const appAuth = getAuth();
 
 // 밖에서 사용할 수 있도록 준비합니다.
-export { appFireStore, appAuth,timestamp }
+export { appFireStore, appAuth, timestamp }
 
 // firebase 랑 연결한다음에 firebase랑 계속 통신할 수잇도록 그 경로를 변수에 저장한 다음, 다른데서 import해서 사용할 수 있도록 export함

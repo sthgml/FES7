@@ -57,6 +57,8 @@ function useFirestore (transaction) {
             const docRef = await addDoc(colRef, {doc, createdTime});
             dispatch({ type:'addDoc', payload: docRef })
         } catch (error){
+            console.log('업로드 실패~!~!~!#@~!@~',error);
+            console.log("colRef",colRef)
             dispatch({type:'error', payload: error.message})
         }
     }

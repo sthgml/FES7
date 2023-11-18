@@ -16,14 +16,18 @@ function useCollection (transaction, myQuery) { // sever의 데이터르 ㄹ불�
                 collection(appFireStore, transaction),
                 where(...myQuery)
             );
+            console.log('myQuery', myQuery);
+            console.log('q',q);
+            console.log('collection', collection(appFireStore, transaction))
         }
 
         const unsubscribe = onSnapshot( // 구독을 끊어주는 함수 반환
-            (myQuery ? q : collection(appFireStore, transaction)), 
+            collection(appFireStore, transaction),
+            where(...myQuery),
+            // (myQuery ? q : collection(appFireStore, transaction)), 
             // collection(appFireStore, transaction),
             (snapshot)=>{ //snapshot (사진직은것처럼 지금 데이터 전부를 담아옴)
                 let result = [];
-
                  // snapshot.docs안에 데이터가 배열상태로 저장되어있음
                 snapshot.docs.forEach((doc)=>{
                     result.push({

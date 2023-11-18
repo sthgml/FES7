@@ -3,7 +3,7 @@ import "../../css/today_modal.css"
 import useFirestore from '../../hooks/useFirestore';
 
 // homejsx에서 props로 전달받은 uid
-export default function DiaryForm({ uid }) {
+export default function DiaryForm({ uid, handleClose }) {
     const [title, setTitle] = useState("");
     const [text, setText] = useState("");
     const {addDocument, response} = useFirestore('diary'/* 원하는 이름을 넣엊세요 이것이 collection의 이름이 될겁니다 */);
@@ -20,6 +20,7 @@ export default function DiaryForm({ uid }) {
         if(response.success){ // firestore에 잘 적용됐다!
             setText('');
             setTitle('');
+            handleClose();
         }
     },[response.success])
 

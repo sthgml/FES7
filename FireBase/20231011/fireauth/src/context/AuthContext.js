@@ -48,4 +48,4 @@ const AuthContextProvider = ({ children }) => { // redux같이 생겼지만 아�
     )
 }
 
-export { AuthContext, AuthContextProvider};
+export { AuthContext, AuthContextProvider };

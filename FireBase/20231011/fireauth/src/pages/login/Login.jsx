@@ -1,6 +1,8 @@
 import '../../css/join.css';
 import { useLogin } from '../../hooks/useLogin';
-import { useState } from 'react'
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import logoBig from "../../images/당장복습헤_logo 1.png"
 
 function Login () {
     const [email, setEmail] = useState('');
@@ -17,31 +19,67 @@ function Login () {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(email, password);
+        // console.log(email, password);
         login(email, password);
     }
 
     return (
         <main className="main">
-        <a href="./"><img src="./images/당장복습헤_logo 1.png" alt="당장복습헤 로고" className="logo-big"/></a>
+        <Link to="./">
+            <img src={logoBig} alt="당장복습헤 로고" className="logo-big"/>
+        </Link>
         <h1 className="mark">로그인</h1>
-        <form className="form" action="#" method="post" name="user-info-join" onSubmit={handleSubmit}>
+        <form 
+        className="form" 
+        action="#" 
+        method="post" 
+        name="user-info-join" 
+        onSubmit={handleSubmit}>
             <div className="input-user-email">
-                <label htmlFor="user-email">이메일</label>
-                <input type="email" id="user-email" name="user-email" className="user-email" placeholder="example@exam.ple" required onChange={handleData}/>
-                <p className="warning-text">아이디를 확인해주세요!</p>
+                <label htmlFor="user-email">
+                    이메일
+                </label>
+                <input 
+                    type="email" 
+                    id="user-email" 
+                    name="user-email" 
+                    className="user-email" placeholder="example@exam.ple" 
+                    onChange={handleData} 
+                    required 
+                />
+                <p className="warning-text">
+                    아이디를 확인해주세요!
+                </p>
             </div>
             <div className="input-user-pw">
-                <label htmlFor="user-pw">비밀번호</label>
-                <input type="password" id="user-pw" name="user-pw" placeholder="비밀번호" className="user-pw" required onChange={handleData}/>
-                <p className="warning-text">비밀번호를 확인해주세요!</p>
+                <label htmlFor="user-pw">
+                    비밀번호
+                </label>
+                <input 
+                    type="password" 
+                    id="user-pw" 
+                    name="user-pw" 
+                    placeholder="비밀번호" 
+                    className="user-pw" 
+                    onChange={handleData}
+                    required
+                />
+                <p className="warning-text">
+                    비밀번호를 확인해주세요!
+                </p>
             </div>
             
-            {isPending && <strong>로그인이 진행중입니다.</strong>}
-            {!isPending && <button type="submit" className="btn-join">로그인</button>}
+            {isPending 
+            ? <strong>로그인이 진행중입니다.</strong> 
+            : <button 
+                type="submit" 
+                className="btn-join">
+                    로그인
+            </button>}
             {error && <strong>{error}</strong>}
         </form>
-        {/* 소셜로그인 <div className="division">
+        {/* 소셜로그인 
+        <div className="division">
             <hr className="division-line" />
             <p className="or">또는</p>
         </div>

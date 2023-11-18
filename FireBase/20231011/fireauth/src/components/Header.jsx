@@ -1,24 +1,34 @@
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useLogout } from "../hooks/useLogout"
 import { Link, useLocation } from "react-router-dom";
+import logoSm from "../images/당장복습헤_logo @4x.png";
+import iconLogout from "../images/icon/icon-logout.svg"
 
-function Header () {
+function Header ({ isMenuOpen, setIsMenuOpen }) {
 
     const { logout } = useLogout();
     const { user } = useAuthContext();
     const location = useLocation();
+    const handleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    }
 
     return (
         <header>
             <div className="container">
                 <div className="left-header">
-                    <button type="button" id="hamburger" className="">
+                    <button type="button" id="hamburger" className={`menu-btn ${isMenuOpen ? 'opened' : ''}`} onClick={handleMenu}>
                         <div></div>
                         <div></div>
                         <div></div>
                     </button>
                     
-                    <h1><p className="a11y-hidden">당장복습헤_logo</p><Link href="./"><img src="./images/당장복습헤_logo @4x.png" alt="당장복습헤 로고" className="logo-sm" /></Link></h1>
+                    <h1>
+                        <p className="a11y-hidden">당장복습헤_logo</p>
+                        <Link href="./">
+                            <img src={logoSm} alt="당장복습헤 로고" className="logo-sm" />
+                        </Link>
+                    </h1>
                 </div>
                 
                 <div className="info">
@@ -44,22 +54,11 @@ function Header () {
                             </div>
                     
                             <Link to="/login" className="logout" onClick={logout}>
-                                <img src="./images/icon/icon-logout.svg" alt="icon-logout" className="icon-logout" />
+                                <img src={iconLogout} alt="icon-logout" className="icon-logout" />
                                 <p className="text-logout">로그아웃</p>
                             </Link>
                         </>
                     )}
-
-                    {/* 로그인 상태
-                    <div className="welcome-text">
-                        <p className="welcome">환영합니다.&nbsp;</p>
-                        <p className="mark">홍길동님</p>
-                    </div>
-            
-                    <a href="./login.html" className="logout" onClick={logout}>
-                        <img src="./images/icon/icon-logout.svg" alt="icon-logout" className="icon-logout" />
-                        <p className="text-logout">로그아웃</p>
-                    </a> */}
                 </div>
             </div>
 
